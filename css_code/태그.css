@@ -1,0 +1,14 @@
+/* tag 선택자 */
+p {
+    color: red;
+}
+
+/* class 선택자 */
+.yellow{
+    color: yellow;
+}
+
+/* id 선택자 */
+#frist{
+    background-color: aqua;
+}
