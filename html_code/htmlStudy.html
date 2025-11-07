@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 배우기</title>
+
+    <style>
+        body{
+            background-color: #a89f9e;
+            padding:50px;
+        }
+        header{
+            background-color: #f1f1f1;
+            padding-left: 5px;
+            text-align: center;
+        }
+        main{
+            margin-top: 100px;
+            background-color: #c0c5d0;
+            padding: 5px;
+        }
+        footer{
+            margin-top: 100px;
+            background-color: #95c9a9;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header 는 머리말 -->
+    <header>
+        <h1> head 글자 크기 1 ~ 6 header 는 섹션의 머리말 HTML 페이지 공부</h1> 
+        <h1> section  그룹 같은 주제끼리 나눌때 사용</h1>
+    </header>
+    <!-- main 말 그대로 홈페이지에 중요한 내용 -->
+    <!-- 하나만 사용할것  -->
+    <main>
+        main 홈페이지 하나에 주요한 내용 하나만 사용 할 것
+        <!-- section 그룹 화 된 내용 -->
+        <section>
+            <h2>메인에 첫번째 섹션</h2>
+            <p> 메인 <em>첫번째 섹션</em> 본문 내용</p>
+            <!-- p 본문 내용 -->
+            <!-- em은 이탤릭체(살짝 누워있는 글씨체) -->
+        </section>
+
+        <section>
+            <h2>메인에 두번째 섹션</h2>
+            <p>메인 <strong>두번째 섹션</strong> 본문 내용</p>
+            <!--strong은 강조(굵게) -->
+        </section>
+
+        <section>
+            <h2>메인에 세번째 섹션</h2>
+            <p>첫번재줄 <br> 두번째줄</p>
+            <!-- br은 다음줄로 넘기기 (자바에 \n 느낌) -->
+        </section>
+    </main>
+
+    <section>
+        <h3>메인이 아닌 첫번째 섹션</h3>
+        <p>첫번째줄</p>
+        <hr>
+        <!-- hr은 수평선 만들기 -->
+        <p>2번째줄</p>
+    </section>
+
+    <section>
+        <h3>메인이 아닌 두번째 섹션</h3>
+        <!-- ol 순서가 있는 리스트 -->
+        <ol>
+            <li>ordered list 1</li>
+            <li>ordered list 2</li>
+            <li>ordered list 3</li>
+        </ol>
+        <!-- ol 순서가 없는 리스트 -->
+        <ul>
+            <li>unordered list 1</li>
+            <li>unordered list 2</li>
+            <li>unordered list 3</li>
+        </ul>
+    </section>
+    <h4>메인, 섹션 둘다 아닌 body</h4>    
+
+    <a href="https://www.google.com/"> 구글 바로가기</a>
+    <br>
+    <a href="C:\AI\html_code\index.html"> 내가 만든 파일 바로가기</a>
+
+    <!-- div는 주로 큰 레이아웃을 그룹화하거나 스타일적용 하기 위해 사용-->
+    <!-- span은 텍스트 내의 작은부분을 감싸거나 스타일을 적용하기 위해 사용-->
+    <!-- section과의 차이점은 stction은 의미있는 콘텐츠 묶음. div는 단순한 레이아웃 그룹-->
+
+    <div style="color: red;">
+        <p>테스트용 문장 1</p>
+        <p>테스트용 <span style="color: blueviolet;">문장</span> 1</p>
+        <p>테스트용 문장 1</p>
+    </div>
+
+    <form>
+        <label for="name">이름 : </label>
+        <input type="text" id="name" name="속성">
+        <input type="submit" value="확인">
+    </form>
+
+    <form>
+        <input type="radio" id="1" name="case1" value="1">
+        <input type="radio" id="2" name="case1" value="2">
+        <input type="radio" id="3" name="case1" value="3">
+        <input type="submit" value="확인">
+    </form>
+
+    <form>
+        <input type="checkbox" id="4" name="case2" value="4">
+        <input type="checkbox" id="5" name="case2" value="5">
+        <input type="checkbox" id="6" name="case2" value="6">
+        <input type="submit" value="확인">
+    </form>
+
+    <form>
+        <select name="nationality" id="">
+            <option value="kr">한국</option>
+            <option value="jp">일본</option>
+            <option value="us">미국</option>
+        </select>
+        <input type="submit" value="확인">
+    </form>
+     
+
+    <footer>화면 아래 주소 및 아이콘 및 관련 링크 웹페이지 푸터 </footer>
+</body>
+</html>
