@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
   <meta charset="UTF-8">
@@ -18,7 +18,7 @@
       </div>
       <!-- header 중앙 logo -->
       <h1 class="logo">
-        <span class="icon"><ion-icon name="logo-octocat"></ion-icon>
+        <span class="img"><img src="./logo.png" alt="Logo img"></ion-icon></span>
       </h1>
       <!-- header 오른쪽 -->
       <div class="nav-right">
@@ -27,42 +27,108 @@
         <span class="icon"><ion-icon name="cart-outline"></ion-icon></span>
       </div>
     </div>
+    
       <!-- header navigation bar -->
-      <nav class="navigation">
-        <ul class="top-bar">
+      <nav>
+        <ul class="menubar">
+
           <li class="products">
             <a href="#">PRODUCTS</a>
-            <ul class="products-menu">
-              <li><a href="#">GIFT</a></li>
-              <li><a href="#">NEW PRODUCTS</a></li>
-              <li><a href="#">BEST SELLER</a></li>
-              <li><a href="#">PRODUCTS</a></li>
-            </ul>
+            <div class="products-dropdown">
+              <div class="products-sidebar">
+                <ul>
+                  <li><a href="#" class="gift">GIFT</a></li>
+                  <li><a href="#">NEW PRODUCTS</a></li>
+                  <li><a href="#">BEST SELLER</a></li>
+                </ul>
+              </div>
+              
+              <div class="products-gift-details">
+                <div class="column-left">
+                  <h4>GIFT MENU</h4>
+                  <ul>
+                    <li><a href="#">CHOOSE FROM GIFT SETS</a></li>
+                    <li><a href="#"></a>CHOOSE FROM PICK-UP OPTIONS</li>
+                    <li><a href="#"></a>CHOSOSE BY CATEGORY</li>
+                    <li><a href="#"></a>FILTER BY PRICE</li>
+                  </ul>
+                </div>
+                <div class="column-right">
+                  <h4>WRAPPING SERVICE</h4>
+                  <ul>
+                    <li><a href="#">GIFT WRAPPING</a></li>
+                    <li><a href="#">GIFT SERVICE</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="products-bestseller-details">
+                <ul>
+                  <li><a href="#">LONG SELLER</a></li>
+                  <li><a href="#">PICK UP ITEMS</a></li>
+                  <li><a href="#">RANKING</a></li>
+                </ul>
+              </div>
+            </div>
           </li>
 
-          <li class="about">
+          <!-- <li class="about">
             <a href="#">ABOUT</a>
-            <ul class="about-menu">
-              <li><a href="#">BRAND STORY</a></li>
-              <li><a href="#">BRAND MESSAGE</a></li>
-              <li><a href="#">OUR COMMITMENT</a></li>
-            </ul>
-          </li>
+            <div class="about-dropdown">
+              <div class="about-sidebar">
+                <ul>
+                  <li><a href="#">BRAND STORY</a></li>
+                  <li><a href="#">BRAND MESSAGE</a></li>
+                  <li><a href="#">OUR COMMITMENT</a></li>
+                </ul>
+              </div>
+              <div class="about-brand_story-details">
+                <span class="about-img"><img src="./replace image.png" alt="about-brand_brand 임시용 이미지1"></span>
+                <span class="about-img"><img src="./replace image.png" alt="about-brand_brand 임시용 이미지2"></span>
+              </div>
+              <div class="about-brand_message-details">
+                <span class="about-img"><img src="./replace image.png" alt="about-brand_message 임시용 이미지1"></span>
+                <span class="about-img"><img src="./replace image.png" alt="about-brand_message 임시용 이미지2"></span>
+                <span class="about-img"><img src="./replace image.png" alt="about-brand_message 임시용 이미지3"></span>
+                <span class="about-img"><img src="./replace image.png" alt="about-brand_message 임시용 이미지4"></span>
+              </div>
+              <div class="about-brand_commitment-details">
+                <span class="about-img"><img src="./replace image.png" alt="about-brand_commitment 임시용 이미지1"></span>
+                <span class="about-img"><img src="./replace image.png" alt="about-brand_commitment 임시용 이미지2"></span>
+                <span class="about-img"><img src="./replace image.png" alt="about-brand_commitment 임시용 이미지3"></span>
+                <span class="about-img"><img src="./replace image.png" alt="about-brand_commitment 임시용 이미지4"></span>
+              </div>
+            </div>
+          </li> -->
 
-          <li><a href="#">NEWS</a></li>
+          <li class="news"><a href="#">NEWS</a></li>
 
-          <li><a href="#">SHOP INFO</a></li>
+          <li class="shopinfo"><a href="#">SHOP INFO</a></li>
 
-          <li class="membership">
+          <!-- <li class="membership">
             <a href="#">MEMBERSHIP</a>
-            <ul class="membership-menu">
-              <li><a href="#">MEMBERSHIP INFO</a></li>
-              <li><a href="#">MEMBERSHIP BENEFITS</a></li>
-            </ul>
-          </li>
+            <div class="membership-dropdown">
+              <div class="membership-sidebar">
+                <ul>
+                  <li><a href="#">MEMBERSHIP INFO</a></li>
+                  <li><a href="#">MEMBERSHIP BENEFITS</a></li>
+                </ul>
+              </div>
+              <div class="membership_info-details">
+                <span class="about-img"><img src="./replace image.png" alt="membership_info 임시용 이미지1"></span>
+              </div>
+              <div class="membership_benefits-details">
+                <span class="membership-img"><img src="./replace image.png" alt="membership_benefits 임시용 이미지1"></span>
+                <span class="membership-img"><img src="./replace image.png" alt="membership_benefits 임시용 이미지1"></span>
+              </div>
+            </div>
+          </li> -->
         </ul>
-    </nav>
-    <div class="header-line"></div>
+      </nav>  
+
+
+
+
   </header>
 
   <main></main>

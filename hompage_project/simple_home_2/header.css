@@ -3,6 +3,15 @@
   margin: 0;
   padding: 0;
 }
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid black;
+  background :white;
+}
 /* 최상단 */
 .top-view{
   position: relative;
@@ -12,121 +21,96 @@
   width: 100%;
   padding: 20px 20px 40px;;
 }
-
 /* 최상단 좌우 아이콘 찾기, 찜, 마이페이지, 장바구니 */
 .nav-left, .nav-right{
   display: flex;
   gap: 15px;
 }
-
 /* 최상단 아이콘 찾기, 찜, 마이페이지, 장바구니, 로고 */
 .top-view .icon{
   font-size: 22px;
   cursor: pointer;
 }
-
 /* 최상단 아이콘 로고 */
-.logo{
+.logo{ 
   position: absolute;
+  width: 100px;
+  height: 60px;
+  overflow: hidden;
   left: 50%;
   transform: translateX(-50%);
+}
+.logo img{
+  width: 80%;
+  height: auto;
+  display: block;
 }
 
 .top-view .logo .icon{
   font-size: 50px;
 }
 
-header:hover{
-  background-color: white;
-}
-
-.header-line{
-  border-bottom: 1px solid black;
-}
-
-
 /* 상단 navigation */
-.navigation .top-bar{
+nav>ul{
   display: flex;
   justify-content: center;
-  gap: 50px;
-  list-style: none;
-  padding: 10px 0 10px;
+  gap: 60px;
+}
+/* menu bar 안에 ul tag 전부 설정 */
+nav ul{
+  list-style: none
+}
+/* menu bar 안에 a tag 전부 설정 */
+nav ul a{
+  text-decoration: none;
+  color: black;
 }
 
-.products-menu {
-  position: fixed; 
-  top: 125px;   
-  left: 50;      
-  width: 200px; 
-  height: 300px;
+.menubar{
+  position: relative;
+}
+
+.products-dropdown, .about-dropdown, .membership-dropdown{
+  display: flex;
+  position: absolute;
+  top: 100%;
+  left: 20px;
+}
+
+.products-sidebar , .about-sidebar, .membership-sidebar{
+  width: 280px;
+  height: 280px;
   background: white;
-  list-style: none;
-  padding: 20px;
-  margin: 0;
-
-  opacity: 0;
-  transform: translateY(-30px);
-  pointer-events: none;
-  transition: all 0.25s ease;
+  display: none;
+  border: 1px solid black;
 }
 
-.products:hover .products-menu {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
-}
-
-.about-menu {
-  position: fixed; 
-  top: 125px;   
-  left: 50;      
-  width: 200px; 
-  height: 300px;
+.products-gift-details, .products-bestseller-details
+, .about-brand_story-details, .about-brand_message-details, .about-brand_commitment-details
+, .membership_info-details, .membership_benefits-details{
   background: white;
-  list-style: none;
+  position: absolute;
+  left: 280px;
+  width: 740px;
+  display:block;
   padding: 20px;
-  margin: 0;
-
-  opacity: 0;
-  transform: translateY(-30px);
-  pointer-events: none;
-  transition: all 0.25s ease;
+  min-width: 400px;
 }
 
-/* hover 시 표시 */
-.about:hover .about-menu {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
+.about-img img, .membership-img img{
+  width: 80px;
+  height: 80px;
 }
 
-.membership-menu {
-  position: fixed; 
-  top: 125px;   
-  left: 50;      
-  width: 200px; 
-  height: 300px;
-  background: white;
-  list-style: none;
-  padding: 20px;
-  margin: 0;
-
-  opacity: 0;
-  transform: translateY(-30px);
-  pointer-events: none;
-  transition: all 0.25s ease;
+.products:hover .products-sidebar
+, .about:hover .about-sidebar
+,.membership:hover .membership-sidebar{
+  display: block;
 }
 
-/* hover 시 표시 */
-.membership:hover .membership-menu {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
-}
 
 
 
 body{
-  background: url(../simple_home/background.png);
+  background:#cbcbcb;
 }
