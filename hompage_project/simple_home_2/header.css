@@ -61,56 +61,108 @@ nav ul{
   list-style: none
 }
 /* menu bar 안에 a tag 전부 설정 */
+
 nav ul a{
   text-decoration: none;
   color: black;
+  list-style: none;
+  display: flex;
+  /* font-weight: 500;
+  letter-spacing: 1px; */
+}
+nav > ul {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
 }
 
-.menubar{
+nav ul {
+  list-style: none;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: black;
+}
+.products {
   position: relative;
 }
 
-.products-dropdown, .about-dropdown, .membership-dropdown{
-  display: flex;
+/* dropdown 기본 상태: 숨김 */
+.dropdown {
   position: absolute;
-  top: 100%;
-  left: 20px;
-}
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;                 /* 메뉴 바로 아래 */
 
-.products-sidebar , .about-sidebar, .membership-sidebar{
-  width: 280px;
-  height: 280px;
-  background: white;
-  display: none;
+  width: 40vw;
+  max-width: 1400px;
+  min-width: 600px;
+  aspect-ratio: 4 / 3;
+
+  background: yellow;
   border: 1px solid black;
+  box-shadow: 0 1px 4px green;
+  display: none;
 }
 
-.products-gift-details, .products-bestseller-details
-, .about-brand_story-details, .about-brand_message-details, .about-brand_commitment-details
-, .membership_info-details, .membership_benefits-details{
-  background: white;
-  position: absolute;
-  left: 280px;
-  width: 740px;
-  display:block;
+
+/* gpt 도움 수정 필요 */
+/* PRODUCTS에 마우스를 올리면 dropdown 전체 보이기 */
+.products:hover .dropdown {
+  display: flex;             /* flex 레이아웃 시작 */
+}
+
+/* 왼쪽 사이드바 영역 */
+.sidebar {
+  width: 30%;
   padding: 20px;
-  min-width: 400px;
+  border-right: 1px solid black;
 }
 
-.about-img img, .membership-img img{
-  width: 80px;
-  height: 80px;
+.sidebar li {
+  padding: 10px 0;
+  cursor: pointer;
 }
 
-.products:hover .products-sidebar
-, .about:hover .about-sidebar
-,.membership:hover .membership-sidebar{
+/* 오른쪽 패널 영역 */
+.details-panel {
+  width: 70%;
+  padding: 20px;
+}
+
+/* 모든 패널 기본 숨김 */
+.detail {
+  display: none;
+}
+
+/* ------------ 핵심 로직: :has()로 hover된 메뉴에 맞는 패널 표시 ------------ */
+
+/* GIFT에 hover 되어 있으면 GIFT 패널 표시 */
+.dropdown:has(.gift:hover) .detail.togift {
   display: block;
 }
 
+/* NEW PRODUCTS에 hover 되어 있으면 NEW 패널 표시 */
+.dropdown:has(.new_products:hover) .detail.tonew_products {
+  display: block;
+}
 
+/* BEST SELLER에 hover 되어 있으면 BEST 패널 표시 */
+.dropdown:has(.best_seller:hover) .detail.tobest_seller {
+  display: block;
+}
 
-
+/* 마우스를 오른쪽 패널로 옮겨도 안 사라지게 유지 */
+.dropdown:has(.detail.togift:hover) .detail.togift {
+  display: block;
+}
+.dropdown:has(.detail.tonew_products:hover) .detail.tonew_products {
+  display: block;
+}
+.dropdown:has(.detail.tobest_seller:hover) .detail.tobest_seller {
+  display: block;
+}
 body{
   background:#cbcbcb;
 }
