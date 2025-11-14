@@ -9,8 +9,10 @@ header{
   top: 0;
   left: 0;
   width: 100%;
+  height: 130px;
   border-bottom: 1px solid black;
   background :white;
+  z-index: 1;
 }
 /* 최상단 */
 .top-view{
@@ -50,119 +52,94 @@ header{
   font-size: 50px;
 }
 
-/* 상단 navigation */
-nav>ul{
+.top_bar {
   display: flex;
   justify-content: center;
-  gap: 60px;
+  position: relative;
+  font-weight: 500;;
+  letter-spacing: 2px;
+  gap: 50px;
 }
-/* menu bar 안에 ul tag 전부 설정 */
+
 nav ul{
   list-style: none
 }
-/* menu bar 안에 a tag 전부 설정 */
 
 nav ul a{
   text-decoration: none;
   color: black;
-  list-style: none;
-  display: flex;
-  /* font-weight: 500;
-  letter-spacing: 1px; */
-}
-nav > ul {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
 }
 
-nav ul {
-  list-style: none;
-}
-
-nav ul a {
-  text-decoration: none;
-  color: black;
-}
-.products {
+.nav {
   position: relative;
 }
 
-/* dropdown 기본 상태: 숨김 */
 .dropdown {
+  top: 100%;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 100%;                 /* 메뉴 바로 아래 */
-
   width: 40vw;
   max-width: 1400px;
   min-width: 600px;
-  aspect-ratio: 4 / 3;
-
-  background: yellow;
+  height: 300px;
   border: 1px solid black;
-  box-shadow: 0 1px 4px green;
+  box-shadow: 0 3px 4px gray;
+  justify-content: space-between;
+  background: white;
   display: none;
 }
 
-
-/* gpt 도움 수정 필요 */
-/* PRODUCTS에 마우스를 올리면 dropdown 전체 보이기 */
-.products:hover .dropdown {
-  display: flex;             /* flex 레이아웃 시작 */
-}
-
-/* 왼쪽 사이드바 영역 */
-.sidebar {
-  width: 30%;
+.sidebar{
+  position: relative;
+  width: 35%;
   padding: 20px;
   border-right: 1px solid black;
+
 }
 
-.sidebar li {
-  padding: 10px 0;
-  cursor: pointer;
-}
-
-/* 오른쪽 패널 영역 */
-.details-panel {
-  width: 70%;
+.details{
+  position: relative;
+  width: 65%;
   padding: 20px;
 }
 
-/* 모든 패널 기본 숨김 */
-.detail {
-  display: none;
+.side, .detail {
+  position: absolute;
 }
 
-/* ------------ 핵심 로직: :has()로 hover된 메뉴에 맞는 패널 표시 ------------ */
-
-/* GIFT에 hover 되어 있으면 GIFT 패널 표시 */
-.dropdown:has(.gift:hover) .detail.togift {
-  display: block;
+/* main 화면 구성  */
+main {
+  padding-top: 130px;
 }
 
-/* NEW PRODUCTS에 hover 되어 있으면 NEW 패널 표시 */
-.dropdown:has(.new_products:hover) .detail.tonew_products {
-  display: block;
+.main_slider {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
 }
 
-/* BEST SELLER에 hover 되어 있으면 BEST 패널 표시 */
-.dropdown:has(.best_seller:hover) .detail.tobest_seller {
-  display: block;
+.slider{
+  width: 300%;
+  height: 100%;
+  display: flex;
+  transition: transform 0.6s ease;
 }
 
-/* 마우스를 오른쪽 패널로 옮겨도 안 사라지게 유지 */
-.dropdown:has(.detail.togift:hover) .detail.togift {
-  display: block;
+.slide {
+  width: 100%;
+  height: 100%;
 }
-.dropdown:has(.detail.tonew_products:hover) .detail.tonew_products {
-  display: block;
+
+.slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  object-position: 50% 80%;
 }
-.dropdown:has(.detail.tobest_seller:hover) .detail.tobest_seller {
-  display: block;
-}
+
+
 body{
   background:#cbcbcb;
 }

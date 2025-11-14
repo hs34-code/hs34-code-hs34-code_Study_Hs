@@ -18,7 +18,7 @@
       </div>
       <!-- header 중앙 logo -->
       <h1 class="logo">
-        <span class="img"><img src="./logo.png" alt="Logo img"></ion-icon></span>
+        <span class="img"><img src="./img/logo.png" alt="Logo img"></ion-icon></span>
       </h1>
       <!-- header 오른쪽 -->
       <div class="nav-right">
@@ -28,58 +28,124 @@
       </div>
     </div>
     
-      <!-- header navigation bar -->
-      <nav>
-        <ul class="menubar">
-          <li class="products"><a href="#">PRODUCTS</a>
-            <div class="dropdown">
-
-              <ul class="sidebar">
-    <li class="menu-item gift">GIFT</li>
-    <li class="menu-item new_products">NEW PRODUCTS</li>
-    <li class="menu-item best_seller">BEST SELLER</li>
-  </ul>
-
-  <!-- 오른쪽: details 패널 -->
-  <div class="details-panel">
-    <div class="detail togift">
-      <ul>
-        <li>test1</li>
+    <nav>
+      <ul class="top_bar">
+        <li data-section="products"><a href="#">PRODUCTS</a></li>
+        <li data-section="about"><a href="#">ABOUT</a></li>
+        <li data-section="news"><a href="#">NEWS</a></li>
+        <li data-section="shop_info"><a href="#">SHOP INFO</a></li>
+        <li data-section="membership"><a href="#">MEMBERSHIP</a></li>
       </ul>
-    </div>
 
-    <div class="detail tonew_products">
-      <ul>
-        <li>test2</li>
-      </ul>
-    </div>
+      <div class="dropdown">
+        <div class="sidebar">
+          <div class="side" data-group="products-side">
+            <ul>
+              <li data-target="gift"><a href="#">GIFT</a></li>
+              <li data-target="new_products"><a href="#">NEW PRODUCTS</a></li>
+              <li data-target="best_seller"><a href="#">BEST SELLER</a></li>
+            </ul>
+          </div>
+          <div class="side" data-group="about-side">
+            <ul>
+              <li data-target="brand_story"><a href="#">BRAND STORY</a></li>
+              <li data-target="brand_message"><a href="#">BRAND MESSAGE</a></li>
+              <li data-target="our_commitment"><a href="#">OUR COMMITMENT</a></li>
+            </ul>
+          </div>
+          <div class="side" data-group="membership-side">
+            <ul>
+              <li data-target="membership_info"><a href="#">MEMBERSHIP INFO</a></li>
+              <li data-target="membership_benefits"><a href="#">MEMBERSHIP BENEFITS</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail" data-type="gift-details">
+            <ul>
+              <li><a href="#"></a>gift test 1</li>
+              <li><a href="#"></a>gift test 2</li>
+              <li><a href="#"></a>gift test 3</li>
+            </ul>
+          </div>
+          <div class="detail" data-type="new_products-details">
+            <ul>
+              <li><a href="#"></a>new_products test 1</li>
+              <li><a href="#"></a>new_products test 2</li>
+              <li><a href="#"></a>new_products test 3</li>
+            </ul>
+          </div>
+          <div class="detail" data-type="best_seller-details">
+            <ul>
+              <li><a href="#"></a>best_seller test 1</li>
+              <li><a href="#"></a>best_seller test 2</li>
+              <li><a href="#"></a>best_seller test 3</li>
+            </ul>
+          </div>
+          <div class="detail" data-type="brand_story-details">
+            <ul>
+              <li><a href="#"></a>brand_story test 1</li>
+              <li><a href="#"></a>brand_story test 2</li>
+              <li><a href="#"></a>brand_story test 3</li>
+            </ul>
+          </div>
+          <div class="detail" data-type="brand_message-details">
+            <ul>
+              <li><a href="#"></a>brand_message test 1</li>
+              <li><a href="#"></a>brand_message test 2</li>
+              <li><a href="#"></a>brand_message test 3</li>
+            </ul>
+          </div>
+          <div class="detail" data-type="our_commitment-details">
+            <ul>
+              <li><a href="#"></a>our_commitment test 1</li>
+              <li><a href="#"></a>our_commitment test 2</li>
+              <li><a href="#"></a>our_commitment test 3</li>
+            </ul>
+          </div>
+          <div class="detail" data-type="membership_info-details">
+            <ul>
+              <li><a href="#"></a>membership_info test 1</li>
+              <li><a href="#"></a>membership_info test 2</li>
+              <li><a href="#"></a>membership_info test 3</li>
+            </ul>
+          </div>
+          <div class="detail" data-type="membership_benefits-details">
+            <ul>
+              <li><a href="#"></a>membership_benefits test 1</li>
+              <li><a href="#"></a>membership_benefits test 2</li>
+              <li><a href="#"></a>membership_benefits test 3</li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
 
-    <div class="detail tobest_seller">
-      <ul>
-        <li>test3</li>
-      </ul>
-    </div>
-  </div>
-                
-
-            </div>
-          </li>
-
-          <li class="about"><a href="#">ABOUT</a></li>
-          <li class="news"><a href="#">NEWS</a></li>
-          <li class="shop_info"><a href="#">SHOP INFO</a></li>
-          <li class="membership"><a href="#">MEMBERSHIP</a></li>
-        </ul>
-      </nav>  
-
-
-
-
+    </nav>
   </header>
 
-  <main></main>
+  <main>
+    <section class="main_slider">
+      <div class="slider">
+        <div class="slide">
+          <img src="./img/img 1.png" alt="main silder img1">
+        </div>
+        <div class="slide">
+          <img src="./img/img 2.png" alt="main silder img2">
+        </div>
+        <div class="slide">
+          <img src="./img/img 3.png" alt="main silder img3">
+        </div>
+      </div>
+      <div class="dots">
+        <button class="dot 1"> ● </button>
+        <button class="dot 2"> ● </button>
+        <button class="dot 3"> ● </button>
+      </div>
+    </section>
+  </main>
 
-
+  <script src="./header.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
