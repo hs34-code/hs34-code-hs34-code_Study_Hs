@@ -1,0 +1,122 @@
+/* main 화면 구성  */
+main {
+  padding-top: 130px;
+}
+
+/* slider */
+.slider-wrapper{
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.slide{
+  flex: 0 0 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+}
+
+.dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+}
+
+.dot.active{
+  background: black;
+}
+
+
+/* track */
+.track-wrapper{
+  position: relative;
+  width: 90%;
+  height: 45vh;
+  background: gray;
+  left: 50%;
+  transform: translateX(-50%);
+  
+}
+
+.track-category{
+  position: relative;
+  top: 0%;
+  height: 20%;
+  width: 100%;
+  background-color: lightcoral;
+}
+
+.carousel-view{
+  position: relative;
+  height: 80%;
+  width: 100%;
+  background-color: lightgreen;
+}
+
+
+.testarea1{
+  position: absolute;
+  left: 0%;
+  height: 100%;
+  width: 10%;
+  background: lightsalmon;
+}
+
+.testarea2{
+  position: absolute;
+  right: 0%;
+  height: 100%;
+  width: 10%;
+  background: lightsalmon;
+}
+
+.carousel-track{
+  position: absolute;
+  height: 90%;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: lightgrey;
+  
+}
+
+.carousel-progress{
+  position: absolute;
+  height: 10%;
+  width: 80%;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  background: lightslategray;
+
+}
+
+
+body{
+  background: lightblue;
+}

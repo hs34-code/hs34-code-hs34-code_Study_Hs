@@ -4,7 +4,7 @@ const targets = document.querySelectorAll('[data-target]');
 const details = document.querySelectorAll('[data-type]');
 const dropdown = document.querySelector('.dropdown');
 
-
+// header 제어
 sections.forEach(section => {
   section.addEventListener("mouseenter" ,() => {
     dropdown.style.display = "flex";
@@ -36,3 +36,4 @@ targets.forEach(target => {
 document.querySelector("header").addEventListener("mouseleave", () =>{
   dropdown.style.display = "none";
 });
+
