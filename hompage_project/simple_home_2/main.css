@@ -1,9 +1,11 @@
 /* main 화면 구성  */
 main {
-  padding-top: 130px;
+  margin-top: 130px;
 }
 
-/* slider */
+/* =================================
+메인 화면 이미지 3개 slider
+================================= */
 .slider-wrapper{
   position: relative;
   width: 100%;
@@ -56,7 +58,9 @@ main {
   background: black;
 }
 
-/* menu */
+/* =================================
+이미지 3개 아래 slider 상품 정렬 메뉴 
+================================= */
 .menu-wrapper{
   margin-top: 60px;
   position: relative;
@@ -80,22 +84,17 @@ main {
   font-weight: 500;
 }
 
-.menu-wrapper button + button::before{
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 40px;
-  background: black;
+.menu-wrapper button:not(:last-child){
+  border-right: 1px solid black;
 }
 
-/* products view4, slider */
+/* =================================
+img track 6개 중 4개 출력 이동
+================================= */
 .track-wrapper{
   margin-top: 60px;
   position: relative;
-  background-color: lightblue;
+  background: lightblue;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -192,7 +191,9 @@ main {
   border-radius: 2px;
 }
 
-/* video, story */
+/* =================================
+video 및 설명
+================================= */
 .visual-wrapper{
   position: relative;
   margin-top: 60px;
@@ -201,42 +202,120 @@ main {
   background: lightcoral;
 }
 
-.story{
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  right: 0; 
-  top: 0;
-  background: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.story p{
-  color: white;
-  letter-spacing: .3px;
-  line-height: 2;
-}
-
-.visual-media{
-  position: absolute;
-  width: 40%;
-  aspect-ratio: 16/9;
-  left: 0;
-  bottom: 0;
-  background: white;
-}
-
-.visual-media video{
-  position: absolute;
+.visual-inner{
   width: 100%;
   height: 100%;
 }
 
+.visual-media{
+  position: absolute;
+  width: 50%;
+  height: 80%;
+  left: 0;
+  bottom: 0;
+  background: white;
+  z-index: 1;
+}
 
+.visual-media video{
+  width: 100%;
+  height: 100%;
+}
+
+.story{
+  position: absolute;
+  width: 70%;
+  height: 80%;
+  right: 0;
+  top: 0;
+  background: black;
+  display: flex;
+  align-items: center;
+}
+
+.text-box{
+  max-width: 600px;
+  margin-left: 30%;
+}
+.story p{
+  color: white;
+  letter-spacing: .3px;
+  line-height: 2;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* =================================
+news card 형식 이미지 출력
+================================= */
+.newscard-wrapper{
+  position: relative;
+  margin-top: 60px;
+  background: lightblue;
+  width: 100%;
+  aspect-ratio: 3/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.news-card{
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  background: lightgreen;
+}
+
+.card{
+  flex: 0 0 auto;
+  width: 20%;
+  aspect-ratio: 3/4;
+  background: lightcoral;
+  border: 1px solid black;
+}
+
+.card.main_card{
+  width: 22%;
+  aspect-ratio: 3/4;
+  background: lightgoldenrodyellow;
+  border: 1px solid black;
+}
+
+.card-bottom{
+  width: 100%;
+  height: 10%;
+  background: lightgray;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.card-all{
+  background: none;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.card-button{
+  width: 30px;
+  height: 30px;
+  background: none;
+  border-radius: 50%;
+  border: 1px solid black;
+  cursor: pointer;
+}
 
 body{
   background: rgb(190, 65, 65);
+  overflow-x: hidden;
 }
 

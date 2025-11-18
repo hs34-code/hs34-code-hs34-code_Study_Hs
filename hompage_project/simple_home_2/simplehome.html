@@ -7,6 +7,7 @@
   <title>Cosmetics homepage</title>
   <link rel="stylesheet" href="./header.css">
   <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="./footer.css">
 </head>
 
 <body>
@@ -182,23 +183,68 @@
     </section>
 
     <section class="visual-wrapper">
-      <div class="story">
-        <p>
-          This section contains the video descripiton and additional information.
-          <br>This section may also include timestamps, references, or related topics.
-          <br>Insights shared in the video are expanded upon to provide deeper understanding.
-          <br>Supplementary visuals or charts may be included to support key concepts.
-          <br>Any relevant background information on context will be presented for clarity.
-        </p>
-      </div>
+      <div class="visual-inner">
+        <div class="visual-media">
+          <video src="./img/test video.mp4"
+          autoplay 
+          muted 
+          loop
+          controls></video>
+        </div>
 
-      <div class="visual-media">
-        <video src="./img/test video.mp4"></video>
+        <div class="story">
+          <div class="text-box">
+            <p>
+              This section contains the video descripiton and additional information.
+              <br>This section may also include timestamps, references, or related topics.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
-
+    <section class="newscard-wrapper">
+      <div class="news-card">
+        <div class="card"></div>
+        <div class="card descripiton_card"></div>
+        <div class="card main_card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+      </div>
+      <div class="card-bottom">
+        <button class="card-all">NEWS ALL</button>
+        <button class="card-button">&lt;</button>
+        <button class="card-button">&gt;</button>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <section class="footer-wrapper">
+        <div class="menu-button">
+          <button>About Us</button>
+          <button>Terms of Service</button>
+          <button>Privacy Policy</button>
+          <button>Anti-Counterfeit Policy</button>
+        </div>
+
+      <div class="iconlogo">
+        <span class="footer-icon"><ion-icon name="logo-instagram"></ion-icon></span>
+        <span class="footer-icon"><ion-icon name="logo-youtube"></ion-icon></span>
+        <span class="footer-icon"><ion-icon name="logo-facebook"></ion-icon></span>
+      </div>
+    </section>
+
+    <section class="footer_descripiton">
+      <p>This Section contains additional footer informaion.</p>
+      <p>Company Name : Logo</p>
+      <p>Representative Name : name</p>
+      <p>Business Registration Number : 123-45-12345</p>
+      <span class="addr">Address : <address>Gangnam-gu, Seoul, Republic of Korea</address></span>
+      <p>Company Email : <a href="mailto:hsstudy@gmail.com">hsstudy@gmail.com</a></p>
+      <p>Main Contact Number : <a href="tel:010-1111-2222">010-1111-2222</a></p>
+    </section>
+  </footer>
 
   <script src="./header.js"></script>
   <script src="./main.js"></script>

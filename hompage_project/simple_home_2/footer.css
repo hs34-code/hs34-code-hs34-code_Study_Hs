@@ -1,0 +1,73 @@
+footer {
+  margin-top: 130px;
+}
+
+/* =================================
+footer button 및 logo
+================================= */
+.footer-wrapper{
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background: lightgray;
+}
+
+.menu-button{
+  display: flex;
+}
+
+.menu-button button{
+  position: relative;
+  width: 170px;
+  height: 40px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.menu-button button:not(:last-child){
+  border-right: 1px solid black;
+}
+
+
+.iconlogo{
+  margin-left: 100px;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-icon{
+  font-size: 30px;
+}
+
+
+/* =================================
+footer descripiton
+================================= */
+.footer_descripiton{
+  width: 100%;
+  height: 200px;
+  background: lightblue;
+  margin-left: 50px;
+}
+
+.footer_descripiton p{
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.addr{
+  display: inline;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.addr address{
+  display: inline;
+  font-style: normal;
+}
