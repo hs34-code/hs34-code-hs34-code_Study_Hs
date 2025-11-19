@@ -10,20 +10,30 @@ main {
   position: relative;
   width: 100%;
   aspect-ratio: 16/5;
-  background: lightblue;
   overflow: hidden;
 }
 
 .slider{
-  display: flex;
+  position: relative;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  transition: transform 0.5s ease;
+  transition: opacity 0.7s ease;
 }
 
 .slide{
-  flex: 0 0 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
+  opacity: 0;
+  transition: opacity .7s ease;
+}
+
+.slide.slide_active{
+  opacity: 1;
 }
 
 .slider-wrapper img{
@@ -66,7 +76,6 @@ main {
   position: relative;
   width: 700px;
   height: 150px;
-  background: lightblue;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -85,7 +94,7 @@ main {
 }
 
 .menu-wrapper button:not(:last-child){
-  border-right: 1px solid black;
+  border-right: 1px solid gray;
 }
 
 /* =================================
@@ -94,7 +103,6 @@ img track 6개 중 4개 출력 이동
 .track-wrapper{
   margin-top: 60px;
   position: relative;
-  background: lightblue;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -105,7 +113,6 @@ img track 6개 중 4개 출력 이동
 .track-category{
   width: 100%;
   height: 100px;
-  background: lightcyan;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,7 +123,7 @@ img track 6개 중 4개 출력 이동
   width: 140px;
   height: 60px;
   background: none;
-  border: 1PX solid black;
+  border: 1PX solid gray;
   cursor: pointer;
   font-weight: 500;
 }
@@ -128,7 +135,6 @@ img track 6개 중 4개 출력 이동
 .arrow-left, .arrow-right{
   width: 50px;
   height: 260px;
-  background: lightgoldenrodyellow;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,14 +156,12 @@ img track 6개 중 4개 출력 이동
 .carousel-track{
   width: calc(240px*4 + 20px*3);
   height: 260px;
-  background: black;
   overflow: hidden;
 }
 
 .img-track{
   width: calc(240px*6);
   height: 260px;
-  background: lightcoral;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -171,7 +175,6 @@ img track 6개 중 4개 출력 이동
 .carousel-progress{
   width: 100%;
   height: 30px;
-  background: lightgreen;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -182,6 +185,7 @@ img track 6개 중 4개 출력 이동
   height: 4px;
   background: lightgray;
   border-radius: 2px;
+  position: relative;
 }
 
 .progress-bar{
@@ -189,6 +193,10 @@ img track 6개 중 4개 출력 이동
   height: 4px;
   background: gray;
   border-radius: 2px;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 /* =================================
@@ -199,7 +207,6 @@ video 및 설명
   margin-top: 60px;
   width: 100%;  
   aspect-ratio: 3/1;
-  background: lightcoral;
 }
 
 .visual-inner{
@@ -213,7 +220,6 @@ video 및 설명
   height: 80%;
   left: 0;
   bottom: 0;
-  background: white;
   z-index: 1;
 }
 
@@ -228,9 +234,9 @@ video 및 설명
   height: 80%;
   right: 0;
   top: 0;
-  background: black;
   display: flex;
   align-items: center;
+  background: black;
 }
 
 .text-box{
@@ -251,25 +257,22 @@ news card 형식 이미지 출력
 .newscard-wrapper{
   position: relative;
   margin-top: 60px;
-  background: lightblue;
   width: 100%;
   aspect-ratio: 3/1;
+  background: lightblue;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  overflow: hidden;
 }
 
-.news-card{
+.news-track{
   width: 100%;
   height: 90%;
+  background: lightcyan;
   display: flex;
   align-items: flex-start;
   align-items: center;
   justify-content: center;
-  gap: 5%;
-  background: lightgreen;
+  gap: 4%;
 }
 
 .card{
@@ -280,14 +283,22 @@ news card 형식 이미지 출력
   border: 1px solid black;
 }
 
-.card.main_card{
+.main_card{
   width: 22%;
-  aspect-ratio: 3/4;
   background: lightgoldenrodyellow;
-  border: 1px solid black;
 }
 
-.card-bottom{
+.descripiton-card{
+  position: absolute;
+  width: 20%;
+  aspect-ratio: 3/4;
+  bottom: 15%;
+  left: 15%;
+  background: white;
+  z-index: 9;
+}
+
+.card-bottom{                                   
   width: 100%;
   height: 10%;
   background: lightgray;
@@ -295,6 +306,22 @@ news card 형식 이미지 출력
   justify-content: flex-end;
   align-items: center;
   gap: 20px;
+}
+
+.card img{
+  width: 100%;
+  height: 100%;
+}
+
+.descripiton-card img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.descripiton-card img.img_active{
+  opacity: 1;
 }
 
 .card-all{
@@ -314,8 +341,9 @@ news card 형식 이미지 출력
   cursor: pointer;
 }
 
+
 body{
-  background: rgb(190, 65, 65);
+  background: white;
   overflow-x: hidden;
 }
 
