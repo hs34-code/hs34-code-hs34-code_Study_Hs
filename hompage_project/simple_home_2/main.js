@@ -67,3 +67,48 @@ window.addEventListener('mouseup', () =>{
 /* =================================
 news card 형식 이미지 출력
 ================================= */
+const newsTrack = document.querySelector('.news-track');
+const newsInner = document.querySelector('.news-inner');
+const newsCards = Array.from(newsInner.children);
+
+const newsTimer = 1000;
+const newsStartX = -10;
+const newsMovingX = -25;
+let newsMoveX = newsStartX;
+let newsIndex = Math.floor(newsCards.length / 2);
+
+newsCards.forEach(card =>{
+  const clone = card.cloneNode(true);
+  newsInner.appendChild(clone);
+  newsInner.style.transform = `translateX(${newsStartX}%)`
+})
+let allCards = document.querySelectorAll('.card');
+
+function newsSlide(){
+  //화면 확대 tag 부여
+  allCards.forEach(c => c.classList.remove('main_card'));
+  newsIndex++;
+  if(newsIndex === 7){
+    allCards[2].classList.add('main_card');
+    allCards[7].classList.add('main_card');
+    newsIndex = Math.floor(newsCards.length / 2);
+  }
+  allCards[newsIndex].classList.add('main_card');
+  
+  // 좌로 이동
+  newsInner.style.transition = "transform 0.5s ease";  
+  newsMoveX += newsMovingX;  
+  newsInner.style.transform = `translateX(${newsMoveX}%)`
+  
+  setTimeout(() =>{
+    if(newsMoveX <= (newsMovingX*newsCards.length)){
+      newsMoveX = newsStartX;
+      newsInner.style.transform = `translateX(${newsStartX}%)`
+      newsInner.style.transition = "none"; 
+    }
+  }, 500);
+  
+  
+}
+
+setInterval(newsSlide, newsTimer);
