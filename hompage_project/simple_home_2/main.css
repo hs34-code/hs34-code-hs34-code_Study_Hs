@@ -260,7 +260,6 @@ news card 형식 이미지 출력
   margin-top: 60px;
   width: 100%;
   aspect-ratio: 3/1;
-  background: lightblue;
   display: flex;
   flex-direction: column;
 }
@@ -268,7 +267,6 @@ news card 형식 이미지 출력
 .news-track{
   width: 100%;
   height: 90%;
-  background: lightcyan;
   overflow: hidden;
 }
 
@@ -285,32 +283,8 @@ news card 형식 이미지 출력
   flex: 0 0 auto;
   width: 20%;
   aspect-ratio: 3/4;
-  background: lightcoral;
+  transition: transform 1s ease;
   border: 1px solid black;
-}
-
-.main_card{
-  background: lightgoldenrodyellow;
-}
-
-/* .descripiton-card{
-  position: absolute;
-  width: 20%;
-  aspect-ratio: 3/4;
-  bottom: 15%;
-  left: 15%;
-  background: white;
-  z-index: 9;
-} */
-
-.card-bottom{                                   
-  width: 100%;
-  height: 10%;
-  background: lightgray;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 20px;
 }
 
 .card img{
@@ -318,15 +292,76 @@ news card 형식 이미지 출력
   height: 100%;
 }
 
-.descripiton-card img{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
+.main_card{
+  transform: scale(1.1);
 }
 
-.descripiton-card img.img_active{
-  opacity: 1;
+/* descripiton-card */
+.descripiton-card{
+  position: absolute;
+  width: 22%;
+  aspect-ratio: 3/4;
+  bottom: 12%;
+  left: 14%;
+  background: white;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.descripiton-card p{
+  font-size: 16px;
+}
+
+.desc-number{
+  position: relative;
+  display: inline-block;
+}
+
+.current{
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.slash{
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  background: black;
+  transform: rotate(-50deg);
+  position: absolute;
+  left: 15px;
+  bottom: 0px;
+}
+
+.total{
+  font-size: 25px;
+  font-weight: 900;
+  color: lightgray;
+  position: absolute;
+  bottom: -30px;
+}
+
+.desc-text{
+  text-align: center;
+}
+
+.desc-title{
+  font-size: 20px;
+  font-weight: 600;
+  
+}
+
+/* bottom-button */
+.card-bottom{                                   
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
 }
 
 .card-all{
@@ -345,6 +380,8 @@ news card 형식 이미지 출력
   border: 1px solid black;
   cursor: pointer;
 }
+
+
 
 
 body{
