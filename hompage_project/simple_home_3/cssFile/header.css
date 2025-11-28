@@ -1,0 +1,40 @@
+*{
+  box-sizing: border-box;
+}
+
+.header{
+  width: 100%;
+  background: lightblue;
+  padding: 15px;
+}
+
+.site-header{
+  width: 100%;
+  background: lightcoral;
+  display: flex;
+  justify-content: space-between;
+}
+
+.site-header a{
+  text-decoration: none;
+  color: black;
+}
+
+.site-left, .site-right{
+  width: 20%;
+  display: flex;
+  gap: 10px;
+}
+
+.site-right{
+  justify-content: flex-end;
+}
+
+.site-header .icon{
+  font-size: 22px;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+}
