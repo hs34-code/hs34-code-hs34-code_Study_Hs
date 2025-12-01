@@ -12,8 +12,9 @@ signUpForm.addEventListener("submit", (e) =>{
   if(!checkAgreeMatch()) return;
   
   saveUserInfo();
-  alert("Your account has been created successfully")
-})
+  alert("Your account has been created successfully");
+  window.location.href = "login.html";
+});
 
 function checkPhoneNumberMatch(){
   const phoneRegex = /^\d{3}-\d{3,4}-\d{4}$/

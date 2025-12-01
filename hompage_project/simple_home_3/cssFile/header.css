@@ -21,13 +21,26 @@
 }
 
 .site-left, .site-right{
-  width: 20%;
+  width: 30%;
   display: flex;
-  gap: 10px;
+  gap: 12px;
+  margin: 0px 10px 0px 10px;
 }
 
 .site-right{
   justify-content: flex-end;
+}
+
+.site-right a{
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login_logout span{
+  color: black;
+  opacity: 1;
 }
 
 .site-header .icon{
