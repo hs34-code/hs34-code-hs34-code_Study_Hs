@@ -66,3 +66,89 @@ loginForm.addEventListener("submit", (e) => {
   alert(`Welcome ${foundUser.name}`);
   window.location.href = "index.html";
 });
+
+// =======================================
+// 이메일, 비밀번호 찾기 및 비밀번호 재설정 
+// =======================================
+const btnOpen = document.querySelectorAll(".btn-open");
+const exit = document.querySelectorAll(".exit");
+// 나가기 (안보이기)
+exit.forEach(btn => {
+  btn.addEventListener("click", () =>{
+    btn.parentElement.classList.add("expanded");
+  });
+});
+// 들어가기 (보이기)
+btnOpen.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const targetSelector = btn.dataset.btn;
+    const section = document.querySelector(targetSelector);
+    section.classList.remove("expanded");
+  })
+})
+
+// 이메일 찾기
+const btnFindEmail = document.querySelector(".findEmail-form");
+
+btnFindEmail.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const inputName = document.querySelector("#findEmailName").value;
+  const inputPhone = document.querySelector("#findEmailNumber").value;
+  const inputDob = document.querySelector("#findEmailDob").value;
+
+  const userInfoList = JSON.parse(localStorage.getItem("users")) || [];
+
+  const nameList = userInfoList.filter(user => user.name === inputName);
+  if(nameList.length === 0){
+    alert("No matching name found.");
+    return;
+  }
+  const phoneList = nameList.filter(user => user.phoneNumber === inputPhone);
+  if(phoneList.length === 0){
+    alert("Phone number does not match.");
+    return;
+  }
+  const dobList = phoneList.filter(user => user.dob === inputDob);
+  if(dobList.length === 0){
+    alert("Date of birth does not match");
+    return;
+  }
+
+  const foundUserEmail = dobList[0];
+  alert(`Your email is : ${foundUserEmail.email}`);
+  window.location.href = "login.html";
+})
+
+//pasword 찾기
+const btnFindPassword = document.querySelector(".findPassword-form");
+
+btnFindPassword.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const inputName = document.querySelector("#findPasswordName").value;
+  const inputPhone = document.querySelector("#findPasswordNumber").value;
+  const inputEmail = document.querySelector("#findPasswordEmail").value;
+
+  const userInfoList = JSON.parse(localStorage.getItem("users")) || [];
+
+  const nameList = userInfoList.filter(user => user.name === inputName);
+  if(nameList.length === 0){
+    alert("No matching name found.");
+    return;
+  }
+  const phoneList = nameList.filter(user => user.phoneNumber === inputPhone);
+  if(phoneList.length === 0){
+    alert("Phone number does not match.");
+    return;
+  }
+  const emailList = phoneList.filter(user => user.email === inputEmail);
+  if(emailList.length === 0){
+    alert("Email does not match");
+    return;
+  }
+
+  const foundUserPassword = emailList[0];
+  alert(`Your password is : ${foundUserPassword.password}`);
+  window.location.href = "login.html";
+})

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MinMall Project</title>
+  <link rel="stylesheet" href="../cssFile/login.css">
 </head>
 
 <body>
@@ -23,11 +24,51 @@
     </form>
     <div>
       <a href="signup.html">Sign Up</a>  
-      <button>Forgot Email</button>
-      <button>Forgot Password</button>
-      <button>Reset Password</button>
+      <button class="btn-open" data-btn=".findEmail">Forgot Email</button>
+      <button class="btn-open" data-btn=".findPassword">Forgot Password</button>
     </div>
   </section>
+
+<hr>
+
+  <section class="findEmail expanded">
+    <button class="exit">X</button>
+    <form action="#" method="post" class="findEmail-form">
+      <div class="findEmailName">
+        <label for="findEmailName">Name</label>
+        <input type="text" id="findEmailName" name="findEmailName" required>
+      </div>
+      <div class="findEmailNumber">
+        <label for="findEmailNumber">phoneNumber</label>
+        <input type="tel" id="findEmailNumber" name="findEmailNumber" required>
+      </div>
+      <div class="forgoDob">Date of Birth</div>
+      <input type="date" id="findEmailDob" name="findEmailDob" required>
+      <button type="submit" class="btn-findEmail">Find Email</button>
+    </form>
+  </section>
+
+<hr>
+
+  <section class="findPassword expanded">
+    <button class="exit">X</button>
+    <form action="#" method="post" class="findPassword-form">
+      <div class="findPasswordName">
+        <label for="findPasswordName">Name</label>
+        <input type="text" id="findPasswordName" name="findPasswordName" required>
+      </div>
+      <div class="findPasswordNumber">
+        <label for="findPasswordNumber">phoneNumber</label>
+        <input type="tel" id="findPasswordNumber" name="findPasswordNumber" required>
+      </div>
+      <div class="findPasswordEmail">
+        <label for="findPasswordEmail">Email</label>
+        <input type="email" id="findPasswordEmail" name="findPasswordEmail" required>
+      </div>
+      <button type="submit" class="btn-findPassword">Find Password</button>
+    </form>
+  </section>
+
   <script src="../jsFile/login.js"></script>
 </body>
 </html>

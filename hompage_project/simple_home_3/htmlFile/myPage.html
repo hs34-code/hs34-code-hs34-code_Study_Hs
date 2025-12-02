@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MinMall Project</title>
+  <link rel="stylesheet" href="../cssFile/mypage.css">
+</head>
+
+<body>
+  <section class="mypage">
+    <div class="userInfo">
+      <p class="userName">userName</p>
+      <p class="userPhoneNumber">010-0000-0000</p>
+      <p class="userDob">0000-00-00</p>
+      <p class="userEmail">@gmail.com</p>
+      <p class="userAddress">address</p>
+    </div>
+    <button class="btn-edit">Edit Prodfile</button>
+  </section>
+
+  <section class="profileEdit expanded">
+    <button class="exit">X</button>
+    <form action="#" method="post" class="profileEdit-form">
+      <div class="name">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name">
+      </div>
+
+      <div class="phoneNumber">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber">
+      </div>
+
+      <div class="dob">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob">
+      </div>
+
+      <div class="email">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email">
+      </div>
+
+      <div class="address">
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address">
+      </div>
+
+      <div class="passwordMatch">
+        <p>Please enter your password for verification. <br>
+        lf it is incorrect, you will need to re-edit</p>
+        <label for="password">Password</label>
+        <input type="password" id="passwordMatch" name="passwordMatch" required>
+      </div>
+
+      <button type="submit" class="btn-save">Save</button>
+    </form>
+  </section>
+
+    <section class="resetPassword expanded">
+    <form action="#" method="post" class="resetPassword-form">
+
+    </form>
+  </section>
+
+
+  <script src="../jsFile/mypage.js"></script>
+</body>
+</html>

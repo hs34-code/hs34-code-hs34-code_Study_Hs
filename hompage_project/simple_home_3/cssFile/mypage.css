@@ -1,0 +1,10 @@
+.resetPassword{
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity .3s ease;
+}
+
+.expanded{
+  opacity: 0;
+  pointer-events: none;
+}
