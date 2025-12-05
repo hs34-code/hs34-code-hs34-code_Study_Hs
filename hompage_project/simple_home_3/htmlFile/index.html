@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MinMall Project</title>
-  <link rel="stylesheet" href="../cssFile/header.css">
+  <link rel="stylesheet" href="../cssFile/common.css">
 </head>
 
 <body>
@@ -41,17 +41,48 @@
         </div>
       </div>
 
-      <!-- 네비게이션 바 -->
-      <div class="naviagtionBar"></div>
+      
+      <nav class="nav">
+        <!-- 네비게이션 바 -->
+        <ul class="navigationBar">
+          <li data-nav="products"><a href="#">PRODUCTS</a></li>
+          <li data-nav="about"><a href="#">ABOUT</a></li>
+          <li data-nav="news"><a href="#">NEWS</a></li>
+          <li data-nav="shopInfo"><a href="#">SHOPINFO</a></li>
+          <li data-nav="membership"><a href="#">MEMBERSHIP</a></li> 
+        </ul>
 
       <!-- 드롭다운 메뉴 -->
-      <div class="dropdownMenu"></div>
+        <div class="dropdown">
+          <ul class="nav_products hidden">
+            <li><a href="#">Tube</a></li>
+            <li><a href="#">Pumpe</a></li>
+            <li><a href="#">Mist</a></li>
+            <li><a href="#">Cream</a></li>
+            <li><a href="#">Ampoule</a></li>
+          </ul>
+
+          <ul class="nav_about hidden">
+            <li><a href="#">Brand Story</a></li>
+            <li><a href="#">Brand</a></li>
+          </ul>
+
+          <ul class="emptySpace hidden"></ul>
+
+          <ul class="emptySpace hidden"></ul>
+
+          <ul class="nav_membership hidden">
+            <li><a href="#">membership info</a></li>
+            <li><a href="#">membership benefits</a></li>
+          </ul>
+        </div>
+      </nav>
     </section>
   </header>
 
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script src="../jsFile/index.js"></script>
+  <script src="../jsFile/common.js"></script>
 </body>
 </html>

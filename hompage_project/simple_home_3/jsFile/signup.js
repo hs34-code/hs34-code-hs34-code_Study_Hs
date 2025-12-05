@@ -17,7 +17,7 @@ signUpForm.addEventListener("submit", (e) =>{
 });
 
 function checkPhoneNumberMatch(){
-  const phoneRegex = /^\d{3}-\d{3,4}-\d{4}$/
+  const phoneRegex = /^\d{3}-\d{3,4}-\d{4}$/;
   const signUpPhoneNumber = document.querySelector("#phoneNumber").value;
   if (!phoneRegex.test(signUpPhoneNumber)){
     alert("Invalid phone number format");
