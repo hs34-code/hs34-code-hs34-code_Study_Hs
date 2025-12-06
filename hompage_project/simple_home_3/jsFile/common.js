@@ -72,28 +72,36 @@ linkIcon.forEach(e => {
 // ===============================================
 // header dropdown
 // ===============================================
-const navList = document.querySelectorAll(".navigationBar li");
+const navBar = document.querySelectorAll(".navigationBar li");
+const lists = document.querySelectorAll(".dropdown ul");
+const dropdown = document.querySelector(".dropdown");
+const siteheader = document.querySelector(".site-header");
 
-let target = null;
-
-navList.forEach(e => {
-  e.addEventListener("mouseenter", () => {
-    target = document.querySelector(".nav_" +e.dataset.nav);
-
+navBar.forEach(li => {
+  li.addEventListener("mouseenter", () => {
     // 전부 숨기기
-    document.querySelectorAll(".dropdown ul").forEach(ul =>{
-      ul.classList.add("hidden");
-    });
+    lists.forEach(ul => ul.classList.add("hidden"));
 
-    // hover 보이기
+    if(li.dataset.nav === "news" || li.dataset.nav === "shopInfo") return;
+
+    const target = document.querySelector(".nav_"+li.dataset.nav);
+
+    dropdown.classList.remove("hidden");
     target.classList.remove("hidden");
-
-    target.addEventListener("mouseleave", hideDropdown);
   });
 });
 
-function hideDropdown(){
-  document.querySelectorAll(".dropdown ul").forEach(ul =>{
-    ul.classList.add("hidden");
+// siteheader in close
+siteheader.addEventListener("mouseenter", () => {
+  dropdown.classList.add("hidden");
+  lists.forEach(ul => ul.classList.add("hidden"));
+});
+
+// target out close
+lists.forEach(ul => {
+  ul.addEventListener("mouseleave", () => {
+    dropdown.classList.add("hidden");
+    lists.forEach(x => x.classList.add("hidden"));
   });
-}
+});
+
