@@ -1,6 +1,8 @@
+//===================================================================
+// 활동이 없을시 자동 로그아웃
+
 let loginStatus = null;
 
-// 활동이 없을시 자동 로그아웃
 const limit_time = 1 * 60 * 1000;
 let lastActiveTime = Date.now();
 
@@ -24,6 +26,7 @@ setInterval(() => {
   }
 }, 1000);
 
+//===================================================================
 // 로그인 버튼 문구 출력
 const btnLoginText = document.querySelector(".login_logout span");
 window.addEventListener("DOMContentLoaded", () =>{
@@ -37,6 +40,7 @@ window.addEventListener("DOMContentLoaded", () =>{
   }
 });
 
+//===================================================================
 // 로그인 및 로그아웃 전환
 const btnLogin = document.querySelector(".login_logout");
 btnLogin.addEventListener("click", () => {
@@ -46,6 +50,7 @@ btnLogin.addEventListener("click", () => {
   }
 })
 
+//===================================================================
 // 로그인 아닐 시 아이콘 연해지게
 window.addEventListener("DOMContentLoaded", ()=>{
   if(!loginStatus){
@@ -56,6 +61,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
   }
 });
 
+//===================================================================
 // 로그인 아닐 시 heat, cart, my 전부 login 연결
 const linkIcon = [...document.querySelectorAll(".site-right a")].filter(
   link => !link.classList.contains("login_logout"));
@@ -91,12 +97,14 @@ navBar.forEach(li => {
   });
 });
 
+//===================================================================
 // siteheader in close
 siteheader.addEventListener("mouseenter", () => {
   dropdown.classList.add("hidden");
   lists.forEach(ul => ul.classList.add("hidden"));
 });
 
+//===================================================================
 // target out close
 lists.forEach(ul => {
   ul.addEventListener("mouseleave", () => {

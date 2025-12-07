@@ -1,3 +1,7 @@
+//===================================================================
+//회원가입
+//===================================================================
+
 const signUpForm = document.querySelector(".signup-form");
 
 signUpForm.addEventListener("submit", (e) =>{
@@ -16,6 +20,8 @@ signUpForm.addEventListener("submit", (e) =>{
   window.location.href = "login.html";
 });
 
+//===================================================================
+// 전화번호 양식 비교
 function checkPhoneNumberMatch(){
   const phoneRegex = /^\d{3}-\d{3,4}-\d{4}$/;
   const signUpPhoneNumber = document.querySelector("#phoneNumber").value;
@@ -26,6 +32,8 @@ function checkPhoneNumberMatch(){
   return true;
 }
 
+//===================================================================
+// 생년월일 양식 비교
 function checkDobMatch(){
   const signUpDob = document.querySelector("#dob").value;
   
@@ -50,6 +58,8 @@ function checkDobMatch(){
   return true;
 }
 
+//===================================================================
+// email 양식 비교
 function checkEmailMatch(){
   const signUpEmail = document.querySelector("#email").value;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]+$/;
@@ -60,6 +70,8 @@ function checkEmailMatch(){
   return true;
 }
 
+//===================================================================
+// password 양식 비교
 function checkPasswordStrengthMatch(){
   const signUpPassword = document.querySelector("#password").value;
   const passwordRegexNumber = /(?=.*[0-9])/;
@@ -90,6 +102,8 @@ function checkPasswordStrengthMatch(){
   return true;
 }
 
+//===================================================================
+// 2개의 패스워드 일치 비교
 function checkPasswordMatch(){
   const signUpPassword = document.querySelector("#password").value;
   const signUpPasswordConfirm = document.querySelector("#passwordConfirm").value;
@@ -100,6 +114,8 @@ function checkPasswordMatch(){
   return true;
 }
 
+//===================================================================
+// 이메일 중복 비교
 function checkEmailAlready(){
   const signUpEmail = document.querySelector("#email").value;
   let userInfo = JSON.parse(localStorage.getItem("users")) || [];
@@ -111,6 +127,8 @@ function checkEmailAlready(){
   return true;
 }
 
+//===================================================================
+// 핸드폰번호 중복 비교
 function checkPhoneNumberAlready(){
   const signUpPhoneNumber = document.querySelector("#phoneNumber").value;
   let userInfo = JSON.parse(localStorage.getItem("users")) || [];
@@ -122,6 +140,8 @@ function checkPhoneNumberAlready(){
   return true;
 }
 
+//===================================================================
+// 약관동의 체크 
 function checkAgreeMatch(){
   const signUpAgree = document.querySelector("#agree").checked;
   if(!signUpAgree){
@@ -131,6 +151,8 @@ function checkAgreeMatch(){
   return true;
 }
 
+//===================================================================
+// 계정 만들기 및 로컬스토리지 저장
 function saveUserInfo(){
   const name = document.querySelector("#name").value;
   const phoneNumber = document.querySelector("#phoneNumber").value;

@@ -14,6 +14,7 @@ loginForm.addEventListener("submit", (e) => {
     return;
   }
   
+//=========================================================================
 // password 일치 여부 확인
   if(loginPassword !== foundUser.password){
     // 로그인 시도 기록 찾기
@@ -72,12 +73,14 @@ loginForm.addEventListener("submit", (e) => {
 // =======================================
 const btnOpen = document.querySelectorAll(".btn-open");
 const exit = document.querySelectorAll(".exit");
+//=========================================================================
 // 나가기 (안보이기)
 exit.forEach(btn => {
   btn.addEventListener("click", () =>{
     btn.parentElement.classList.add("expanded");
   });
 });
+//=========================================================================
 // 들어가기 (보이기)
 btnOpen.forEach(btn => {
   btn.addEventListener("click", () => {
@@ -87,6 +90,7 @@ btnOpen.forEach(btn => {
   })
 })
 
+//=========================================================================
 // 이메일 찾기
 const btnFindEmail = document.querySelector(".findEmail-form");
 
@@ -120,6 +124,7 @@ btnFindEmail.addEventListener("submit", (e) => {
   window.location.href = "login.html";
 })
 
+//=========================================================================
 //pasword 찾기
 const btnFindPassword = document.querySelector(".findPassword-form");
 
