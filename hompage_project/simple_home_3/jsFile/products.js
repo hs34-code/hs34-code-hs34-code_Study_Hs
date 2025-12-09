@@ -1,9 +1,8 @@
 //=====================================================
-//dropdown에서 건너온거 처리
+//dropdown에서 넘어온 url 처리
 const params = new URLSearchParams(window.location.search);
 const dropdownType = params.get("type") || "All";
 
-console.log(dropdownType)
 groupProductsByType(dropdownType);
 
 //=====================================================
@@ -34,7 +33,7 @@ function showProductList(filteredProduct){
   const title = cardClone.querySelector("h3");
   const price = cardClone.querySelector("p");
 
-  img.src = item.img;
+  img.src = item.mainImg;
   title.textContent = item.title;
   price.textContent = item.price+ "원";
   cardClone.querySelector("a").href = `product.html?id=${item.id}`;

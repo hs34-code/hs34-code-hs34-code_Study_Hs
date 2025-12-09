@@ -65,7 +65,15 @@ loginForm.addEventListener("submit", (e) => {
   //비밀번호 맞음
   localStorage.setItem("loginStatus", JSON.stringify(foundUser));
   alert(`Welcome ${foundUser.name}`);
-  window.location.href = "index.html";
+
+  //이전 페이지 기록 이 있을 경우
+  const redirectPage = localStorage.getItem("redirectAfterLogin");
+  if(redirectPage){
+    localStorage.removeItem("redirectAfterLogin");
+    window.location.href = redirectPage
+  } else {
+    window.location.href = "index.html";
+  }
 });
 
 // =======================================
