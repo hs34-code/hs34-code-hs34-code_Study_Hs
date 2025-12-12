@@ -78,55 +78,49 @@ linkIcon.forEach(e => {
 
 // ===============================================
 // header dropdown
-// // ===============================================
+// ===============================================
+const navBar = document.querySelectorAll(".navigationBar li");
+const dropdown = document.querySelector(".dropdown");
 
+let activeDropdown = null; // 활성 ul 기억용
 
+document.addEventListener("mousemove", (e) => {
+  const navArray = Array.from(navBar);
 
+  //navBar 위에 hover 중인지 확인(e.target)
+  const inNavBar = navArray.some(li => li.contains(e.target));
 
+  //navBar 위에 어떤 ul에 hover중인지 확인
+  const inNavBarData = (inNavBar ? navArray.find(li => li.contains(e.target)) : null);
 
+  if(inNavBarData) {
+    const targetName = ".nav_" + inNavBarData.dataset.nav;
 
+    // 예외 class (공간용 empty)
+    const emptySpace1 = ".nav_news";
+    const emptySpace2 = ".nav_shopInfo";
 
+    if(targetName === emptySpace1 || targetName === emptySpace2){
+      activeDropdown = null; // 예외 영역일시 활성 ul 없음
+    } else{
+      activeDropdown = document.querySelector(targetName); // ul 활성
+    }
+  }
 
+  // mouse 가 활성 ul에 있는지 확인
+  const inActiveDropdown = (activeDropdown ? activeDropdown.contains(e.target) : false);
 
+  // 영역을 벗어날시 dropdown 종료
+  if (!inNavBar && !inActiveDropdown){
+    dropdown.classList.add("hidden");
+    dropdown.querySelectorAll("ul").forEach(ul => ul.classList.add("hidden"));
+    return;
+  }
 
-
-
-
-
-
-
-// const navBar = document.querySelectorAll(".navigationBar li");
-// const lists = document.querySelectorAll(".dropdown ul");
-// const dropdown = document.querySelector(".dropdown");
-// const siteheader = document.querySelector(".site-header");
-
-// navBar.forEach(li => {
-//   li.addEventListener("mouseenter", () => {
-//     // 전부 숨기기
-//     lists.forEach(ul => ul.classList.add("hidden"));
-
-//     if(li.dataset.nav === "news" || li.dataset.nav === "shopInfo") return;
-
-//     const target = document.querySelector(".nav_"+li.dataset.nav);
-
-//     dropdown.classList.remove("hidden");
-//     target.classList.remove("hidden");
-//   });
-// });
-
-// //===================================================================
-// // siteheader in close
-// siteheader.addEventListener("mouseenter", () => {
-//   dropdown.classList.add("hidden");
-//   lists.forEach(ul => ul.classList.add("hidden"));
-// });
-
-// //===================================================================
-// // target out close
-// lists.forEach(ul => {
-//   ul.addEventListener("mouseleave", () => {
-//     dropdown.classList.add("hidden");
-//     lists.forEach(x => x.classList.add("hidden"));
-//   });
-// });
-
+  // navBar 위, 활성 ul일때만 열기
+  if(inNavBar && activeDropdown) {
+    dropdown.querySelectorAll("ul").forEach(ul => ul.classList.add("hidden"));
+    activeDropdown.classList.remove("hidden");
+    dropdown.classList.remove("hidden");
+  }
+})

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MinMall Project</title>
   <link rel="stylesheet" href="../cssFile/common.css">
+  <link rel="stylesheet" href="../cssFile/index.css">
 </head>
 
 <body>
@@ -51,8 +52,7 @@ header (navigationBar, logo, cart, heart, login 등등)
           <li data-nav="products"><a href="products.html">PRODUCTS</a></li>
           <li data-nav="about"><a href="#">ABOUT</a></li>
           <li data-nav="news"><a href="#">NEWS</a></li>
-          <li data-nav="shopInfo"><a href="#">SHOPINFO</a></li>
-          <li data-nav="membership"><a href="#">MEMBERSHIP</a></li> 
+          <li data-nav="shopInfo"><a href="#">SHOPINFO</a></li> 
         </ul>
       </nav>
 
@@ -75,18 +75,81 @@ header (navigationBar, logo, cart, heart, login 등등)
           <ul class="emptySpace hidden"></ul>
 
           <ul class="emptySpace hidden"></ul>
-
-          <ul class="nav_membership hidden">
-            <li><a href="membership.html?form=info">membership info</a></li>
-            <li><a href="membership.html?form=benefits">membership benefits</a></li>
-          </ul>
         </div>
     </section>
   </header>
+
+<!-- ==============================================================
+index
+============================================================== -->
+<main>
+  <!-- ====----====----====----====----====----====
+  fadeSlider -->
+  <section class="fadeSlider-wrapper">
+    <!-- fadeSlideImg -->
+    <div class="fadeSliderImgArea"> 
+      <div class="fadeSlide fadeImg_active">
+        <img src="../imgFile/FadeSlideImg 1.png" alt="FadeSlideImg">
+      </div>
+      <div class="fadeSlide">
+        <img src="../imgFile/FadeSlideImg 2.png" alt="FadeSlideImg">
+      </div>
+      <div class="fadeSlide">
+        <img src="../imgFile/FadeSlideImg 3.png" alt="FadeSlideImg">
+      </div>
+    </div>
+    
+    <!-- fadeSlideDots -->
+    <div class="fadeSlideDots">
+      <button class="dot_fadeSlide fadeDot_active" data-fade="0"></button>
+      <button class="dot_fadeSlide" data-fade="1"></button>
+      <button class="dot_fadeSlide" data-fade="2"></button>
+    </div>
+  </section>
+
+  <!-- ====----====----====----====----====----====
+  carouselSlider -->
+  <section class="carouselSlider-wrapper">
+    <!-- 카루셀 슬라이더 타이틀 -->
+    <div class="carouselTitle">
+      <p>Best Seller</p>
+    </div>
+
+    <!-- 카루셀 슬라이더 트랙 -->
+    <div class="carouselTrackViwer">
+      <div class="carouselTrack">
+        <div class="carousel"><img src="../imgFile/Ampoule-type Product 3.png" alt="bestSellerImg"></div>
+        <div class="carousel"><img src="../imgFile/Cream-type Product 9.png" alt="bestSellerImg"></div>
+        <div class="carousel mainCarousel"><img src="../imgFile/Pump-type Product 5.png" alt="bestSellerImg"></div>
+        <div class="carousel"><img src="../imgFile/Tube-type Product 3.png" alt="bestSellerImg"></div>
+        <div class="carousel"><img src="../imgFile/Tube-type Product 10.png" alt="bestSellerImg"></div>
+      </div>
+    </div>
+
+    <!-- 카루셀 슬라이더 제어 버튼 -->
+    <div class="carouselBtnArea">
+      <button class="btn-carouselLeft">&lt;</button>
+      <button class="btn-carouselRight">&gt;</button>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+</main>
+
+
+
+
 
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="../jsFile/common.js"></script>
+  <script src="../jsFile/index.js"></script>
 </body>
 </html>

@@ -1,4 +1,12 @@
+/* =================================================
+전체적인 배치 각 grid 영역, button area 
+================================================= */
+.products-wrapper{
+  width: 100%;
+}
+
 .products{
+  width: 75%;
   max-width: 1200px;
   padding: 10px;
   gap: 20px;
@@ -8,8 +16,10 @@
 
   justify-content: center;
   margin: 0 auto;
+  background: lightgoldenrodyellow;
 }
 
+/*============= 상품 개별 card =============*/
 .products_card{
   width: 240px;
   height: 360px;
@@ -19,6 +29,10 @@
   border: 1px solid black;
   border-radius: 10px;
   display: none;
+}
+
+.products_card:hover{
+  scale: 1.1;
 }
 
 .products_card img{
@@ -37,4 +51,58 @@
 
 .products_card p{
   font-size: 16px;
+}
+
+/* =================================================
+Button area
+================================================= */
+.productsList{
+  position: absolute;
+
+  top: 200px;
+  left: 87.5%;
+  transform: translateX(-10%);
+
+  width: 80px;
+  height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  border: 1px solid black;
+  border-radius: 20px;
+  background: lightblue;
+}
+
+.productsList button{
+  width: 65px;
+  height: 35px;
+
+  background: #e5e5e5;
+  border: 1px solid #222;
+  color: #222;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.productsList button:not(.btn-active):hover{
+  background: #d4d4d4;
+  border: 1px solid #222;
+  color: #222;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.productsList .btn-active{
+  background: #3a3a3a;
+  border: 1px solid #222;
+  color: #e7e7e7;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  cursor: default;
 }

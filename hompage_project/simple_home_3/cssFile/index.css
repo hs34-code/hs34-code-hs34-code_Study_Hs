@@ -1,0 +1,149 @@
+/* =================================================
+Fade Slider
+================================================= */
+.fadeSlider-wrapper{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21/9;
+}
+
+.fadeSliderImgArea{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/*============= img =============*/
+.fadeSlide{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.fadeSlide img{
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.fadeImg_active{
+  opacity: 1;
+  
+}
+
+/*============= dot =============*/
+.fadeSlideDots{
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  gap: 10px;
+}
+
+.dot_fadeSlide{
+  width: 8px;
+  height: 8px;
+  padding: 0;  
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: lightgray;
+}
+
+
+.fadeDot_active{
+  background: #2A1F1B;
+}
+
+
+/* =================================================
+Carousel Slider
+================================================= */
+.carouselSlider-wrapper{
+  margin-top: 60px;
+  position: relative;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  aspect-ratio: 21/9;
+
+  display: flex;
+  flex-direction: column;
+  
+  background: lightblue;
+}
+
+/*============= title =============*/
+.carouselTitle{
+  width: 100%;
+  height: 10%;
+  background: lightyellow;
+}
+
+.carouselTitle{
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+/*============= track img =============*/
+.carouselTrackViwer{
+  width: 100%;
+  height: 80%;
+}
+
+.carouselTrack{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: lightgray;
+}
+
+.carousel{
+  position: absolute;
+  width: 20%;
+  height: 80%;
+  
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.6s ease;
+}
+
+.carousel img{
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.slot-0{left: 1%; transform:translateY(-50%) scale(0.9); z-index: 1;}
+.slot-1{left: 20%; transform:translateY(-50%) scale(1); z-index: 2}
+.slot-2{left: 40%; transform:translateY(-50%) scale(1.1); z-index: 3}
+.slot-3{left: 60%; transform:translateY(-50%) scale(1); z-index: 2}
+.slot-4{left: 79%; transform:translateY(-50%) scale(0.9); z-index: 1}
+/*============= btn =============*/
+.carouselBtnArea{
+  width: 100%;
+  height: 10%;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+
+  background: lightskyblue;
+}
+
+.carouselBtnArea button{
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background: none;
+  border-radius: 50%;
+  border: 1px solid #222;
+  cursor: pointer;
+}

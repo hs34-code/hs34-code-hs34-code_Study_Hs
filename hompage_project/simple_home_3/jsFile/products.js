@@ -6,11 +6,14 @@ const dropdownType = params.get("type") || "All";
 groupProductsByType(dropdownType);
 
 //=====================================================
-// button 누를시 해당 제품 type 만 보이기
+// button 누를 시 해당 제품 type 만 보이기
+// button 누를 시 active 추가
 const ListNav = document.querySelectorAll(".productsList button");
 
 ListNav.forEach( btn => {
   btn.addEventListener("click", () => {
+  ListNav.forEach(b => b.classList.remove("btn-active"));
+  btn.classList.add("btn-active");
   groupProductsByType(btn.dataset.showtype);
   });
 });
@@ -47,10 +50,32 @@ function showProductList(filteredProduct){
 function groupProductsByType(input){
   if (input === "All"){
     showProductList(productList);
+    document.querySelector(".btn-all").classList.add("btn-active");
   } else {
     const filteredProduct = productList.filter(item => item.type === input);
     showProductList(filteredProduct);
+    document.querySelector(".btn-"+input.toLowerCase()).classList.add("btn-active");
   }
 }
 
+
+/* =================================================
+side 카테고리  선택
+================================================= */
+const panel = document.querySelector(".productsList");
+
+let targetY = 0;
+let currentY = 0;
+
+window.addEventListener("scroll", () => {
+  targetY = window.scrollY;
+})
+
+function movePanel() {
+  currentY +=  (targetY - currentY) * 0.15;
+  panel.style.transform = `translateY(${currentY}px)`;
+  requestAnimationFrame(movePanel)
+}
+
+movePanel()
 
