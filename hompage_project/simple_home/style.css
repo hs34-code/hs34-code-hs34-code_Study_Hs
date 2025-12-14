@@ -86,10 +86,7 @@ header .navigation a {
     width: 400px;
     height: 440px;
     background: transparent;
-    border: 2px solid #8386d1;
-    border-radius: 20px;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px #8386d1;
+    
     display: flex;
     justify-content: center;
     align-items: center;

@@ -24,7 +24,7 @@ signUpForm.addEventListener("submit", (e) =>{
 // 전화번호 양식 비교
 function checkPhoneNumberMatch(){
   const phoneRegex = /^\d{3}-\d{3,4}-\d{4}$/;
-  const signUpPhoneNumber = document.querySelector("#phoneNumber").value;
+  const signUpPhoneNumber = document.querySelector("..signup-form #phoneNumber").value;
   if (!phoneRegex.test(signUpPhoneNumber)){
     alert("Invalid phone number format");
     return false
@@ -35,7 +35,7 @@ function checkPhoneNumberMatch(){
 //===================================================================
 // 생년월일 양식 비교
 function checkDobMatch(){
-  const signUpDob = document.querySelector("#dob").value;
+  const signUpDob = document.querySelector(".signup-form #dob").value;
   
   if(!signUpDob){
     alert("Please enter your date of birth");
@@ -61,7 +61,7 @@ function checkDobMatch(){
 //===================================================================
 // email 양식 비교
 function checkEmailMatch(){
-  const signUpEmail = document.querySelector("#email").value;
+  const signUpEmail = document.querySelector(".signup-form #email").value;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]+$/;
   if(!emailRegex.test(signUpEmail)){
     alert("Email format is incorrect");
@@ -73,7 +73,7 @@ function checkEmailMatch(){
 //===================================================================
 // password 양식 비교
 function checkPasswordStrengthMatch(){
-  const signUpPassword = document.querySelector("#password").value;
+  const signUpPassword = document.querySelector(".signup-form #password").value;
   const passwordRegexNumber = /(?=.*[0-9])/;
   const passwordRegexUpper = /(?=.*[A-Z])/;
   const passwordRegexLower = /(?=.*[a-z])/;
@@ -105,8 +105,8 @@ function checkPasswordStrengthMatch(){
 //===================================================================
 // 2개의 패스워드 일치 비교
 function checkPasswordMatch(){
-  const signUpPassword = document.querySelector("#password").value;
-  const signUpPasswordConfirm = document.querySelector("#passwordConfirm").value;
+  const signUpPassword = document.querySelector(".signup-form #password").value;
+  const signUpPasswordConfirm = document.querySelector(".signup-form #passwordConfirm").value;
   if(signUpPassword !== signUpPasswordConfirm){
     alert("Passwords do not match");
     return false;
@@ -117,7 +117,7 @@ function checkPasswordMatch(){
 //===================================================================
 // 이메일 중복 비교
 function checkEmailAlready(){
-  const signUpEmail = document.querySelector("#email").value;
+  const signUpEmail = document.querySelector(".signup-form #email").value;
   let userInfo = JSON.parse(localStorage.getItem("users")) || [];
   const foundUser = userInfo.find(user => user.email === signUpEmail);
   if(foundUser !== undefined){
@@ -130,7 +130,7 @@ function checkEmailAlready(){
 //===================================================================
 // 핸드폰번호 중복 비교
 function checkPhoneNumberAlready(){
-  const signUpPhoneNumber = document.querySelector("#phoneNumber").value;
+  const signUpPhoneNumber = document.querySelector(".signup-form #phoneNumber").value;
   let userInfo = JSON.parse(localStorage.getItem("users")) || [];
   const foundUser = userInfo.find(user => user.phoneNumber === signUpPhoneNumber);
   if(foundUser !== undefined){
@@ -143,7 +143,7 @@ function checkPhoneNumberAlready(){
 //===================================================================
 // 약관동의 체크 
 function checkAgreeMatch(){
-  const signUpAgree = document.querySelector("#agree").checked;
+  const signUpAgree = document.querySelector(".signup-form #agree").checked;
   if(!signUpAgree){
     alert("You must agree to the Terms and Conditions");
     return false;
@@ -154,12 +154,12 @@ function checkAgreeMatch(){
 //===================================================================
 // 계정 만들기 및 로컬스토리지 저장
 function saveUserInfo(){
-  const name = document.querySelector("#name").value;
-  const phoneNumber = document.querySelector("#phoneNumber").value;
-  const dob = document.querySelector("#dob").value;
-  const address = document.querySelector("#address").value;
-  const email = document.querySelector("#email").value;
-  const password = document.querySelector("#password").value;
+  const name = document.querySelector(".signup-form #name").value;
+  const phoneNumber = document.querySelector(".signup-form #phoneNumber").value;
+  const dob = document.querySelector(".signup-form #dob").value;
+  const address = document.querySelector(".signup-form #address").value;
+  const email = document.querySelector(".signup-form #email").value;
+  const password = document.querySelector(".signup-form #password").value;
 
   const SignUpInfo = {
     name: `${name}`,

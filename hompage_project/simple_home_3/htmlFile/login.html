@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <!-- ==============================================================
+<!-- ==============================================================
 header (navigationBar, logo, cart, heart, login 등등)
 ============================================================== -->
   <header>
@@ -50,9 +50,9 @@ header (navigationBar, logo, cart, heart, login 등등)
         <!-- 네비게이션 바 -->
         <ul class="navigationBar">
           <li data-nav="products"><a href="products.html">PRODUCTS</a></li>
-          <li data-nav="about"><a href="#">ABOUT</a></li>
-          <li data-nav="news"><a href="#">NEWS</a></li>
-          <li data-nav="shopInfo"><a href="#">SHOPINFO</a></li>
+          <li data-nav="about"><a href="brand.html">ABOUT</a></li>
+          <li data-nav="news"><a href="news.html">NEWS</a></li>
+          <li data-nav="shopInfo"><a href="shopInfo.html">SHOPINFO</a></li> 
         </ul>
       </nav>
 
@@ -68,8 +68,8 @@ header (navigationBar, logo, cart, heart, login 등등)
           </ul>
 
           <ul class="nav_about hidden">
-            <li><a href="brand.html?form=story">Brand Story</a></li>
-            <li><a href="brand.html?form=brand">Brand</a></li>
+            <li><a href="brand.html?form=a">Brand Story</a></li>
+            <li><a href="brand.html?form=b">Brand</a></li>
           </ul>
 
           <ul class="emptySpace hidden"></ul>
@@ -79,10 +79,10 @@ header (navigationBar, logo, cart, heart, login 등등)
     </section>
   </header>
   
-  <!-- ==============================================================
+<!-- ==============================================================
 login 기능 시작
 ============================================================== -->
-  <section class="login">
+  <section class="form-box login">
     <form action="#" method="post" class="login-form">
       <div class="eamil">
         <label for="email">Email</label>
@@ -103,43 +103,46 @@ login 기능 시작
 
 <hr>
 
-  <section class="findEmail expanded">
+  <section class="form-box findEmail expanded">
     <button class="exit">X</button>
     <form action="#" method="post" class="findEmail-form">
       <div class="findEmailName">
         <label for="findEmailName">Name</label>
-        <input type="text" id="findEmailName" name="findEmailName" required>
+        <input type="text" id="findEmailName" name="findEmailName" placeholder="Enter UserName" required>
       </div>
       <div class="findEmailNumber">
         <label for="findEmailNumber">phoneNumber</label>
-        <input type="tel" id="findEmailNumber" name="findEmailNumber" required>
+        <input type="tel" id="findEmailNumber" name="findEmailNumber" placeholder="Enter UserPhoneNumber" required>
       </div>
-      <div class="forgoDob">Date of Birth</div>
-      <input type="date" id="findEmailDob" name="findEmailDob" required>
+      <div class="forgoDob">
+        <label for="forgoDob">Date of Birth</label>
+        <input type="date" id="findEmailDob" name="findEmailDob" required>
+      </div>
       <button type="submit" class="btn-findEmail">Find Email</button>
     </form>
   </section>
 
 <hr>
 
-  <section class="findPassword expanded">
+  <section class="form-box findPassword expanded">
     <button class="exit">X</button>
     <form action="#" method="post" class="findPassword-form">
       <div class="findPasswordName">
         <label for="findPasswordName">Name</label>
-        <input type="text" id="findPasswordName" name="findPasswordName" required>
+        <input type="text" id="findPasswordName" name="findPasswordName" placeholder="Enter UserName" required>
       </div>
       <div class="findPasswordNumber">
         <label for="findPasswordNumber">phoneNumber</label>
-        <input type="tel" id="findPasswordNumber" name="findPasswordNumber" required>
+        <input type="tel" id="findPasswordNumber" name="findPasswordNumber" placeholder="Enter UserPhoneNumber" required>
       </div>
       <div class="findPasswordEmail">
         <label for="findPasswordEmail">Email</label>
-        <input type="email" id="findPasswordEmail" name="findPasswordEmail" required>
+        <input type="email" id="findPasswordEmail" name="findPasswordEmail" placeholder="Enter UserEmail" required>
       </div>
       <button type="submit" class="btn-findPassword">Find Password</button>
     </form>
   </section>
+
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

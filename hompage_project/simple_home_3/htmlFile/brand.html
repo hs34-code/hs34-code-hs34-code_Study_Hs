@@ -12,7 +12,7 @@
 <!-- ==============================================================
 header (navigationBar, logo, cart, heart, login 등등)
 ============================================================== -->
-    <header>
+  <header>
     <section class="header">
       <!-- icon 및 logo -->
       <div class="site-header">
@@ -50,9 +50,9 @@ header (navigationBar, logo, cart, heart, login 등등)
         <!-- 네비게이션 바 -->
         <ul class="navigationBar">
           <li data-nav="products"><a href="products.html">PRODUCTS</a></li>
-          <li data-nav="about"><a href="#">ABOUT</a></li>
-          <li data-nav="news"><a href="#">NEWS</a></li>
-          <li data-nav="shopInfo"><a href="#">SHOPINFO</a></li>
+          <li data-nav="about"><a href="brand.html">ABOUT</a></li>
+          <li data-nav="news"><a href="news.html">NEWS</a></li>
+          <li data-nav="shopInfo"><a href="shopInfo.html">SHOPINFO</a></li> 
         </ul>
       </nav>
 
@@ -68,20 +68,38 @@ header (navigationBar, logo, cart, heart, login 등등)
           </ul>
 
           <ul class="nav_about hidden">
-            <li><a href="brand.html?form=story">Brand Story</a></li>
-            <li><a href="brand.html?form=brand">Brand</a></li>
+            <li><a href="brand.html?form=a">Brand Story</a></li>
+            <li><a href="brand.html?form=b">Brand</a></li>
           </ul>
 
           <ul class="emptySpace hidden"></ul>
 
           <ul class="emptySpace hidden"></ul>
-          </ul>
         </div>
     </section>
   </header>
+
+<section class="brand-wrapper">
+  <!-- 시각용 -->
+  <section class="brand" data-video="a">
+    <video src="../videoFile/brand video 1.mp4"></video>
+    <div class="overlay"></div>
+  </section>
+
+  <section class="brand" data-video="b">
+    <video src="../videoFile/brand video 2.mp4"></video>
+    <div class="overlay"></div>
+  </section>
+
+  <!-- 이벤트 용  -->
+    <div class="hit a"></div>
+    <div class="hit b"></div>
+</section>
   
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="../jsFile/common.js"></script>
+  <script src="../jsFile/brand.js"></script>
+
 </body>
 </html>

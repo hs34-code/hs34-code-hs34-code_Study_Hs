@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MinMall Project</title>
   <link rel="stylesheet" href="../cssFile/common.css">
-  <link rel="stylesheet" href="../cssFile/product.css">
+  <link rel="stylesheet" href="../cssFile/news.css">
 </head>
 
 <body>
-<!-- ==============================================================
+  <!-- ==============================================================
 header (navigationBar, logo, cart, heart, login 등등)
 ============================================================== -->
   <header>
@@ -80,58 +80,37 @@ header (navigationBar, logo, cart, heart, login 등등)
   </header>
   
 <!-- ==============================================================
-product 기능 시작
+news
 ============================================================== -->
-  <section class="product">
-    <div class="product_card">
-      <div class="leftArea">
-        <div class="mainImage">
-          <img src="" alt="mainImage">
-        </div>
-
-        <div class="detailImage">
-          <img src="" alt="detailImage1">
-          <img src="" alt="detailImage2">
-          <img src="" alt="detailImage3">
-          <img src="" alt="detailImage4">
-        </div>
+<section class="news-wrapper">
+  <ul class="news">
+    <li data-news="A">
+      <div class="imgArea">
+        <img src="../imgFile/news detail 1.jpg" alt="newsimg">
       </div>
+      <p>News 1</p>
+    </li>
+  </ul>
 
-      <div class="rightArea">
-        <div class="mainInfo">
-          <h2 class="title"></h2>
-          <p class="info"></p>
-        </div>
+  <section class="newsCard A"></section>
+</section>
+  <!-- ==============================================================
+게시판
+============================================================== -->
+<section class="Message-board">
+  <!-- 게시판 내용 업로드 공간 -->
+  <div class="form"></div>
 
-        <div class="calcArea">
-          <button class="btn-increase">+</button>
-          <button class="btn-decrease">-</button>
-          <p class="qtantity"></p>
-          <p class="price"></p>
-        </div>
+  <!-- 글쓰기 버튼 -->
+  <button class="btn-writing">Writing</button>
+</section>
 
-        <div class="btnArea">
-          <div class="btnCart">
-            <span class="icon"><ion-icon name="cart-outline"></ion-icon></span>
-            <span class="text">Cart</span>
-          </div>
-          <div class="btnHeart">
-            <span class="icon"><ion-icon name="heart-outline"></ion-icon></span>
-            <span class="text">Heart</span>
-          </div>
-          <div class="payment">
-            <button class="btn-payment">Payment</button>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </section>
+
+
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="../jsFile/common.js"></script>
-  <script src="../jsFile/productList.js"></script>
-  <script src="../jsFile/product.js"></script>
+  <script src="../jsFile/news.js"></script>
 </body>
 </html>

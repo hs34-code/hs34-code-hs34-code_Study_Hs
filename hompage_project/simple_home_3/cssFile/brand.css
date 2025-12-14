@@ -1,0 +1,95 @@
+.brand-wrapper{
+  width: 100%;
+  aspect-ratio: 21/9;
+  position: relative;
+
+  background-color: lightcyan;
+
+  --left: 0%;
+  --right: 0%;
+}
+
+/* 시각용 */
+.brand{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: antiquewhite;
+}
+
+[data-video="a"]{
+  clip-path: polygon(
+    0 0,
+    var(--left) 0,
+    calc(100% - var(--right)) 100%,
+    0 100%);
+}
+
+[data-video="b"]{
+  clip-path: polygon(
+    var(--left) 0,
+    100% 0,
+    100% 100%,
+    calc(100% - var(--right)) 100%);
+}
+
+video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 이벤트용 */
+.hit.a{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(
+    0 0,
+    var(--left) 0,
+    calc(100% - var(--right)) 100%,
+    0 100%);
+}
+
+.hit.b{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(
+    var(--left) 0,
+    100% 0,
+    100% 100%,
+    calc(100% - var(--right)) 100%);
+}
+
+.hit.a, 
+.hit.b, 
+.brand[data-video="a"], 
+.brand[data-video="b"]{
+  transition: clip-path 0.6s cubic-bezier(.4, 0, .2, 1);
+}
+
+.filter{
+  filter: blur(3px);
+  transition: filter 0.3s ease;
+}
+
+
+/* ============== hover ============== */
+/* [data-video="a"]:hover{
+  clip-path: polygon(
+    0 0,
+    20% 0,
+    100% 100%,
+    0 100%);
+} */
+ 
+
+/* [data-video="b"]:hover{
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    80% 100%);
+} */
+

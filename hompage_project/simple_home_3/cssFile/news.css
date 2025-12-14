@@ -1,0 +1,61 @@
+/* =============== 빈공간 및 배치 요소 =============== */
+.news-wrapper{
+  width: 100%;
+  height: 100px;
+  background-color: bisque;
+}
+
+.news-wrapper ul{
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  list-style: none;
+}
+
+/* =============== 선택 요소들 =============== */
+.news-wrapper li{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.imgArea{
+  width: 70px;
+  height: 70px;
+  border: 1px solid black;
+  border-radius: 50%;
+
+  overflow: hidden;
+}
+
+.news-wrapper p{
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =============== news hover 시 img area 확장 =============== */
+.news-wrapper li:hover .imgArea{
+  border-radius: 10%;
+}
+
+
+
+
+
+
+
+
+img{
+  width: 100px;
+  height: 100px;
+}
