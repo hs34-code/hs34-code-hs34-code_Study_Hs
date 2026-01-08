@@ -1,0 +1,149 @@
+/* ================================
+  Product Layout
+================================ */
+.product {
+  max-width: 1280px;
+  margin: 120px auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.product_card {
+  display: flex;
+  gap: 80px;
+}
+
+/* ================================
+  LEFT AREA (Image)
+================================ */
+.leftArea {
+  width: 55%;
+}
+
+.mainImage {
+  width: 100%;
+  background: #f7f7f7;
+}
+
+.mainImage img {
+  width: 100%;
+  display: block;
+}
+
+.detailImage {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.detailImage img {
+  width: calc(25% - 7.5px);
+  background: #f0f0f0;
+  cursor: pointer;
+  border: 1px solid #e5e5e5;
+}
+
+/* ================================
+  RIGHT AREA (Info)
+================================ */
+.rightArea {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 상품 기본 정보 */
+.mainInfo h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.mainInfo p {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* ================================
+  Price / Quantity
+================================ */
+.calcArea {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+
+.calcArea button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+.calcArea .qtantity {
+  min-width: 30px;
+  text-align: center;
+}
+
+.calcArea .price {
+  margin-left: auto;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ================================
+  Buttons
+================================ */
+.btnArea {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btnCart,
+.btnHeart {
+  width: 56px;
+  height: 56px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btnCart ion-icon,
+.btnHeart ion-icon {
+  font-size: 22px;
+}
+
+.heart{
+  display: none;
+}
+
+.choice{
+  display: block;
+}
+
+.fill.choice{
+  color: red;
+}
+
+.payment {
+  flex: 1;
+}
+
+.btn-payment {
+  width: 100%;
+  height: 56px;
+  background: #555;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}

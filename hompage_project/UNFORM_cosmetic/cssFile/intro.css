@@ -1,0 +1,79 @@
+/* ========================================================
+-------------------------- intro --------------------------
+========================================================= */
+
+/* ========== intro =========== */
+.intro{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+
+  --blackAreaMove: 0%;
+  --LineMove: 0%;
+
+  z-index: 90;
+}
+
+.blackArea{
+  width: 50%;
+  height: 100%;
+  background-color: black;
+
+  display: flex;
+  align-items: center;
+
+  transform: translateX(0);
+  transition: transform 1s ease;
+}
+
+/* ========== 좌우 공간 =========== */
+.introLeft{
+  justify-content: flex-end;
+  transform: translateX(calc(-1 * var(--blackAreaMove)));
+}
+
+.introRight{
+  justify-content: flex-start;
+  transform: translateX(var(--blackAreaMove));
+}
+
+/* ========== 선 및 텍스트 =========== */
+.introLine{
+  position: absolute;
+
+  width: var(--LineMove);
+  transition: width 1s ease;
+
+  border: 2px solid white;
+}
+
+.introMask{
+  background-color: black;
+  width: 110px;
+  height: 70px;
+
+  z-index: 92;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.introLogoText{
+  color: white;
+
+  font-size: 50px;
+  z-index: 93;
+}
+
+
+
+
+
+
+
+

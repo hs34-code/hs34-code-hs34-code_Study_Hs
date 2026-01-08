@@ -1,0 +1,177 @@
+/* ========================================================
+------------------- shop html 기본 설정 --------------------
+========================================================= */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+  overflow-x: hidden;
+  background: linear-gradient(
+  to bottom,
+  rgba(0,0,0,1) 0%,
+  rgb(164, 164, 164) 100%
+  );
+}
+
+/* ========================================================
+-------------------------- shop ---------------------------
+========================================================= */
+
+/* ========== shop 공통 영역 =========== */
+.mainShop{
+  margin-top: 200px;
+  margin-bottom: 100px;
+  width: 100%;
+  height: auto;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* ========== shop design 영역 =========== */
+.shopDesginBanner{
+  width: 100%;
+  height: 400px;
+
+  position: relative;
+
+  /* background-color: beige; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testArea{
+  width: 70%;
+  max-width: 800px;
+  min-width: 500px;
+  height: 80%;
+  background-color: #aaa;
+}
+
+/* ========== shop navgationBar 영역 =========== */
+.shopNavBar{
+  position: relative;
+
+  width: 100%;
+  height: 100px;
+  /* background-color: aquamarine; */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shopNavBar p{
+  width: 200px;
+  min-width: 140px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+}
+
+.shopNavBarLine{
+  height: 70%;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+/* ========== prdocuts Area =========== */
+.products{
+  padding-top: 50px;
+  width: fit-content;
+  max-width: 60%;
+  /* background-color: aliceblue; */
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 280px);
+  gap: 24px;
+
+  margin: 0 auto;
+  /* background-color: yellow; */
+}
+
+/* ========== prdocuts Card =========== */
+.productCard{
+  max-width: 280px;
+  height: 360px;
+
+  text-align: center;
+
+  border: 1px solid white;
+  border-radius: 18px;
+
+  background-color: #f4f3f1;
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.productCard:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 1px 20px rgb(248,241,181);
+}
+
+.productCard a{
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  cursor: pointer;
+  color: white;
+}
+
+/* ========== prdocuts Card img =========== */
+.CardImgArea{
+  width: 80%;
+  height: 70%;
+  border-radius: 12px;
+
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productCard img{
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+/* ========== prdocuts Card text =========== */
+.CardTextArea{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.CardTextArea h3{
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #111;
+
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.CardTextArea p{
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #666;
+}

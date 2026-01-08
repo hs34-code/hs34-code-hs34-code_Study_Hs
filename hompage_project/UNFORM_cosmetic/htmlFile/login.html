@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNFORM Cosmetics project</title>
+  <link rel="stylesheet" href="../cssFile/header.css">
+  <link rel="stylesheet" href="../cssFile/login.css">
+</head>
+
+
+<body>
+  <!-- ========================================================
+-------------------------- header --------------------------- a링크1, 3
+========================================================= -->
+  <header> 
+    <section class="navigtaionBar">
+      <div class="logo">
+        <a href="><p class="logoText">UNFORM</p></a>
+      </div>
+
+      <ul class="navBar">
+        <li class="shop"><a href="../htmlFile/1.html">SHOP</a></li>
+        <li class="about"><a href=">ABOUT</a></li>
+        <li class="community"><a href=">COMMUNITY</a></li>
+        <li class="login"><a href=">LOGIN</a></li>
+      </ul>
+
+      <div class="hoverBar"></div>
+    </section>
+  </header>
+
+
+<!-- ========================================================
+----------------------- main login --------------------------
+========================================================= -->
+<div class="floorSet">
+  <section class="loginDesignBook">
+
+    <div class="designCover">
+      <!-- ============= 커버 앞장 ============= -->
+      <div class="cover-front">
+        <p>UNFORM COSMETICS</p>
+        <h3>Step Inside</h3>
+        <h3>to Login</h3>
+        <div class="desginShape"></div>
+      </div>
+      <!-- ============= 커버 뒷장 ============= -->
+      <div class="cover-back"></div>
+    </div>
+
+    <!-- ========================================================
+    ---------------------- login System -------------------------
+    ========================================================= -->
+    <section class="page login" data-page-index="1">
+      <!-- ============= 페이지 앞장 ============= -->
+      <div class="page-front">
+        <h2>Login</h2>
+
+        <div class="inputArea">
+          <form action="#" method="post" class="login-form">
+
+            <!-- ========== login / input Email ========== -->
+            <div class="field">
+              <div class="box">
+                <label for="loginForm-email">Email</label>
+                <input type="email" id="loginForm-email" name="email" placeholder="Enter User Email">
+              </div>
+              <div class="alertText"></div>
+            </div>
+
+            <!-- ========== login / input password ========== -->
+            <div class="field">
+              <div class="box">
+                <label for="loginForm-password">Password</label>
+                <input type="password" id="loginForm-password" name="password">
+                <button type="button" class="btn-openPassword">
+                  <span><ion-icon name="eye-off-outline"></ion-icon></span>
+                  <span class="none"><ion-icon name="eye-outline"></ion-icon></span>
+                </button>
+              </div>
+              <div class="alertText"></div>
+            </div>
+
+            <button type="submit" class="btn-login">Login</button>
+          </form>
+          
+          <div class="btnArea">
+            <button class="btn-goSignUp" data-move-page="signUp">Sign Up</button>
+            <button class="btn-goFindEmail" data-move-page="findEmail">Find Email</button>
+            <button class="btn-goFindPassword" data-move-page="findPassword">Find Password</button>
+          </div>
+        </div>
+
+        <!-- ========== findPassword / popup ========== -->
+        <div class="popupFound popupHidden">
+          <span class="close"><ion-icon name="close-outline"></ion-icon></span>
+          <p>Welcome!</p>
+          <p class="foundText"></p>
+        </div>
+      </div>
+
+      <!-- ============= 페이지 뒷장 ============= -->
+      <div class="page-back"></div>
+    </section>
+
+    <!-- ========================================================
+    ---------------------- signUp System ------------------------
+    ========================================================= -->
+    <section class="page signUp" data-page-index="2">
+      <!-- ============= 페이지 앞장 ============= -->
+      <div class="page-front">
+        <h2>Sign Up</h2>
+
+        <div class="inputArea">
+          <form action="#" method="post" class="signUp-form">
+
+            <!-- ========== signUp / input Name ========== -->
+            <div class="field">
+              <div class="box">
+                <label for="signUpForm-name">Name</label>
+                <input type="text" id="signUpForm-name" name="name">
+              </div>
+              <div class="alertText"></div>
+            </div>
+
+            <!-- ========== signUp / input mobile phone number ========== -->
+            <div class="field">
+              <div class="box">
+                <label for="signUpForm-mob">Phone Number</label>
+                <input type="tel" id="signUpForm-mob" name="mob">
+              </div>
+              <div class="alertText"></div>
+            </div>
+
+            <!-- ========== signUp / input dob ========== -->
+            <div class="field">
+              <div class="box">
+                <label for="signUpForm-dob">Birthdate</label>
+                <input type="date" id="signUpForm-dob" name="dob">
+              </div>
+              <div class="alertText"></div>
+            </div>
+
+            <!-- ========== signUp / address ========== -->
+            <div class="field">
+              <div class="box">
+                <label for="signUpForm-address">Address</label>
+                <input type="text" id="signUpForm-address" name="address">
+              </div>
+              <div class="alertText"></div>
+            </div>
+            
+            <!-- ========== signUp / email ========== -->
+            <div class="field">
+              <div class="box">
+                <label for="signUpForm-email">Email</label>
+                <input type="email" id="signUpForm-email" name="email">
+              </div>
+              <div class="alertText"></div>
+            </div>
+
+            <!-- ========== signUp / password ========== -->
+            <div class="field">
+              <div class="box">
+                <label for="signUpForm-password">Password</label>
+                <input type="password" id="signUpForm-password" name="password">
+
+                <button type="button" class="btn-openPassword">
+                  <span><ion-icon name="eye-off-outline"></ion-icon></span>
+                  <span class="none"><ion-icon name="eye-outline"></ion-icon></span>
+                </button>
+              </div>
+              <div class="alertText"></div>
+            </div>
+
+            <!-- ========== signUp / password confirm ========== -->
+            <div class="field">
+              <div class="box">
+                <label for="signUpForm-passwordConfirm">Password Confirm</label>
+                <input type="password" id="signUpForm-passwordConfirm" name="password">
+
+                <button type="button" class="btn-openPassword">
+                  <span><ion-icon name="eye-off-outline"></ion-icon></span>
+                  <span class="none"><ion-icon name="eye-outline"></ion-icon></span>
+                </button>
+              </div>
+              <div class="alertText"></div>
+            </div>
+
+            <!-- ========== signUp / agree ========== -->
+            <div class="field">
+              <div class="box agree">
+                <label for="signUpForm-agree">Agree</label>
+                <input type="checkbox" id="signUpForm-agree" name="agree">
+              </div>
+              <div class="alertText"></div>
+            </div>
+
+            <button type="submit" class="btn-signUp">Sign Up</button>
+          </form>
+
+          <div class="btnArea">
+            <button class="btn-goLogin" data-move-page="login">Login</button>
+            <button class="btn-goFindEmail" data-move-page="findEmail">Find Email</button>
+            <button class="btn-goFindPassword" data-move-page="findPassword">Find Password</button>
+          </div>
+        </div>
+
+        <!-- ========== findPassword / popup ========== -->
+        <div class="popupFound popupHidden">
+          <span class="close"><ion-icon name="close-outline"></ion-icon></span>
+          <p>Welcome! Your registration is complete</p>
+        </div>
+      </div>
+
+      <!-- ============= 페이지 뒷장 ============= -->
+      <div class="page-back"></div>
+    </section>
+
+    <!-- ========================================================
+    -------------------- find Email System ----------------------
+    ========================================================= -->
+    <section class="page findEmail" data-page-index="3">
+      <!-- ============= 페이지 앞장 ============= -->
+      <div class="page-front">
+        <h2>Find Email</h2>
+
+        <div class="inputArea">
+          <form action="#" method="post" class="findEmail-form">
+
+            <!-- ========== findEmail / input Name ========== -->
+            <div class="field">
+              <div class="box">
+                <label for="findEmail-name">Name</label>
+                <input type="text" id="findEmail-name" name="name">
+              </div>
+              <div class="alertText"></div>
+            </div>
+
+            <!-- ========== findEmail / input mobile phone number ========== -->
+            <div class="field">
+              <div class="box">
+                <label for="findEmail-mob">Phone Number</label>
+                <input type="tel" id="findEmail-mob" name="mob">
+              </div>
+              <div class="alertText"></div>
+            </div>
+
+            <!-- ========== findEmail / input dob ========== -->
+            <div class="field">
+              <div class="box">
+                <label for="findEmail-dob">Birthdate</label>
+                <input type="date" id="findEmail-dob" name="dob">
+              </div>
+              <div class="alertText"></div>
+            </div>
+
+            <button type="submit" class="btn-findEmail">Find Email</button>
+          </form>
+
+          <div class="btnArea">
+            <button class="btn-goLogin" data-move-page="login">Login</button>
+            <button class="btn-goSignUp" data-move-page="signUp">Sign Up</button>
+            <button class="btn-goFindPassword" data-move-page="findPassword">Find Password</button>
+          </div>
+        </div>
+
+        <!-- ========== findEmail / popup ========== -->
+        <div class="popupFound popupHidden">
+          <span class="close"><ion-icon name="close-outline"></ion-icon></span>
+          <p>Your Email is : </p>
+          <p class="foundText"></p>
+        </div>
+      </div>
+
+      <!-- ============= 페이지 뒷장 ============= -->
+      <div class="page-back"></div>
+    </section>
+
+    <!-- ========================================================
+    ------------------ find password System ---------------------
+    ========================================================= -->
+    <section class="page findPassword" data-page-index="4">
+      <!-- ============= 페이지 앞장 ============= -->
+      <div class="page-front">
+        <h2>Find Password</h2>
+
+        <div class="inputArea">
+          <form action="#" method="post" class="findPassword-form">
+
+            <!-- ========== findPassword / input Name ========== -->
+            <div class="field">
+              <div class="box">
+                <label for="findPassword-form-name">Name</label>
+                <input type="text" id="findPassword-form-name" name="name">
+              </div>
+              <div class="alertText"></div>
+            </div>
+
+            <!-- ========== findPassword / input mobile phone number ========== -->
+            <div class="field">
+              <div class="box">
+                <label for="findPassword-form-mob">Phone Number</label>
+                <input type="tel" id="findPassword-form-mob" name="mob">
+              </div>
+              <div class="alertText"></div>
+            </div>
+
+            <!-- ========== findPassword / input dob ========== -->
+            <div class="field">
+              <div class="box">
+                <label for="findPassword-form-dob">Birthdate</label>
+                <input type="date" id="findPassword-form-dob" name="dob">
+              </div>
+              <div class="alertText"></div>
+            </div>
+
+            <!-- ========== findPassword / email ========== -->
+            <div class="field">
+              <div class="box">
+                <label for="findPassword-form-email">Email</label>
+                <input type="email" id="findPassword-form-email" name="email">
+              </div>
+              <div class="alertText"></div>
+            </div>
+
+            <button type="submit" class="btn-findPassword">Find Password</button>
+          </form>
+
+          <div class="btnArea">
+            <button class="btn-goLogin" data-move-page="login">Login</button>
+            <button class="btn-goSignUp" data-move-page="signUp">Sign Up</button>
+            <button class="btn-goFindEmail" data-move-page="findEmail">Find Email</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============= 페이지 뒷장 ============= -->
+      <div class="page-back"></div>
+    </section>
+
+    <!-- ========================================================
+    ------------------ chagne password System -------------------
+    ========================================================= -->
+    <section class="page changePassword" data-page-index="5">
+      <!-- ============= 페이지 앞장 ============= -->
+      <div class="page-front">
+        <h2>Change Password</h2>
+
+        <div class="inputArea">
+          <form action="#" method="post" class="changePassword-form">
+
+            <!-- ========== signUp / password ========== -->
+            <div class="field">
+              <div class="box">
+                <label for="changePassword-form-password">Password</label>
+                <input type="password" id="changePassword-form-password" name="password">
+
+                <button type="button" class="btn-openPassword">
+                  <span><ion-icon name="eye-off-outline"></ion-icon></span>
+                  <span class="none"><ion-icon name="eye-outline"></ion-icon></span>
+                </button>
+              </div>
+              <div class="alertText"></div>
+            </div>
+
+            <!-- ========== signUp / password confirm ========== -->
+            <div class="field">
+              <div class="box">
+                <label for="changePassword-form-passwordConfirm">Password Confirm</label>
+                <input type="password" id="changePassword-form-passwordConfirm" name="password">
+
+                <button type="button" class="btn-openPassword">
+                  <span><ion-icon name="eye-off-outline"></ion-icon></span>
+                  <span class="none"><ion-icon name="eye-outline"></ion-icon></span>
+                </button>
+              </div>
+              <div class="alertText"></div>
+            </div>
+
+            <button type="submit" class="btn-changePassword">Change Password</button>
+          </form>
+
+          <div class="btnArea">
+            <button class="btn-goLogin" data-move-page="login">Login</button>
+            <button class="btn-goSignUp" data-move-page="signUp">Sign Up</button>
+            <button class="btn-goFindEmail" data-move-page="findEmail">Find Email</button>
+          </div>
+        </div>
+
+        <!-- ========== findEmail / popup ========== -->
+        <div class="popupFound popupHidden">
+          <span class="close"><ion-icon name="close-outline"></ion-icon></span>
+          <p>Password changed successfully</p>
+        </div>
+      </div>
+
+      <!-- ============= 페이지 뒷장 ============= -->
+      <div class="page-back"></div>
+    </section>
+
+
+    <div class="designBackCover"></div>
+  </section>
+</div>
+
+
+  <!-- ICON -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <script src="../jsFile/login.js"></script>
+</body>
+</html>

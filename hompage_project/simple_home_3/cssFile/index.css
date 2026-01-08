@@ -51,7 +51,6 @@ Fade Slider
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  background: lightgray;
 }
 
 
@@ -74,15 +73,12 @@ Carousel Slider
 
   display: flex;
   flex-direction: column;
-  
-  background: lightblue;
 }
 
 /*============= title =============*/
 .carouselTitle{
   width: 100%;
   height: 10%;
-  background: lightyellow;
 }
 
 .carouselTitle{
@@ -101,7 +97,6 @@ Carousel Slider
   position: relative;
   width: 100%;
   height: 100%;
-  background: lightgray;
 }
 
 .carousel{
@@ -134,8 +129,6 @@ Carousel Slider
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
-
-  background: lightskyblue;
 }
 
 .carouselBtnArea button{

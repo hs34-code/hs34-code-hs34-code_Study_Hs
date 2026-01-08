@@ -1,0 +1,131 @@
+/* ========================================================
+-------------------- footer 기본 설정 ----------------------
+========================================================= */
+.footer{
+  position: relative;
+  padding: 40px;
+
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  
+  background-color: lightgray;
+}
+
+/* ========== footer 왼쪽 Info Area =========== */
+.InfoArea{
+  position: relative;
+
+  width: 70%;
+
+  display: flex;
+  flex-direction: column;
+
+  z-index: 1;
+}
+
+/* ========== Brand Logo Area =========== */
+.brandlogo{
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.brandlogo p{
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+
+  padding-right: 10px;
+}
+
+.brandlogo img{
+  width: 40px;
+  height: 50px;
+}
+
+/* ========== Brand Info Area =========== */
+.brandInfo p{
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  padding-bottom: 5px;
+}
+
+.brandInfo .highlight{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.brandInfo .min{
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* ========== Hompage Info Area =========== */
+.hompageInfo p{
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  padding-bottom: 5px;
+}
+
+
+/* ========== footer 오른쪽 Social Media info =========== */
+.followArea{
+  position: relative;
+  width: 30%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+.followArea a{
+  list-style: none;
+  color: black;
+  font-size: 30px;
+}
+
+
+/* ========== footer Desgin div =========== */
+.footerDesignLine{
+  position: absolute;
+  top: 10%;
+  left: 69.8%;
+  
+  height: 80%;
+
+  border-radius: 2px;
+  border: 2px solid black;
+}
+
+.footerDesignCricle1{
+  position: absolute;
+  
+  width: 30%;
+
+  aspect-ratio: 1/1;
+
+  border-radius: 50%;
+  border: clamp(3px, 4vw, 3px) solid white;
+
+  top: -20%;
+  right: -10%;
+}
+
+.footerDesignCricle2{
+  position: absolute;
+  
+  width: 30%;
+
+  aspect-ratio: 1/1;
+
+  border-radius: 50%;
+  border: clamp(3px, 4vw, 3px) solid white;
+
+  bottom: -20%;
+  left: -10%;
+}

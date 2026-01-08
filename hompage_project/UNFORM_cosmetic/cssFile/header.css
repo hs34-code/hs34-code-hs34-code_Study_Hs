@@ -1,0 +1,111 @@
+/* ========================================================
+-------------------------- header -------------------------
+========================================================= */
+
+/* ========== header 공통 영역 =========== */
+header{
+  position: fixed;
+
+  top: 40px;
+
+  width: 100%;
+  height: 100px;
+
+  z-index: 30;
+  /* overflow: hidden; */
+}
+
+.navigtaionBar{
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+}
+
+/* ===================== logo ====================== */
+.logo{
+  position: relative;
+
+  margin-left: 5vw;
+  width: 140px;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 33;
+}
+
+.logo a{
+  text-decoration: none;
+
+  cursor: pointer;
+
+  font-size: 25px;
+  font-weight: 600;
+  
+  color: white;
+  text-shadow: 
+    1px 1px 3px black,   /* 오른쪽 아래 방향 그림자 */
+   -1px -1px 3px black,  /* 왼쪽 위 방향 그림자 */
+    1px -1px 3px black,  /* 오른쪽 위 방향 그림자 */
+   -1px  1px 3px black;  /* 왼쪽 아래 방향 그림자 */
+  
+  transition: color 0.5s ease;
+}
+
+a.logoShow{
+  color: black;
+}
+
+/* ===================== navBar ====================== */
+.navBar{
+  position: absolute;
+  right: 0;
+
+  width: 10%;
+  height: 100px;
+
+  background-color: aliceblue;
+  
+  border-radius: 40px 0 0 40px ;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: clamp(10px, 3vw, 500px);;
+
+  transition: width 1s ease;
+  cursor: pointer;
+  z-index: 31;
+
+  overflow: hidden;
+}
+
+.navBar li{
+  list-style: none;
+
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.navBar a{
+  text-decoration: none;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  color: black;
+}
+
+.navBar:hover{
+  width: 60%;
+  height: 100px;
+}
+
+.navBar:hover li{
+  transition-delay: .5s;
+  opacity: 1;
+}

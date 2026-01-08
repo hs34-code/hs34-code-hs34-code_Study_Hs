@@ -1,0 +1,380 @@
+/* ========================================================
+------------------- home html 기본 설정 --------------------
+========================================================= */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+  overflow-x: hidden;
+}
+
+/* ========================================================
+----------------------- main banner -----------------------
+========================================================= */
+
+/* ========== main banner 공통 영역 =========== */
+.mainBanner{
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 16/9;
+
+  background-color: black;
+
+  padding-top: 15%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.bannerArea{
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  gap: 1.5%;
+}
+
+.bannerArea:hover > :not(:hover){
+  filter: blur(2px) 
+    brightness(0.85)
+    saturate(0.6)
+    contrast(0.9);;
+}
+
+/* ========== banner, img =========== */
+.banner{
+  width: 30%;
+  aspect-ratio: 1/1;
+
+  background-color: white;
+  border: 1px solid black;
+
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  transition: filter .5s ease;
+}
+
+.banner img{
+  width: 120%;
+  aspect-ratio: 1/1;
+}
+
+
+/* ========== 디자인 요소 (선, 원) =========== */
+.bannerLine{
+  margin: 0 3% 0 3%;
+
+  height: 80%;
+
+  border: 2px solid white;
+  border-radius: 1px;
+}
+
+
+.bannerCircle{
+  position: absolute;
+  
+  width: 70%;
+
+  aspect-ratio: 1/1;
+
+  border-radius: 50%;
+  border: 4px solid white;
+
+  bottom: -40%;
+}
+
+
+/* ========================================================
+----------------------- scroll banner ---------------------
+========================================================= */
+
+/* ========== 기본 설정 =========== */
+.scrollBanner{
+  background: linear-gradient(
+  to bottom,
+  rgba(0,0,0,1) 0%,
+  rgba(0,0,0,0.8) 25%,
+  rgba(0,0,0,0.3) 55%,
+  rgba(255,255,255,1) 100%
+);
+}
+
+.scrollWrapperSetting{
+  position: relative;
+  width: 100%;
+  height: 300vh;
+}
+
+/* ========== scroll banner 내용 기본 설정 =========== */
+.scrollAreaSetting{
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  align-items: center;
+  
+  place-items: center;
+  place-content: center;
+
+}
+
+/* ========== text Area =========== */
+.textArea{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.textArea a{
+  margin: 0;
+}
+
+.textArea.title{
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.textArea.desc{
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  max-width: 420px;
+}
+
+/* ========== text Area =========== */
+.imgArea{
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+
+  justify-content: center;
+}
+
+.imgArea img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------------------- 1번 scroll banner 설정 ---------------------- */
+.scroll_1_desc .textArea.title{
+  color: white;
+}
+
+.scroll_1_desc .textArea.desc{
+  color: #dcdcdc;
+}
+/* ---------------------- 2번 scroll banner 설정 ---------------------- */
+
+.scroll_2_desc .imgArea{
+  width: 80%;
+  max-width: 350px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+
+  justify-content: center;
+}
+
+/* ---------------------- 3번 scroll banner 설정 ---------------------- */
+
+
+/* ========================================================
+------------------------- hover banner ---------------------
+========================================================= */
+.hoverBanner{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+
+  overflow: hidden;
+}
+
+.hoverImgArea{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  scale: 1.1;
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hoverImg{
+  transition: all .5s ease;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hoverImg:hover{
+  transform: scale(1.1);
+}
+
+.hoverImg img{
+  width: 105%;
+  height: 105%;
+  object-fit: cover;
+  object-position: center;
+
+  /* ★ 변경: mask 방식 */
+  --x: -9999px;
+  --y: -9999px;
+
+  mask-image: radial-gradient(
+    circle var(--r) at var(--x) var(--y),
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,1) 90%,
+    rgba(0,0,0,0.4) 95%,
+    rgba(0,0,0,0) 100%
+  );
+
+  -webkit-mask-image: radial-gradient( 
+    circle var(--r) at var(--x) var(--y),
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,1) 90%,
+    rgba(0,0,0,0.4) 95%,
+    rgba(0,0,0,0) 100%
+  );
+}
+
+/* ========== 개별 img area 조정 =========== */
+.hoverImg-1{
+  position: absolute;
+  background-color: #d5a580;
+  width: 20%;
+  aspect-ratio: 1/1.5;
+
+  top: 5%;
+  left: 5%;
+}
+
+.hoverImg-2{
+  position: absolute;
+  background-color: #8dae5e;
+  width: 22%;
+  aspect-ratio: 1.2/1;
+
+  top: 62%;
+  left: 25%;
+}
+
+.hoverImg-3{
+  position: absolute;
+  background-color: #908d8d;
+  width: 20%;
+  aspect-ratio: 1.2/1;
+
+  top: 10%;
+  left: 48%;
+}
+
+.hoverImg-4{
+  position: absolute;
+  background-color: #a9a9a9;
+  width: 15%;
+  aspect-ratio: 1/1.5;
+
+  top: 45%;
+  left: 60%;
+}
+
+.hoverImg-5{
+  position: absolute;
+  background-color: #dbd294;
+  width: 16%;
+  aspect-ratio: 1/1.2;
+
+  top: 20%;
+  left: 82%;
+}
+
+/* ========== design 요소 =========== */
+.hoverTextArea{
+  font-size: clamp(36px, 4vw, 80px);
+  font-weight: 400;
+  z-index: 1;
+}
+
+.line1{
+  position: absolute;
+  top: 30%;
+  left: 27%;
+}
+
+.line2{
+  position: absolute;
+  top: 38%;
+  left: 35%;
+}
+
+.hoverTextArea span{
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+
+  transition-delay: calc(var(--i) * 0.05s);
+}
+
+.hoverTextArea.textShow span{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.designCricle1{
+  position: absolute;
+  
+  width: 60%;
+
+  aspect-ratio: 1/1;
+
+  border-radius: 50%;
+  border: clamp(4px, 4vw, 10px) solid black;
+
+  top: -20%;
+  right: -10%;
+}
+
+.designCricle2{
+  position: absolute;
+  
+  width: 50%;
+
+  aspect-ratio: 1/1;
+
+  border-radius: 50%;
+  border: clamp(4px, 4vw, 10px) solid black;
+
+  bottom: -20%;
+  left: -30%;
+}

@@ -1,0 +1,836 @@
+/* ========================================================
+------------------------- 기본설정 ------------------------
+======================================================== */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  font-weight: 300;
+}
+
+
+/* ========================================================
+--------------------------- main --------------------------
+======================================================== */
+main{
+  width: 100%;
+  height: 100%;
+  margin-bottom: 7rem;
+}
+
+.main__root{
+  width: 100%;
+  height: 100%;
+}
+
+/* ========================================================
+---------------------- section 1 hero ---------------------
+======================================================== */
+.hero__root{
+  position: relative;
+  margin-top: 200px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* ======================== content Area, designLine ======================= */
+.hero__root__content{
+  width: 88%;
+}
+
+.hero__root__content > .h1Area{
+  width: 45%;
+  margin-bottom: 3rem;
+}
+
+.hero__root__content > .textArea {
+  width: 45%;
+  margin-left: 55%;
+}
+
+.hero__root__content > .videoArea{
+  margin-top: 10rem;
+  margin-bottom: 15%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+
+.hero__root > .desginLine{
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+
+  width: 1px;
+  background-color: black;
+}
+.desginLine.left{left: 28px;}                       
+.desginLine.right{right: 28px;}
+
+/* ----------------------- content Area 세부사항 ------------------------ */
+.hero__root .h1Area h1{
+  font-size: 3rem;
+}
+
+.hero__root .textArea p{
+  font-size: 1.2rem;
+}
+
+.hero__root .videoArea video{
+  width: 70%;
+  transform: scale(1);
+  will-change: transform;
+}
+
+@media screen and (max-width: 780px){
+  .hero__root__content > .h1Area{width: 100%;}
+
+  .hero__root__content > .textArea {
+    width: 100%;
+    margin-left: 0%;}
+
+  .desginLine.left{left: 12px;}
+  .desginLine.right{right: 12px;}
+}
+
+
+
+/* ========================================================
+------------------ section 2 innovation -------------------
+======================================================== */
+.innovation__root{
+  position: relative;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: #f3f0ed;
+
+  display: flex;
+  justify-content: center;
+}
+
+.innovation__root__wrapper{
+  padding-top: 3rem;
+  width: 90%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+/* ======================== h2Area, rightArea, imgArea ======================= */
+.innovation__root__wrapper > .h2Area{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.innovation__root__wrapper > .rightArea{
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.innovation__root__wrapper > .imgArea{
+  grid-column: 1/-1;
+
+  display: flex;
+  justify-content: center;
+  gap: 4%;
+  margin-bottom: 3rem;
+}
+
+
+/* ----------------------- h2Area 세부사항 ------------------------ */
+.innovation__root .h2Area h2{
+  width: 92%;
+  font-size: 3.5rem;
+}
+
+/* ----------------------- rightArea 세부사항 ------------------------ */
+.innovation__root .desginLine{
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 1px;
+  background-color: black;
+  
+  transform-origin: top;
+  scale: 1 0;
+  /* scale이 가로축은 1 그대로 세로축이 0 */
+}
+
+.innovation__root .textArea{
+  width: 92%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ------------------ rightArea안 textArea 세부사항 ------------------- */
+.innovation__root .desginCricle{
+  width: 96%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.innovation__root svg{
+  display: block;
+  overflow: hidden;
+}
+.innovation__root circle{
+  fill: none;
+  stroke: black;
+  stroke-width: 0.5;
+
+  stroke-dasharray: 308;
+  stroke-dashoffset: 308;
+}
+
+.innovation__root p{
+  font-size: 1.2rem;
+}
+
+/* ----------------------- imgArea 세부사항 ------------------------ */
+.innovation__root .imgDiv{
+  width: 42%;
+  margin-bottom: 3rem;
+  opacity: 0;
+  will-change: transform;
+}
+
+.innovation__root .imgDiv img{
+  width: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 780px){
+  .innovation__root__wrapper{grid-template-columns: 1fr;}
+  .innovation__root__wrapper > .imgArea{
+    flex-direction: column;
+  }
+  .innovation__root .imgDiv{width: 100%;}
+}
+
+
+/* ========================================================
+------------------ section 3 what we do -------------------
+======================================================== */
+.whateWeDo__root{
+  position: relative;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+
+  display: flex;
+  justify-content: center;
+}
+
+.whateWeDo__root__wrapper{
+  padding-top: 3rem;
+
+  width: 90%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.textRow{
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+/* ======================== h2Area, rightArea, imgArea ======================= */
+.whateWeDo__root__wrapper > .textRow .h2Area{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.whateWeDo__root__wrapper > .textRow .rightArea{
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.whateWeDo__root__wrapper > .imgArea{
+  padding-top: 3rem;
+  grid-column: 1/-1;
+  display: flex;
+}
+
+/* ----------------------- h2Area 세부사항 ------------------------ */
+.whateWeDo__root .h2Area h2{
+  font-size: 3.5rem;
+}
+
+.whateWeDo__root .desginCricle{
+  position: absolute;
+  width: 96%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.whateWeDo__root svg{
+  display: block;
+  overflow: hidden;
+}
+.whateWeDo__root circle{
+  fill: none;
+  stroke: black;
+  stroke-width: 0.5;
+
+  stroke-dasharray: 308;
+  stroke-dashoffset: 308;
+}
+
+.whateWeDo__root .textRow .desginLine{
+  position: absolute;
+  top: 0;
+  right: 50%;
+
+  height: 100%;
+  width: 0.5px;
+  background-color: black;
+  
+  transform-origin: top;
+  scale: 1 0;
+  /* scale이 가로축은 1 그대로 세로축이 0 */
+}
+
+/* ----------------------- rightArea 세부사항 ------------------------ */
+.whateWeDo__root .textArea{
+  width: 92%;
+}
+
+
+.whateWeDo__root p{
+  font-size: 1.2rem;
+}
+
+/* ------------- aHoverArrow 세부사항-------------  */
+.aHoverArrow{
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  cursor:pointer;
+}
+.arrow{
+  width:120px;
+  height:60px;
+  transition: transform 0.5s ease;
+  scale: 0.7;
+}
+.arrow line{
+  stroke:#000;
+  stroke-width:1;
+  fill:none;
+}
+.arrow circle{
+  stroke:#000;
+  stroke-width:1;
+  fill: #000;
+}
+/* 원 */
+.arrow-circle{
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.5s ease;
+}
+/* hover */
+.aHoverArrow:hover .arrow-circle{
+  transform: translateX(80px) scale(1.5);
+}
+.aHoverArrow:hover .arrow {
+  transform: scale(1.2);
+}
+
+.aHoverArrow p{
+  white-space: nowrap;
+  font-weight: 600; 
+  font-size: 1em;
+}
+
+/* ----------------------- imgArea 세부사항 ------------------------ */
+.whateWeDo__root .imgDiv{
+  position: relative;
+  width: calc(100%/3);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.whateWeDo__root .imgDiv h4{
+  position: absolute;
+  left: 0.8rem;
+  top: 0.8rem;
+  font-size: 1.2rem;
+  z-index: 1;
+}
+
+.whateWeDo__root .imgDiv img{
+  width: 100%;
+  object-fit: cover;
+  scale: 1.2;
+}
+
+
+@media screen and (max-width: 780px){
+  .whateWeDo__root__wrapper .textRow{grid-template-columns: 1fr;}
+  .whateWeDo__root__wrapper > .imgArea{
+    flex-direction: column;
+  }
+  .whateWeDo__root .desginCricle{display: none;}
+  .whateWeDo__root .desginLine{left: 0;}
+  .whateWeDo__root .imgDiv{width: 100%;}
+}
+
+/* ========================================================
+---------------- section 4 drivingBeauty ------------------
+======================================================== */
+.drivingBeauty_root{
+  position: relative;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  background-color: white;
+}
+
+.drivingBeauty_root_wrapper{
+  margin-top: 3rem;
+  width: 92%;
+  height: 100%;
+
+  background-color: white;
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+/* ======================== textArea, desginArea ======================= */
+.drivingBeauty_root_wrapper > .textArea{
+  /* width: 40%; */
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.drivingBeauty_root_wrapper > .desginArea{
+  /* width: 60%; */
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* ----------------------- textArea 세부사항 ------------------------ */
+.drivingBeauty_root_wrapper .textArea h2{
+  font-size: 3.5rem;
+  font-weight: 400;
+}
+.drivingBeauty_root_wrapper .textArea p{
+  font-size: 1.2rem;
+}
+/* ----------------------- desginArea 세부사항 ------------------------ */
+/* 원 관련  */
+.drivingBeauty_root_wrapper .svgCricle{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.drivingBeauty_root_wrapper .desginArea svg{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* display: block; */
+  overflow: hidden;
+  transform: rotate(-90deg);
+}
+.drivingBeauty_root_wrapper .desginArea circle{
+  width: 100%;
+  /* height: 100%; */
+  fill: white;
+  stroke: black;
+  stroke-width: 0.5;
+
+  stroke-dasharray: 616;
+  stroke-dashoffset: 616;
+}
+
+.drivingBeauty_root_wrapper .svgCricle.left{
+  left: 10%;
+}
+.drivingBeauty_root_wrapper .svgCricle.right{
+  left: 70%}
+.drivingBeauty_root_wrapper .svgCricle.right svg{
+  transform: rotate(-180deg);
+}
+
+@media screen and (max-width: 780px){
+  .drivingBeauty_root_wrapper{grid-template-columns: 100%;}
+
+  .drivingBeauty_root_wrapper > .desginArea{display: none;}
+  /* .drivingBeauty_root_wrapper > .textArea{width: 100%;} */
+}
+
+
+
+/* ========================================================
+------------------ section 5 HighQulity -------------------
+======================================================== */
+.highQuality_root{
+  padding-top: 3rem;
+  position: relative;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.highQuality_root_wrapper{
+  position: relative;
+
+  width: 90%;
+  height: 100%;
+
+  /* display: flex;
+  flex-direction: row;
+  justify-content: center; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+
+  justify-items: center;
+}
+
+/* ======================== titleArea, textArea, desginLine ======================= */
+.highQuality_root_wrapper > .titleArea{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 94%;
+}
+.highQuality_root_wrapper > .textArea{
+  grid-column: 2/3;
+  grid-row: 2/3;
+  width: 94%;
+  margin-bottom: 1rem;
+}
+
+.highQuality_root_wrapper > .desginLine{
+  position: absolute;
+  top: 0;
+  right: 50%;
+
+  height: 100%;
+  width: 0.5px;
+  background-color: black;
+  
+  transform-origin: top;
+  scale: 1 0;
+}
+
+/* ----------------------- titleArea 세부사항 ------------------------ */
+.highQuality_root_wrapper .titleArea h2{
+  font-size: 3.5rem;
+  font-weight: 400;
+}
+
+/* ----------------------- textArea 세부사항 ------------------------ */
+.highQuality_root_wrapper .textArea p{
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 780px){
+  .highQuality_root_wrapper{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .highQuality_root_wrapper > .titleArea{
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .highQuality_root_wrapper > .textArea{
+    margin-top: 3rem;
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .highQuality_root_wrapper > .desginLine{left: 0;}
+}
+
+/* ========================================================
+------------------------- backdrop ------------------------
+======================================================== */
+.backdrop{
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  width: 100%;
+  height: 8rem;
+
+  background-color: #fafafa;
+  background-image:
+    radial-gradient(rgba(0,0,0,0.06) 1px, transparent 4px);
+  background-size: 16px 16px;
+}
+
+/* ========================================================
+------------------- section 6 ourStory --------------------
+======================================================== */
+.ourStory_root{
+  position: relative;
+  margin-top: 3rem;
+  margin: 0 auto;
+
+  width: 90%;
+  height: 100%;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+}
+
+.ourStory_root_wrapper{
+  width: 100%;
+  height: 100%;
+  
+  display: grid;
+  grid-template-columns: 45% 55%;
+  justify-items: center;
+}
+
+/* ======================== textArea, imgArea desginLine ======================= */
+.textArea{
+  width: 92%;
+}
+
+.mediaArea{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.ourStory_root_wrapper .desginLine{
+  position: absolute;
+  top: 0;
+  left: 45%;
+
+  height: 100%;
+  width: 0.5px;
+  background-color: black;
+  
+  transform-origin: top;
+  scale: 1 0;
+}
+
+/* ----------------------- textArea 세부사항 ------------------------ */
+.ourStory_root_wrapper .textArea h2{
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-top: 4.5rem;
+  margin-bottom: 3rem;
+}
+
+.ourStory_root_wrapper .textArea p{
+  font-size: 1.2rem;
+}
+
+
+/* ----------------------- mdediaArea 세부사항 ------------------------ */
+.ourStory_root_wrapper .desginCricle{
+  position: absolute;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.ourStory_root_wrapper svg{
+  display: block;
+  overflow: hidden;
+}
+.ourStory_root_wrapper circle{
+  fill: none;
+  stroke: black;
+  stroke-width: 0.5;
+
+  stroke-dasharray: 308;
+  stroke-dashoffset: 308;
+}
+
+.mediaArea .imgArea{
+  position: relative;
+
+}
+
+.mediaArea img{
+  position: absolute;
+  width: 22%;
+  object-fit: cover;
+}
+
+.mediaArea img:nth-child(1){
+  top: 20%;
+  left: 55%;
+}
+.mediaArea img:nth-child(2){
+  top: 40%;
+  left: 20%;
+}
+.mediaArea img:nth-child(3){
+  top: 55%;
+  left: 65%;
+}
+
+@media screen and (max-width: 780px){
+  .ourStory_root_wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .mediaArea img{width: 50%;}
+
+  .mediaArea img:nth-child(1){
+    top: 0;
+    left: 45%;
+  }
+  .mediaArea img:nth-child(2){
+    top: 35%;
+    left: 2%;
+  }
+  .mediaArea img:nth-child(3){
+    top: 65%;
+    left: 53%;
+  }
+
+  .ourStory_root_wrapper .desginLine{
+    left: 0%;
+  }
+}
+
+
+
+/* ========================================================
+-------------------- section 7 media ----------------------
+======================================================== */
+.media_root{
+  position: relative;
+  margin-top: 3rem;
+
+  width: 100%;
+  height: 100%;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+}
+
+.media_root_wrapper{
+  width: 90%;
+  height: 100%;
+  
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+/* ======================== titleArea, textArea, desginLine ======================= */
+.media_root_wrapper .titleArea{
+  width: 92%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.media_root_wrapper .textArea{
+  width: 92%;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.media_root_wrapper .desginLine{
+  position: absolute;
+  top: 0;
+  right: 50%;
+
+  height: 100%;
+  width: 0.5px;
+  background-color: black;
+  
+  transform-origin: top;
+  scale: 1 0;
+}
+
+/* ----------------------- titleArea 세부사항 ------------------------ */
+.media_root_wrapper .titleArea h2{
+  font-size: 3.5rem;
+  font-weight: 400;
+}
+
+/* ----------------------- textArea 세부사항 ------------------------ */
+.media_root_wrapper .textArea p{
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 780px){
+  .media_root_wrapper{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .media_root_wrapper .titleArea{
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .media_root_wrapper .textArea{
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .media_root_wrapper .desginLine{left: 5%;}
+}

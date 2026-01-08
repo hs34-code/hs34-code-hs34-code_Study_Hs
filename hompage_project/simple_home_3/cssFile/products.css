@@ -16,7 +16,6 @@
 
   justify-content: center;
   margin: 0 auto;
-  background: lightgoldenrodyellow;
 }
 
 /*============= 상품 개별 card =============*/
@@ -74,7 +73,6 @@ Button area
 
   border: 1px solid black;
   border-radius: 20px;
-  background: lightblue;
 }
 
 .productsList button{

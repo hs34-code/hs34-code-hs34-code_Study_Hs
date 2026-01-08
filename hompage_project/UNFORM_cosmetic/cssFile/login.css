@@ -1,0 +1,409 @@
+/* ========================================================
+------------------- login html 기본 설정 ------------------
+========================================================= */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+  overflow-x: hidden;
+  background: linear-gradient(
+  to bottom,
+  rgba(0,0,0,1) 0%,
+  rgb(164, 164, 164) 100%
+  );
+}
+
+
+/* ========================================================
+----------------------- 놓여져 있는 책 ---------------------
+========================================================= */
+.floorSet{
+  position: relative;
+  margin-top: 400px;
+  margin-bottom: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginDesignBook{
+  position: relative;
+
+  width: 40%;
+  max-width: 500px;
+
+  aspect-ratio: 1/1.4;
+
+  container-type: inline-size;
+
+  display: flex;
+  align-items: center;
+  justify-content: left;
+
+  transform-style: preserve-3d;
+  perspective: 2500px;
+  transition: transform 1s ease;
+}
+
+
+/* ========================================================
+--------------------- anmation effect ---------------------
+========================================================= */
+.loginDesignBook .designCover{z-index: 6;}
+.loginDesignBook .page:nth-of-type(1){z-index: 5;}
+.loginDesignBook .page:nth-of-type(2){z-index: 4;}
+.loginDesignBook .page:nth-of-type(3){z-index: 3;}
+.loginDesignBook .page:nth-of-type(4){z-index: 2;}
+.loginDesignBook .page:nth-of-type(5){z-index: 1;}
+
+.cover-front, .cover-back,
+.page-front,.page-back{
+  backface-visibility: hidden;
+}
+
+.pageOpen{
+  transform: rotateY(-180deg);
+}
+
+
+/* 책 펼쳐질시 중앙정렬 */
+.startBook{
+  transform: translateX(50%);
+  z-index: 0;
+}
+
+/* ===== [추가] 페이지 열릴 때 cover를 뒤로 ===== */
+.loginDesignBook.coverHidden .designCover{
+  z-index: 0;
+}
+
+
+/* ========================================================
+----------------------- design cover ----------------------
+========================================================= */
+.designCover{
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+}
+
+.cover-front{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  
+  background-color: #cecece;
+  border-radius: 0 7.5cqw 7.5cqw 0;
+}
+
+.cover-back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-color: #cecece;
+  border-radius: 7.5cqw 0 0 7.5cqw;
+  transform: rotateY(180deg);
+}
+
+
+.designBackCover{
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: #cecece;
+  border-radius: 0 7.5cqw 7.5cqw 0;
+}
+
+.desginShape{
+  position: absolute;
+  width: 80%;
+  height: 85%;
+  border: 1.5cqw solid #8a8a8a;
+}
+
+/* ========== text 세부 design =========== */
+.designCover p{
+  color: #9b9b9b;
+  font-size: 3.2cqw;
+  letter-spacing: 0.02cqw;
+  margin-bottom: 40cqw;
+}
+
+.designCover h3{
+  text-align: center;
+  color: black;
+}
+
+.designCover h3:nth-of-type(1){
+  color: #4a4a4a;
+  font-weight: 600;
+  font-size: 7.8cqw;
+  margin-bottom: 5cqw;
+}
+
+.designCover h3:nth-of-type(2){
+  color: #4a4a4a;
+  font-weight: 600;
+  font-size: 7.0cqw;
+}
+
+/* ========================================================
+----------------------- page 공통 설정 --------------------
+========================================================= */
+.page{
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+}
+
+.page-front{
+  position: absolute;
+  width: 95%;
+  height: 95%;
+
+  background-color: #ffffff;
+  border-radius: 0 5cqw 5cqw 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page-back{
+  position: absolute;
+  width: 95%;
+  height: 95%;
+
+  background-color: #ffffff;
+  border-radius: 5cqw 0 0 5cqw;
+  transform: rotateY(180deg);
+}
+
+/* ========== Category =========== */
+.page h2{
+  width: 100%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 10cqw;
+  font-weight: 700;
+
+  color: black;
+}
+
+/* ========== Input Area =========== */
+.page .inputArea{
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  overflow-y: auto;
+}
+
+.page form{
+  width: 90%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ========== Input Area div=========== */
+.box{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-top: 6cqw;
+}
+
+.page form label{
+  width: 28%;
+  font-size: 3.5cqw;
+  color: #555;
+}
+
+.page form input{
+  width: 60%;
+  padding: 2cqw 2cqw;
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  font-size: 3cqw;
+}
+
+.alertText{
+  width: 100%;
+  height: 6.5cqw;
+  text-align: center;
+  background-color: lightcoral;
+}
+
+/* ========== open Password Icon =========== */
+.btn-openPassword{
+  margin-left: 2%;
+  width: 10%;
+  aspect-ratio: 1/1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: none;
+  border: none;
+  color: black;
+
+  cursor: pointer;
+}
+
+.btn-openPassword span{
+  font-size: 5.5cqw;
+}
+
+.btn-openPassword .none{
+  display: none;
+}
+
+/* ========== submit button =========== */
+.page form button[type="submit"]{
+  margin-top: 6cqw;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 70%;
+  font-size: 4.5cqw;
+  padding: 2cqw 2cqw;
+
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+/* ========== buttn Area button =========== */
+.btnArea{
+  margin-top: 5cqw;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3cqw;
+}
+
+.btnArea button{
+  width: 25cqw;
+  background: none;
+  border: none;
+  font-size: 3.5cqw;
+  color: #3e3e3e;
+  cursor: pointer;
+}
+
+/* ========== find 시리즈 pop up =========== */
+
+.popupFound{
+  position: absolute;
+  width: 60%;
+  aspect-ratio: 1/1;
+
+  border-radius: 3cqw;
+  box-shadow: 0 0 10px black;
+
+  background-color: #e1e1e1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popupFound p{
+  font-size: 4cqw;
+}
+
+.popupFound .close{
+  position: absolute;
+  top: 2cqw;
+  right: 2cqw;
+  font-size: 5cqw;
+}
+
+.popupHidden{
+  display: none;
+}
+
+/* ========================================================
+----------------------- Login Page 설정 -------------------
+========================================================= */
+.testhidden{
+  display: none;
+}
+
+/* ========================================================
+---------------------- signUp Page 설정 -------------------
+========================================================= */
+.signUp .box{
+  margin-top: 2cqw;
+
+}
+.signUp button[type="submit"]{
+  margin-top: 2cqw;
+}
+
+
+.box .agree{
+  align-items: center;
+}
+.signUp input[type="checkbox"]{
+  width: auto;
+  border: 1px solid #ccc;
+}
+
+/* ========================================================
+--------------------- findEmail Page 설정 ------------------
+========================================================= */
+
+
+
+/* ========================================================
+------------------- findPassword Page 설정 -----------------
+========================================================= */
+.findPassword .box{
+  margin-top: 2cqw;
+
+}
+.findPassword button[type="submit"]{
+  margin-top: 2cqw;
+}
