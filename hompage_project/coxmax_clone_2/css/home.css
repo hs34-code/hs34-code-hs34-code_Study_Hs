@@ -1,0 +1,680 @@
+/* ========================================================
+------------------ home main css 기본 설정 -----------------
+======================================================== */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid red; */
+}
+
+/* main{
+  display: flex;
+
+  flex-direction: column;
+  gap: 3rem;
+} */
+
+main *{
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 200;
+  letter-spacing: 1px;
+  word-break:keep-all;
+  overflow-wrap: normal;
+}
+
+main h3{font-size: 3.2rem}
+main p{
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+main .wrapper{
+  position: relative;
+  padding: 3rem 0;
+
+  width: 94%;
+  margin: 0 auto;
+}
+
+
+/* ========== svg 도형들 ========== */
+/* ----- anmation Line ----- */
+main .desginLineMoveY{
+  position: absolute; 
+  width: 1px;
+  height: 100%;
+  top: 0;
+
+  display: block;
+  transform-box: fill-box;
+}
+main .desginLineMoveY line{
+  stroke:black;
+  stroke-width:1;
+}
+
+/* ----- anmation half cricle ----- */
+main .desginHalfCricleMove_wrapper{
+  position: relative;
+  width: 100%;
+}
+main .desginHalfCricleMove{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+main .desginHalfCricleMove circle{
+  fill: none;
+  stroke:black;
+  stroke-width:0.5;
+  top: -50%;
+}
+
+
+/* ----- aLinkButton" ----- */
+.aLinkButton{
+  text-decoration: none;
+  color: black;
+  margin-top: 2rem;
+
+  display: flex;
+  align-items: center;
+  cursor:pointer;
+}
+.aLinkButton p {
+  font-weight: 500;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+.arrow{
+  width:120px;
+  height:60px;
+  transition: transform 0.5s ease;
+  scale: 0.7;
+}
+.arrow line{
+  stroke:#000;
+  stroke-width:2;
+  fill:none;
+  transition: stroke 0.2s ease;
+}
+.arrow circle{
+  stroke:#000;
+  stroke-width:2;
+  fill: #000;
+  transform-origin: center;
+  transition: transform 0.5s ease;
+}
+
+.aLinkButton:hover .arrow-circle{
+  transform: translateX(110px) scale(2);
+}
+.aLinkButton:hover .arrow line:nth-of-type(2),
+.aLinkButton:hover .arrow line:nth-of-type(3){
+  transition-delay: 0.3s;
+  stroke: white;
+}
+
+/* ========================================================
+----------------------- main1_wrapper ---------------------
+======================================================== */
+.main1{
+  display: flex;
+  flex-direction: column;
+
+  --titleAreaTop: 0;
+}
+.main1 .textArea{
+  display: flex;
+  flex-direction: column;
+}
+
+.main1 .titleArea{
+  padding: 0 15px 3rem 15px;
+  width: 50%;
+}
+.main1 .contentArea{
+  padding: 0 15px;
+  margin-left: 50%;
+  width: 50%;
+}
+
+.main1 .videoArea{
+  margin: 65px 0 180px 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+.main1 .videoArea video{
+  width: 60%;
+
+  transform-origin: top;
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+/* 디자인 선 */
+.main1 .desginLineY:nth-of-type(1){
+  left: 0;
+}
+.main1 .desginLineY:nth-of-type(2){
+  right: 0;
+}
+
+.main1 .desginLineY{
+  position: absolute;
+  width: 1px;
+  height: calc(100% - var(--titleAreaTop) - 3rem);
+  top: var(--titleAreaTop);
+
+  display: block;
+}
+
+.main1 .desginLineY line{
+  stroke:black;
+  stroke-width:1;
+}
+
+/* ========================================================
+----------------------- main2_wrapper ---------------------
+======================================================== */
+.main2{
+  background-color: #f3f0ed;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+}
+.main2 .textArea{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+} 
+
+.main2 .titleArea{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main2 .desginCantentArea_wrapper{
+  grid-column: 2/3;
+  grid-row: 1/2;
+  
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+}
+
+.main2 .desginHalfCricleMove_wrapper{
+  padding: 0 20px;
+}
+.main2 .contentArea{
+  padding: 0 20px;
+  margin-top: 10%;
+}
+.main2 .desginLineMoveY{left: 0;}
+
+
+.main2 .imgArea{
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+}
+.main2 .img_wrapper{
+  width: 88%;
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+}
+.main2 .img_wrapper img{
+  width: 49%;
+  object-fit: cover;
+}
+
+/* ========================================================
+----------------------- main3_wrapper ---------------------
+======================================================== */
+.main3{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.main3 .textArea{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+.main3 .desginLineMoveY{
+  left: 50%;
+}
+
+.main3 .titleArea_wrapper{
+  position: relative;
+  padding: 0 15px;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main3 .contentArea_wrapper{
+  padding: 0 15px;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.main3 .titleArea{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.main3 .desginHalfCricleMove_wrapper{}
+
+.main3 .contentArea{
+  margin-top: 10%;
+}
+.main3 .aLinkButton{}
+
+
+/* img Area */
+.main3 .imgArea_wrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.main3 .imgArea{
+  position: relative;
+  width: calc(100%/3);
+  overflow: hidden;
+}
+.main3 .imgArea p{
+  position: absolute;
+  z-index: 1;
+  padding: 1rem 0 0 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.main3 .imgArea img{
+  width: 100%;
+  object-fit: cover;
+  scale: 1.2;
+}
+
+/* gsap 용 css */
+.main3 .imgArea{
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.main3 .imgArea.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================================
+----------------------- main4_wrapper ---------------------
+======================================================== */
+.main4{
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  grid-row: auto;
+}
+
+.main4 .textArea{
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+}
+.main4 .desginArea_wrapper{
+  grid-column: 2/3;
+}
+
+
+.main4 .titleArea{
+  padding: 0 15px 3rem 15px;
+}
+.main4 .contentArea{
+  padding: 0 15px;
+}
+.main4 .aLinkButton{}
+
+
+
+/* 원 애니메이션 */
+.main4 .desginArea{
+  position: relative;
+  
+  /* display: flex; */
+  /* align-items: center; */
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.main4 .desginArea svg{
+  position: absolute;
+  left: -27.5%;
+  width: 100%;
+  height: 100%;
+  transform-origin: left;
+  scale: 2.5;
+}
+.main4 .desginArea circle{
+  fill: none;
+  stroke: black;
+  stroke-width: 0.5;
+  stroke-dasharray: 628;
+  stroke-dashoffset: 628;
+}
+
+.main4 circle.circle-a{
+  transform-origin: 150px 150px;
+}
+.main4 circle.circle-b{
+  transform-origin: 300px 150px;
+  transform: rotate(60deg);
+}
+.main4 .animate{
+  animation: draw 1.5s ease-out forwards;
+}
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+.main4 circle.dot-q{
+  fill: black;
+  opacity: 0;
+}
+.main4 circle.dot-w{
+  fill: black;
+  opacity: 0;
+}
+
+/* ========================================================
+----------------------- main5_wrapper ---------------------
+======================================================== */
+.main5{}
+
+.main5_wrapper{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+.main5 .titleArea{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  padding: 0 15px;
+}
+.main5 .contentArea{
+  grid-column: 2/3;
+  grid-row: 2/3;
+  margin-top: 2rem;
+  padding: 0 15px;
+}
+
+.main5 .desginLineMoveY{
+  left: 50%;
+}
+
+
+/* ========================================================
+----------------------- main6_wrapper ---------------------
+======================================================== */
+.desginMargin{
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  width: 100%;
+  height: 8rem;
+
+  background-color: #fafafa;
+  background-image:
+    radial-gradient(rgba(0,0,0,0.06) 1px, transparent 4px);
+  background-size: 16px 16px;
+}
+
+.main6{}
+.main6_wrapper{
+  position: relative;
+  display: grid;
+  grid-template-columns: 45% 1fr;
+  grid-row: auto;
+}
+
+.main6 .textArea{
+  margin-top: 20%;
+  grid-column: 1/2;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.main6 .imgArea_wrapper{
+  position: relative;
+  padding: 0 15px;
+  grid-column: 2/3;
+
+  display: grid;
+}
+.main6 .desginLineMoveY{
+  left: 45%;
+}
+
+
+.main6 .desginCantentArea_wrapper{
+  grid-area: 1 / 1;
+  z-index: 1;
+  height: 400px;
+}
+.main6 .imgArea{
+  grid-area: 1 / 1;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+}
+.main6 .imgArea img{
+  position: relative;
+  width: 30%;
+}
+.main6 .imgArea img:nth-of-type(1){
+  left: 50%;
+  top: 0;
+}
+.main6 .imgArea img:nth-of-type(2){
+  left: -20%;
+  top: 45%;
+}
+.main6 .imgArea img:nth-of-type(3){
+  left: 5%;
+  top: 60%;
+}
+
+/* ========================================================
+----------------------- main7_wrapper ---------------------
+======================================================== */
+.main7{}
+
+.main7_wrapper{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+.main7 .titleArea{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  padding: 0 15px
+}
+.main7 .textArea{
+  grid-column: 2/3;
+  grid-row: 2/3;
+  padding: 0 15px
+}
+.main7 .desginLineMoveY{
+  left: 50%;
+}
+
+
+
+
+
+
+
+
+
+/* ======== main 1 ======== */
+@media screen and (max-width: 768px){
+  .main1 .titleArea{
+    width: 100%;
+  }
+  .main1 .contentArea{
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* ======== main 2 ======== */
+@media screen and (max-width: 768px){
+  .main2 .textArea{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .main2 .titleArea{
+    padding: 0 0 20px 20px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .main2 .desginCantentArea_wrapper{
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .main2 .img_wrapper{
+    width: 100%;
+    flex-direction: column;
+  }
+  .main2 .img_wrapper img{
+    width: 100%;
+  }
+}
+
+/* ======== main 3 ======== */
+@media screen and (max-width: 768px){
+  .main3 .textArea{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+  .main3 .titleArea_wrapper{
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .main3 .contentArea_wrapper{
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .main3 .desginLineMoveY{left: 0;}
+  .main3 .desginHalfCricleMove_wrapper{ display: none;}
+  .main3 .titleArea{position: static;}
+
+  .main3 .imgArea_wrapper{
+    flex-direction: column;
+  }
+  .main3 .imgArea{width: 100%;}
+}
+
+/* ======== main 4 ======== */
+@media screen and (max-width: 768px){
+  .main4 {grid-template-columns: 1fr;}
+  .main4 .textArea{grid-column: 1/2;}
+  .main4 .desginArea_wrapper{
+    display: none;
+  }
+
+}
+
+/* ======== main 5 ======== */
+@media screen and (max-width: 768px){
+  .main5_wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .main5 .contentArea{grid-column: 1/2;}
+
+  .main5 .desginLineMoveY{left: 0;}
+}
+
+/* ======== main 6 ======== */
+@media screen and (max-width: 768px){
+  .main6_wrapper{
+    grid-template-columns: 1fr;
+  }
+
+  .main6 .textArea{
+    margin-top: 0;
+    grid-column: 1/2;
+    padding: 0 15px;
+    gap: 0;
+  }
+  .main6 .imgArea_wrapper{
+    grid-column: 1/2;
+  }
+  .main6 .desginLineMoveY{
+    left: 0;
+  }
+
+  .main6 .imgArea{
+    position: relative;
+    width: 100%;
+    z-index: 2;
+  }
+  .main6 .imgArea img{
+    position: relative;
+    width: 40%;
+  }
+  .main6 .imgArea img:nth-of-type(1){
+    left: 50%;
+    top: 0;
+  }
+  .main6 .imgArea img:nth-of-type(2){
+    left: -35%;
+    top: 40%;
+  }
+  .main6 .imgArea img:nth-of-type(3){
+    left: 55%;
+    top: 30%;
+  }
+
+
+}
+
+/* ======== main 7 ======== */
+@media screen and (max-width: 768px){
+  .main7_wrapper{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+  .main7 .titleArea{
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .main7 .textArea{
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .main7 .desginLineMoveY{left: 0;}
+}

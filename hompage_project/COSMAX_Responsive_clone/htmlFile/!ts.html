@@ -1,94 +1,247 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>Circle Hover Button Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Circles Animation</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f5f5f5;
+        }
 
-<style>
-/* ================= 기본 세팅 ================= */
-*{
-  box-sizing: border-box;
-}
+        svg {
+            width: 600px;
+            height: 300px;
+        }
 
-body{
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f2f2f2;
-}
+        /* ============================================
+           빨간색 원 A - 디자인
+        ============================================ */
+        .circle-a {
+            fill: none;
+            stroke: #e63946;
+            stroke-width: 1;
+            stroke-dasharray: 628;
+            stroke-dashoffset: 628;  /* 처음엔 안 보임 */
+        }
 
-/* ================= 버튼 ================= */
-.btn{
-  position: relative;
-  width: 200px;
-  height: 60px;
-  border-radius: 999px;
-  border: 1px solid #000;
-  background: #fff;
-  overflow: hidden; /* 🔥 원 잘리는 핵심 */
-  cursor: pointer;
-}
+        /* ============================================
+           빨간색 원 B - 디자인
+        ============================================ */
+        .circle-b {
+            fill: none;
+            stroke: #e63946;
+            stroke-width: 1;
+            stroke-dasharray: 628;
+            stroke-dashoffset: 628;  /* 처음엔 안 보임 */
+        }
 
-/* ================= 원형 배경 ================= */
-.circle{
-  position: absolute;
-  width: 240px;
-  height: 240px;
-  background: #000;
-  border-radius: 50%;
-  left: 50%;
-  bottom: -180px; /* 처음엔 아래에 숨김 */
-  transform: translateX(-50%);
-  transition: transform 0.5s ease;
-}
+        /* ============================================
+           빨간색 원 C - 디자인
+        ============================================ */
+        .circle-c {
+            fill: none;
+            stroke: #e63946;
+            stroke-width: 1;
+            stroke-dasharray: 628;
+            stroke-dashoffset: 628;  /* 처음엔 안 보임 */
+        }
 
-/* ================= 텍스트 ================= */
-.text{
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: 600;
-  transition: all 0.4s ease;
-}
+        /* ============================================
+           빨간색 원 A - 애니메이션 효과
+           (시계방향, 12시 시작)
+        ============================================ */
+        .circle-a {
+            transform-origin: 150px 150px;
+            transform: rotate(-90deg);
+        }
+        
+        .circle-a.animate {
+            animation: draw 1.5s ease-out forwards;
+        }
 
-.text-default{
-  color: #000;
-}
+        /* ============================================
+           빨간색 원 B - 애니메이션 효과
+           (반시계방향, 5시 시작)
+        ============================================ */
+        .circle-b {
+            transform-origin: 300px 150px;
+            transform: rotate(60deg) scaleX(-1);
+        }
+        
+        .circle-b.animate {
+            animation: draw 1.5s ease-out forwards;
+        }
 
-.text-hover{
-  color: #fff;
-  transform: translateY(100%);
-  opacity: 0;
-}
+        /* ============================================
+           빨간색 원 C - 애니메이션 효과
+           (시계방향, 8시 시작)
+        ============================================ */
+        .circle-c {
+            transform-origin: 450px 150px;
+            transform: rotate(150deg);
+        }
+        
+        .circle-c.animate {
+            animation: draw 1.5s ease-out forwards;
+        }
 
-/* ================= hover ================= */
-.btn:hover .circle{
-  transform: translate(-50%, -160px); /* 슬며시 올라옴 */
-}
+        /* ============================================
+           검정색 점 Q - 디자인
+        ============================================ */
+        .dot-q {
+            fill: #1d3557;
+            opacity: 0;  /* 처음엔 안 보임 */
+        }
 
-.btn:hover .text-default{
-  transform: translateY(-100%);
-  opacity: 0;
-}
+        /* ============================================
+           검정색 점 W - 디자인
+        ============================================ */
+        .dot-w {
+            fill: #1d3557;
+            opacity: 0;  /* 처음엔 안 보임 */
+        }
 
-.btn:hover .text-hover{
-  transform: translateY(0);
-  opacity: 1;
-}
-</style>
+        /* ============================================
+           원 그리기 애니메이션 키프레임
+        ============================================ */
+        @keyframes draw {
+            from { stroke-dashoffset: 628; }
+            to { stroke-dashoffset: 0; }
+        }
+
+        /* ============================================
+           시작 버튼 스타일
+        ============================================ */
+        button {
+            position: fixed;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 40px;
+            font-size: 18px;
+            background: #e63946;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #d62828;
+        }
+    </style>
 </head>
-
 <body>
+    <svg viewBox="0 0 600 300">
+        <!-- ============================================
+             빨간색 원 A - 생성
+             위치: 중심(150, 150), 반지름 100
+        ============================================ -->
+        <circle class="circle-a" cx="150" cy="150" r="100"/>
+        
+        <!-- ============================================
+             빨간색 원 B - 생성
+             위치: 중심(300, 150), 반지름 100
+        ============================================ -->
+        <circle class="circle-b" cx="300" cy="150" r="100"/>
+        
+        <!-- ============================================
+             빨간색 원 C - 생성
+             위치: 중심(450, 150), 반지름 100
+        ============================================ -->
+        <circle class="circle-c" cx="450" cy="150" r="100"/>
+        
+        <!-- ============================================
+             검정색 점 Q - 생성
+             시작 위치: (150, 50)
+        ============================================ -->
+        <circle class="dot-q" cx="150" cy="50" r="6"/>
+        
+        <!-- ============================================
+             검정색 점 W - 생성
+             시작 위치: (300, 50)
+        ============================================ -->
+        <circle class="dot-w" cx="300" cy="50" r="6"/>
+    </svg>
 
-<button class="btn">
-  <span class="circle"></span>
-  <span class="text text-default">BUTTON</span>
-  <span class="text text-hover">HOVER</span>
-</button>
+    <!-- GSAP Start 버튼 (나중에 gsap.to()로 대체 예정) -->
+    <button onclick="gsapStart()">GSAP START</button>
 
+    <script>
+        // ============================================
+        // 검정색 점 Q - 애니메이션 설정
+        // ============================================
+        const dotQ = {
+            element: document.querySelector('.dot-q'),
+            원중심: { x: 150, y: 150 },
+            반지름: 100,
+            도착위치: { x: 225, y: 84 },
+            시계방향: true,
+            지속시간: 2000
+        };
+
+        // ============================================
+        // 검정색 점 W - 애니메이션 설정
+        // ============================================
+        const dotW = {
+            element: document.querySelector('.dot-w'),
+            원중심: { x: 300, y: 150 },
+            반지름: 100,
+            도착위치: { x: 375, y: 216 },
+            시계방향: false,
+            지속시간: 2000
+        };
+
+        // ============================================
+        // 점 애니메이션 함수 (공통)
+        // ============================================
+        function 점애니메이션(설정) {
+            설정.element.style.opacity = 1;  // 점 보이기
+            
+            const 시작시간 = performance.now();
+            const 도착각도 = Math.atan2(
+                설정.도착위치.y - 설정.원중심.y, 
+                설정.도착위치.x - 설정.원중심.x
+            );
+            
+            let 회전량 = 도착각도 + Math.PI / 2;
+            회전량 += 설정.시계방향 ? Math.PI * 2 : -Math.PI * 2;
+
+            function 움직임(현재시간) {
+                const 진행 = Math.min((현재시간 - 시작시간) / 설정.지속시간, 1);
+                
+                if (진행 < 1) {
+                    const 각도 = -Math.PI / 2 + 회전량 * 진행;
+                    설정.element.setAttribute('cx', 설정.원중심.x + Math.cos(각도) * 설정.반지름);
+                    설정.element.setAttribute('cy', 설정.원중심.y + Math.sin(각도) * 설정.반지름);
+                    requestAnimationFrame(움직임);
+                } else {
+                    설정.element.setAttribute('cx', 설정.도착위치.x);
+                    설정.element.setAttribute('cy', 설정.도착위치.y);
+                }
+            }
+            requestAnimationFrame(움직임);
+        }
+
+        // ============================================
+        // GSAP START 함수 (나중에 gsap.to()로 대체)
+        // ============================================
+        function gsapStart() {
+            // 빨간색 원 A, B, C 그리기 애니메이션 시작
+            document.querySelector('.circle-a').classList.add('animate');
+            document.querySelector('.circle-b').classList.add('animate');
+            document.querySelector('.circle-c').classList.add('animate');
+            
+            // 검정색 점 Q, W 움직임 애니메이션 시작
+            점애니메이션(dotQ);
+            점애니메이션(dotW);
+        }
+    </script>
 </body>
 </html>

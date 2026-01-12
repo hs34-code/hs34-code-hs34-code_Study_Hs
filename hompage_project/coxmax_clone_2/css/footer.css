@@ -1,0 +1,122 @@
+footer{
+  background-color: #f3f0ed;
+  padding: 30px 0;
+  display: flex;
+}
+footer .footerArea_wrapper{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  place-items: center;
+  overflow: hidden;
+}
+
+footer .textArea_wrapper{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+footer .desginArea{
+  position:lative;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+footer .desginLineY{
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: 0;
+  display: block;
+}
+footer .desginLineY line{
+  stroke:black;
+  stroke-width:1;
+}
+
+
+footer .textArea{
+  position: relative;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+footer .aLinkArea{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+footer .logoArea{}
+footer .textArea p{
+  line-height: 1.5;
+  font-weight: 200;
+  letter-spacing: 1px;
+  color: black;
+}
+footer .addressArea{}
+footer .tellArea{}
+footer .desginLineX{
+  width: 100%;
+  height: 1px;
+  display: none;
+}
+footer .desginLineX line{
+  stroke:black;
+  stroke-width:1;
+}
+footer .copyright1 p{
+  font-size: 0.7rem;
+}
+footer .copyright2 a{
+  font-size: 0.7rem;
+  color: rgb(80, 80, 80);
+}
+
+footer .aLinkArea p{}
+footer .aLinkAreaContent{
+  display: flex;
+  gap: 0.2rem;
+}
+footer .aLinkAreaContent a{
+  font-size: 1.6rem;
+  color: black;
+}
+
+footer .desginArea svg{
+  position: relative;
+  left: 20%;
+  width: 100%;
+  scale: 1.4;
+}
+footer .desginArea svg circle{}
+footer .circle-a, footer .circle-b, footer .circle-c{
+  fill: none;
+  stroke: black;
+  stroke-width: 1;
+}
+footer .dot-q, footer .dot-w{
+  fill: black;
+}
+
+@media screen and (max-width: 768px){
+  footer .footerArea_wrapper{grid-template-columns: 1fr;}
+  footer .textArea_wrapper{
+    flex-direction: column;
+  }
+  footer .textArea{width: 100%;}
+  footer .aLinkArea{width: 100%;}
+
+  footer .desginLineY{display: none;}
+  footer .desginLineX{display: block;}
+
+  footer .desginArea{display: none;}
+}
