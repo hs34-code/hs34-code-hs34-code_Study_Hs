@@ -1,56 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
 
-// ========================================================
-// ------------- desginLineY anmation effect --------------
-// ========================================================
-
-// 세로선
-gsap.utils.toArray(".desginLineMoveY").forEach((lineY) => {
-  gsap.fromTo(
-    lineY,
-    {
-      scaleY: 0,
-      transformOrigin: "top",
-    },
-    {
-      scaleY: 1,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: lineY,
-        start: "top center",
-        end: "top center",
-        toggleActions:"play none reverse none",
-        // markers: true,
-      }
-    }
-  )
-})
-//반원
-gsap.utils.toArray(".desginHalfCricleMove circle").forEach((circle) => {
-  const length = circle.getTotalLength();
-  gsap.fromTo(
-    circle,
-    {
-      strokeDasharray: length,
-      strokeDashoffset: length,
-    },
-    {
-      strokeDashoffset: 0,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: circle.closest(".desginHalfCricleMove"),
-        start: "top center",
-        end: "top center",
-        toggleActions: "play none reverse none",
-        // markers: true,
-      }
-    }
-  )
-})
-
-
 // media type 감지, media일때 실행안되게 할려면 if(isMobile)
 const mediaWidth = window.matchMedia("(max-width: 768px)");
 let isMobile = mediaWidth.matches;

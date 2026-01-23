@@ -1,0 +1,484 @@
+/* ========================================================
+-------------------- whatwedo_1 기본 설정 ------------------
+======================================================== */
+
+/* main{
+  margin-top: 100px;
+} */
+
+main .wrapper{
+  position: relative;
+  padding: 3rem 0;
+
+  width: 94%;
+  margin: 0 auto;
+}
+
+
+main h3{
+  font-size: 3.2rem;
+  font-weight: 300;
+}
+main p{
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+
+.test2{
+  width: 100%;
+  height: 2000px;
+  background-color: lightcyan;
+}
+
+/* ========================================================
+------------------------ heroabanner ----------------------
+======================================================== */
+.heroBanner{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  
+  justify-items: center;
+  align-items: end;
+}
+
+.heroBanner .ImgArea{
+  background-color: lightgray;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.heroBanner .cricleTitleArea{
+  position: relative;
+  width: 94%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  margin-bottom: 5%;
+}
+.desginHalfCricleMove circle{
+  stroke:white;
+}
+
+.heroBanner .titleArea{
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+  width: 50%;
+}
+.heroBanner .titleArea h2{
+  color: white;
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+
+.heroBanner .ImgArea .imgCover{
+  width: calc(100% / 3);
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  will-change: opacity, transform;
+  overflow: hidden;
+}
+.heroBanner .ImgArea .imgCover.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+.heroBanner .ImgArea img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+@media screen and (max-width: 768px){
+  .heroBanner{}
+  .heroBanner .ImgArea{}
+  .heroBanner .cricleTitleArea{}
+  .heroBanner .titleArea{
+    position: relative;
+    margin-top: 1rem;
+    left: 0;
+    width: 100%;
+  }
+  .heroBanner .titleArea h2{}
+
+
+  .heroBanner .ImgArea .imgCover:not(.mediaMain){
+    display: none;
+  }
+  .heroBanner .ImgArea .mediaMain{
+    width: 100%;
+  }
+  .heroBanner .ImgArea img{}
+}
+
+/* ========================================================
+----------------------- main1_wrapper ---------------------
+======================================================== */
+.main1{
+  display: flex;
+  flex-direction: column;
+}
+.main1 .contentArea{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row: auto auto;
+}
+
+.main1 .titleArea{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  padding: 0 15px;
+}
+.main1 .textArea{
+  grid-column: 2/3;
+  grid-row: 2/3;
+  padding: 2rem 15px 0 15px;
+}
+.main1 .desginLineMoveY{
+  left: 50%;
+}
+
+.main1 .imgArea{
+  width: 100%;
+  height: 100%;
+  padding: 70px 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
+.main1 .imgCover{
+  width: 40%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.main1 .imgCover img{
+  width: 100%;
+  height: 100%;
+  scale: 1.3;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px){
+  .main1{}
+  .main1 .contentArea{
+    grid-template-columns: 1fr;
+  }
+
+  .main1 .titleArea{
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .main1 .textArea{
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .main1 .desginLineMoveY{
+    left: 0;
+  }
+
+  .main1 .imgArea{
+    flex-direction: column;
+  }
+  .main1 .imgCover{
+    width: 100%;
+  }
+  .main1 .imgCover img{
+  }
+}
+
+/* ========================================================
+----------------------- main2_wrapper ---------------------
+  ======================================================== */
+.main2{
+  display: flex;
+  flex-direction: column;
+}
+.main2 .contentArea{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+.main2 .desginAnimationArea{}
+
+.main2 .titleArea{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  padding: 0 15px;
+}
+.main2 .textArea{
+  grid-column: 2/3;
+  grid-row: 2/3;
+  padding: 2rem 15px 0 15px;
+}
+.main2 .desginLineMoveY{
+  left: 50%;
+}
+
+
+/* ========= desginAnimationArea ========= */
+.main2.desginAnimationArea{}
+.main2 .desginAnimationArea svg{
+  width: 100%;
+  height: auto;
+}
+
+.main2 .svg-circle{
+  fill: none;
+  stroke: black;
+  stroke-width: 1;
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+.main2 .svg-circle.show{
+  opacity: 1;
+}
+.main2 #movingCircle{
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.main2 .moving-circle{
+  fill: none;
+  stroke: black;
+  stroke-width: 1;
+
+  stroke-dasharray: 628;
+  stroke-dashoffset: 628; /* ← 완전히 숨김 */
+}
+.main2 .moving-circle.transition{  
+  transition: 
+  stroke-dashoffset 1s linear,
+  transform 1s ease;
+}
+
+.main2 .circle-text{
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 300;
+  font-size: 1.3rem;
+  fill: darkblue;
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+.main2 .circle-text.show{
+  opacity: 1;
+}
+
+.main2 .top-line, .main2 .bottom-line {
+  stroke-width: 2;
+}
+/* ----- top line area ----- */
+.main2 .top-line{
+  stroke: black;
+}
+.main2 .brand-circle{}
+.main2 .brand-text{
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  fill: white;
+}
+.main2 .top-dot{}
+
+/* ----- bottom line area ----- */
+.main2 .bottom-line{
+  stroke: burlywood;
+}
+.main2 .product-circle{
+  stroke: burlywood;
+  fill: burlywood;
+}
+.main2 .product-text{
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  fill: black;
+}
+.main2 .bottom-dot{
+  fill: burlywood;
+}
+
+/* 공용 라인 */
+.main2 .beige-ring{
+  fill: none;
+  stroke: burlywood;
+  stroke-width: 1;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.main2 .beige-ring.show{
+  opacity: 1;
+}
+.main2 .lineAnimation{
+  transition: 
+  transform 1s ease,
+  opacity 1s ease;
+}
+.main2 .lineShow{
+  transform: translateY(0);
+  opacity: 1;
+}
+.main2 .lineHidden{
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+@media screen and (max-width: 768px){
+  .main2{}
+  .main2 .contentArea{
+    grid-template-columns: 1fr;
+  }
+  .main2 .desginAnimationArea{}
+
+  .main2 .titleArea{
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .main2 .textArea{
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .main2 .desginLineMoveY{left: 0;}
+}
+
+/* ========================================================
+----------------------- main3_wrapper ---------------------
+======================================================== */
+.main3{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+
+  --imgCoverWidth: 200px
+}
+.main3 .imgCover{
+  padding: 0 15px;
+}
+.main3 .imgCover.img1{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  padding-left: 50%;
+}
+.main3 .imgCover.img2{
+  position: absolute;
+  top: 25%;
+  left: 5%;
+}
+.main3 .imgCover img{
+  width: var(--imgCoverWidth);
+}
+.main3 .titleArea{
+  grid-column: 1/2;
+  grid-row: 2/3;
+  margin-top: 3rem;
+  padding-left: 45%;
+}
+
+@media screen and (max-width: 768px){
+  .main3{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  .main3 .imgCover.img1{
+    padding-left: 0;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .main3 .imgCover.img2{
+    position: relative;
+    top: 0;
+    left: 0;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    
+  }
+  .main3 .imgCover img{
+    width: 100%;
+  }
+  .main3 .titleArea{
+    padding-left: 0;
+    grid-column: 1/-1;
+    grid-row: 3/4;
+  }
+}
+
+/* ========================================================
+----------------------- main4_wrapper ---------------------
+======================================================== */
+.main4{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.main4 .contentArea{
+  padding: 0 15px;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main4 .imgArea{
+  padding: 0 15px;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main4 .imgCover{
+  width: 70%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+.main4 .imgCover img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px){
+  .main4{
+    grid-template-columns: 1fr;
+  }
+  .main4 .contentArea{}
+  .main4 .imgArea{
+    display: none;
+  }
+
+  .main4 .imgCover{}
+  .main4 .imgCover img{}
+}
+
+
+/* ========================================================
+----------------------- main5_wrapper ---------------------
+======================================================== */
+/* @media screen and (max-width: 768px) */
+
+
+
+
+
+
+
+
+/* ========================================================
+----------------------- main3_wrapper ---------------------
+======================================================== */
+/* @media screen and (max-width: 768px) */

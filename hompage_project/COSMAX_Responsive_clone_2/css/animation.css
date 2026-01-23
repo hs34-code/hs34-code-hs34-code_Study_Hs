@@ -1,0 +1,105 @@
+/* =================== 기본세팅 =================== */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid red; */
+
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 200;
+  /* letter-spacing: 1px; */
+  word-break:keep-all;
+  overflow-wrap: normal;
+}
+
+/* =================== animation =================== */
+/* ================= gsap ================= */
+.imgCover.animationOutImg{
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.imgCover.animationOutImg.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= svg ================= */
+/* =========== 반원 =========== */
+.desginHalfCricleMove_wrapper{
+  position: relative;
+  width: 100%;
+}
+.desginHalfCricleMove{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.desginHalfCricleMove circle{
+  fill: none;
+  stroke:black;
+  stroke-width:0.5;
+  top: -50%;
+}
+/* =========== 세로선 =========== */
+main .desginLineMoveY{
+  position: absolute; 
+  width: 1px;
+  height: 100%;
+  top: 0;
+
+  display: block;
+  transform-box: fill-box;
+}
+main .desginLineMoveY line{
+  stroke:black;
+  stroke-width:1;
+}
+
+/* =========== aLinkButton =========== */
+.aLinkButton{
+  text-decoration: none;
+  color: black;
+  margin-top: 2rem;
+
+  display: flex;
+  align-items: center;
+  cursor:pointer;
+}
+.aLinkButton p {
+  font-weight: 500;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+.arrow{
+  width:120px;
+  height:60px;
+  transition: transform 0.5s ease;
+  scale: 0.7;
+}
+.arrow line{
+  stroke:#000;
+  stroke-width:2;
+  fill:none;
+  transition: stroke 0.2s ease;
+}
+.arrow circle{
+  stroke:#000;
+  stroke-width:2;
+  fill: #000;
+  transform-origin: center;
+  transition: transform 0.5s ease;
+}
+
+.aLinkButton:hover .arrow-circle{
+  transform: translateX(110px) scale(2);
+}
+.aLinkButton:hover .arrow line:nth-of-type(2),
+.aLinkButton:hover .arrow line:nth-of-type(3){
+  transition-delay: 0.3s;
+  stroke: white;
+}

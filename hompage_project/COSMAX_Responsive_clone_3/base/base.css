@@ -1,0 +1,183 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 200;
+  word-break:keep-all;
+  overflow-wrap: normal;
+}
+/* 
+html {
+  font-size: clamp(14px, 0.9vw + 0.5rem, 16px);
+} */
+
+:root {
+  --fsh1 : 1rem;
+  --fsh2 : 1rem;
+  --fsh3 : clamp(3.2rem, 2.2rem + 2.8vw, 6.4rem);
+  --fsh4 : 1rem;
+  --fsh5 : 1rem;
+  --fsh6 : 1rem;
+  --fsp : clamp(1.3rem, 0.9rem + 1.14vw, 1.5rem);
+
+  --wrapperTopPadding: 50px
+}
+
+* h3{font-size: var(--fsh3);}
+* p{font-size: var(--fsp);}
+
+.bottomGap{
+  margin-bottom: var(--fsh3);
+}
+
+
+
+
+.wrapper{
+  position: relative;
+  padding: var(--wrapperTopPadding) 0;
+  
+  margin: 0 15px;
+
+  border: 1px solid red;
+}
+
+.area{
+  padding: 0 15px;
+}
+
+main .desginLineY{
+  position: absolute; 
+  width: 2px;
+  height: 100%;
+  top: 0;
+
+  display: block;
+  transform-box: fill-box;
+}
+main .desginLineY line{
+  stroke:black;
+  stroke-width:1;
+}
+
+
+
+
+
+
+/* ----- anmation Line -----
+main .desginLineMoveY{
+  position: absolute; 
+  width: 1px;
+  height: 100%;
+  top: 0;
+
+  display: block;
+  transform-box: fill-box;
+}
+main .desginLineMoveY line{
+  stroke:black;
+  stroke-width:1;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+main p{
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+main .wrapper{
+  position: relative;
+  padding: 3rem 0;
+
+  width: 94%;
+  margin: 0 auto;
+} */
+
+
+/* ========== svg 도형들 ========== */
+
+
+/* ----- anmation half cricle ----- */
+/* main .desginHalfCricleMove_wrapper{
+  position: relative;
+  width: 100%;
+}
+main .desginHalfCricleMove{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+main .desginHalfCricleMove circle{
+  fill: none;
+  stroke:black;
+  stroke-width:0.5;
+  top: -50%;
+}
+
+
+.aLinkButton{
+  text-decoration: none;
+  color: black;
+  margin-top: 2rem;
+
+  display: flex;
+  align-items: center;
+  cursor:pointer;
+}
+.aLinkButton p {
+  font-weight: 500;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+.arrow{
+  width:120px;
+  height:60px;
+  transition: transform 0.5s ease;
+  scale: 0.7;
+}
+.arrow line{
+  stroke:#000;
+  stroke-width:2;
+  fill:none;
+  transition: stroke 0.2s ease;
+}
+.arrow circle{
+  stroke:#000;
+  stroke-width:2;
+  fill: #000;
+  transform-origin: center;
+  transition: transform 0.5s ease;
+}
+
+.aLinkButton:hover .arrow-circle{
+  transform: translateX(110px) scale(2);
+}
+.aLinkButton:hover .arrow line:nth-of-type(2),
+.aLinkButton:hover .arrow line:nth-of-type(3){
+  transition-delay: 0.3s;
+  stroke: white;
+} */

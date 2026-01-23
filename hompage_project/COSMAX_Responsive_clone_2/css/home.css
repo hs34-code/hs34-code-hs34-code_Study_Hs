@@ -9,13 +9,10 @@
 }
 
 /* main{
-  display: flex;
-
-  flex-direction: column;
-  gap: 3rem;
+  margin-top: 100px;
 } */
 
-main *{
+*{
   font-family: 'Pretendard', sans-serif;
   font-weight: 200;
   letter-spacing: 1px;
@@ -23,7 +20,10 @@ main *{
   overflow-wrap: normal;
 }
 
-main h3{font-size: 3.2rem}
+main h3{
+  font-size: 3.2rem;
+  font-weight: 300;
+}
 main p{
   font-size: 1.2rem;
   line-height: 1.5;
@@ -74,7 +74,7 @@ main .desginHalfCricleMove circle{
 
 
 /* ----- aLinkButton" ----- */
-.aLinkButton{
+/* .aLinkButton{
   text-decoration: none;
   color: black;
   margin-top: 2rem;
@@ -115,7 +115,7 @@ main .desginHalfCricleMove circle{
 .aLinkButton:hover .arrow line:nth-of-type(3){
   transition-delay: 0.3s;
   stroke: white;
-}
+} */
 
 /* ========================================================
 ----------------------- main1_wrapper ---------------------
@@ -323,7 +323,7 @@ main .desginHalfCricleMove circle{
 ======================================================== */
 .main4{
   display: grid;
-  grid-template-columns: 40% 1fr;
+  grid-template-columns: 30% 1fr;
   grid-row: auto;
 }
 
@@ -360,11 +360,12 @@ main .desginHalfCricleMove circle{
 }
 .main4 .desginArea svg{
   position: absolute;
-  left: -27.5%;
+  /* left: -50%; */
   width: 100%;
   height: 100%;
+  /* background-color: khaki; */
   transform-origin: left;
-  scale: 2.5;
+  scale: 2;
 }
 .main4 .desginArea circle{
   fill: none;
