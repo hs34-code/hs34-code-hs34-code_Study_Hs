@@ -1,0 +1,659 @@
+/* ========================================================
+----------------------- heroBanner ------------------------
+======================================================== */
+.heroBanner{}
+
+.heroBanner .img{
+  background-color: lightgray;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+}
+.heroBanner .imgCover{
+  width: calc(100%/3);
+  height: 100vh;
+  overflow: hidden;
+}
+.heroBanner .imgCover img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  scale: 1.1;
+}
+
+.heroBanner .title{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  position: relative;
+}
+.heroBanner .title h2{
+  bottom: 50px;
+  left: 50%;
+  width: 30%;
+  position: absolute;
+  z-index: 2;
+  /* background-color: lightblue; */
+}
+.heroBanner .animationHalfCircleTop{
+  bottom: 50px;
+  left: 0;
+  position: absolute;
+}
+.heroBanner .animationHalfCircleTop circle{stroke:white;}
+
+@media screen and (max-width: 768px){
+  .heroBanner{}
+
+  .heroBanner.img{}
+  .heroBanner .imgCover{width: 100%;}
+  .heroBanner .imgCover:not(.mobileHero){display: none;}
+  .heroBanner .imgCover img{}
+
+  .heroBanner .title{}
+  .heroBanner .title h2{
+    width: auto;
+    left: 15px;
+  }
+  .heroBanner .animationHalfCircleTop{
+    transform: translateY( calc((var(--fs_h2) + 20px) * -1));
+  }
+}
+
+/* ========================================================
+--------------------------- main1 -------------------------
+======================================================== */
+.main1{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.main1 .content{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+.main1 .img{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: center;
+}
+
+.main1 .title{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main1 .text{
+  width: 70%;
+  margin-top: var(--fs_h2);
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.main1 .animationLineY{left: 50%;}
+
+.main1 .imgCover{
+  width: 40%;
+  overflow: hidden;
+}
+.main1 .imgCover img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  scale: 1.2;
+}
+
+@media screen and (max-width: 768px){
+  .main1{}
+
+  .main1 .content{grid-template-columns: 1fr;}
+  .main1 .img{flex-direction: column;}
+
+  .main1 .title{}
+  .main1 .text{
+    width: 100%;
+    grid-column: 1/2;
+  }
+  .main1 .animationLineY{left: 0}
+
+  .main1 .imgCover{width: 100%;}
+  .main1 .imgCover img{}
+}
+
+/* ========================================================
+--------------------------- main2 -------------------------
+======================================================== */
+.main2{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.main2 .content{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+.main2 .title{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main2 .text{
+  width: 70%;
+  margin-top: var(--fs_h2);
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.main2 .animationLineY{left: 50%;}
+
+@media screen and (max-width: 768px){
+  .main2{}
+
+  .main2 .content{grid-template-columns: 1fr;}
+  .main2 .title{}
+  .main2 .text{
+    width: 100%;
+    grid-column: 1/2;
+  }
+  .main2 .animationLineY{left: 0;}
+}
+
+/* ================= desginAnimationArea ================= */
+.main2.desginAnimationArea{}
+.main2 .desginAnimationArea svg{
+  width: 100%;
+  height: auto;
+}
+
+.main2 .svg-circle{
+  fill: none;
+  stroke: black;
+  stroke-width: 1;
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+.main2 .svg-circle.show{
+  opacity: 1;
+}
+.main2 #movingCircle{
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.main2 .moving-circle{
+  fill: none;
+  stroke: black;
+  stroke-width: 1;
+
+  stroke-dasharray: 628;
+  stroke-dashoffset: 628; /* ← 완전히 숨김 */
+}
+.main2 .moving-circle.transition{  
+  transition: 
+  stroke-dashoffset 1s linear,
+  transform 1s ease;
+}
+
+.main2 .circle-text{
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 300;
+  font-size: 1.3rem;
+  fill: darkblue;
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+.main2 .circle-text.show{
+  opacity: 1;
+}
+
+.main2 .top-line, .main2 .bottom-line {
+  stroke-width: 2;
+}
+/* ----- top line area ----- */
+.main2 .top-line{
+  stroke: black;
+}
+.main2 .brand-circle{}
+.main2 .brand-text{
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  fill: white;
+}
+.main2 .top-dot{}
+
+/* ----- bottom line area ----- */
+.main2 .bottom-line{
+  stroke: burlywood;
+}
+.main2 .product-circle{
+  stroke: burlywood;
+  fill: burlywood;
+}
+.main2 .product-text{
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  fill: black;
+}
+.main2 .bottom-dot{
+  fill: burlywood;
+}
+
+/* 공용 라인 */
+.main2 .beige-ring{
+  fill: none;
+  stroke: burlywood;
+  stroke-width: 1;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.main2 .beige-ring.show{
+  opacity: 1;
+}
+.main2 .lineAnimation{
+  transition: 
+  transform 1s ease,
+  opacity 1s ease;
+}
+.main2 .lineShow{
+  transform: translateY(0);
+  opacity: 1;
+}
+.main2 .lineHidden{
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+/* ========================================================
+--------------------------- main3 -------------------------
+======================================================== */
+.main3{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  overflow: hidden;
+}
+
+.main3 .title{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+}
+.main3 .content{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.main3 .title h3{
+  margin-top: var(--fs_h2);
+  position: relative;
+  left: 45%;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.main3 .title .imgCover{
+  width: 22%;
+}
+.main3 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.main3 .i31{
+  position: relative;
+  left: 50%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main3 .i32{
+  position: absolute;
+  left: 10%;
+  bottom: 0;
+}
+
+.main3 .text{
+  justify-self: end;
+  width: 70%;
+}
+
+.main3 .content .imgCover{
+  align-self: center;
+  justify-self: center;
+  width: 60%;
+}
+
+@media screen and (max-width: 768px){
+  .main3{}
+
+  .main3 .title{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .main3 .content{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .main3 .title h3{
+    left: 0;
+    grid-column: 1/-1;
+    grid-row: 3/4;
+  }
+  .main3 .title .imgCover{width: 100%;}
+  .main3 .title .imgCover img{}
+  .main3 .i31{
+    left: 0;
+    position: relative;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .main3 .i32{
+    left: 0;
+    position: relative;
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .main3 .text{width: 100%;}
+
+  .main3 .content .imgCover{display: none;}
+  .main3 .content .imgCover img{}
+}
+
+
+/* ========================================================
+--------------------------- main4 -------------------------
+======================================================== */
+.main4{
+  display: grid;
+  grid-template-columns: 1fr 40%;
+  grid-row: auto;
+}
+
+.desginAnimationCricle{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.content{
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.title{}
+.text{
+  margin-top: var(--fs_h2);
+  width: 70%;
+}
+
+@media screen and (max-width: 768px){
+  .main4{grid-template-columns: 1fr;}
+
+  .desginAnimationCricle{display: none;}
+  .content{grid-column: 1/2;}
+
+  .title{}
+  .text{width: 100%;}
+}
+
+/* ========================================================
+--------------------------- main5 -------------------------
+======================================================== */
+.main5{
+  --cardWidth: calc(100%/3)
+}
+.card{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.card svg:nth-of-type(1){left: 0;}
+.card svg:nth-of-type(2){left: calc(100% / 3);}
+.card svg:nth-of-type(3){left: calc(100% / 3 * 2);}
+.card svg:nth-of-type(4){left: calc(100% / 3 * 3);}
+
+.cardCover{
+  width: var(--cardWidth);
+  padding: 0 16px 120px 16px;
+}
+.statCard{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.statCard h3{padding-bottom: 15px;}
+.statCard svg{}
+.statCard p{padding: 15px 0;}
+
+@media screen and (max-width: 768px){
+  .card{flex-direction: column;}
+
+  .cardCover{
+    width: 100%;
+    padding: 0 16px 32px 16px;
+  }
+
+  .card svg:nth-of-type(2){display: none;}
+  .card svg:nth-of-type(3){display: none;}
+}
+
+/* ========================================================
+--------------------------- main6 -------------------------
+======================================================== */
+.main6{}
+@media screen and (max-width: 768px){}
+
+
+/* ========================================================
+--------------------------- main7 -------------------------
+======================================================== */
+.main7{
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.main7 .content{
+  position: relative;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+.main7 .desginImg{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+
+.main7 .title{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main7 .text{
+  width: 70%;
+  margin-top: var(--fs_h2);
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.main7 .content .animationLineY{left: 50%;}
+.main7 .animationLineY line{stroke:white;}
+
+.main7 .img{
+  grid-column: 1/1;
+  grid-row: 1/1;
+
+  position: absolute;
+  
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-content: center;
+  
+  gap: 15px;
+}
+.main7 .imgCover{
+  width: 30%;
+  overflow: hidden;
+}
+.main7 .imgCover img{
+  width: 100%;
+  object-fit: cover;
+  scale: 1.2;
+}
+.main7 .desginImg .animationLineY.line1{left: 0;}
+.main7 .desginImg .animationLineY.line2{left: 100%;}
+.main7 .desginImg .animationHalfCircleTop{
+  grid-column: 1/1;
+  grid-row: 1/1;
+  justify-self: center;
+}
+
+@media screen and (max-width: 768px){
+  .main7{}
+
+  .main7 .content{grid-template-columns: 1fr;}
+  .main7 .desginImg{}
+
+  .main7 .title{}
+  .main7 .text{
+    width: 100%;
+    grid-column: 1/2;
+  }
+  .main7 .content .animationLineY{left: 0;}
+  .main7 .content .animationLineY line{}
+
+  .main7 .img{
+    position: relative;
+    flex-direction: column;
+  }
+  .main7 .imgCover{
+    width: 100%;
+  }
+  .main7 .imgCover img{}
+  .main7 .img .animationLineY{}
+  .main7 .img .animationLineY.line1{}
+  .main7 .img .animationLineY.line2{}
+  .main7 .img .animationHalfCircleTop{display: none;}
+}
+
+/* ========================================================
+--------------------------- main8 -------------------------
+======================================================== */
+.main8{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.main8 .content{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+.main8 .title{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main8 .text{
+  margin-top: var(--fs_h2);
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.main8 .content .animationLineY{
+  left: 50%;
+}
+
+.main8 .gridLogo{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.main8 .buttonArea{
+  width: fit-content;
+  position: relative;
+  display: flex;
+  gap: 24px;
+}
+.main8 .buttonArea button{
+  width: 80px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  font-size: var(--fs_p_normal);
+  letter-spacing: 1px;
+}
+.main8 .buttonArea button.select{font-weight: 600;}
+.main8 .buttonArea .btn_global{}
+.main8 .buttonArea .btn_Korean{}
+.main8 .buttonArea .desginLineY{left: 50%;}
+
+.main8 .logoArea{
+  width: 100%;
+  position: relative;
+}
+.main8 .logoArea .animationLineY{}
+.main8 .logoArea .animationLineY.l1{left: 0;}
+.main8 .logoArea .animationLineY.l2{left: 25%;}
+.main8 .logoArea .animationLineY.l3{left: 50%;}
+.main8 .logoArea .animationLineY.l4{left: 75%;}
+.main8 .logoArea .animationLineY.l5{right: 0;}
+
+.main8 .logoCard{
+  width: 25%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+.main8 .logoCard img{
+  width: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px){
+  .main8{}
+
+  .main8 .content{grid-template-columns: 1fr;}
+
+  .main8 .title{}
+  .main8 .text{
+    grid-column: 1/2;
+    width: 100%;
+  }
+  .main8 .content .animationLineY{left: 0;}
+
+  .main8 .gridLogo{}
+
+  .main8 .buttonArea{}
+  .main8 .buttonArea button{}
+  .main8 .buttonArea .btn_global{}
+  .main8 .buttonArea .btn_Korean{}
+  .main8 .buttonArea .desginLineY{}
+
+  .main8 .logoArea{}
+  .main8 .logoArea .animationLineY{}
+  .main8 .logoArea .animationLineY.l1{left: 0;}
+  .main8 .logoArea .animationLineY.l2{display: none;}
+  .main8 .logoArea .animationLineY.l3{display: none;}
+  .main8 .logoArea .animationLineY.l4{display: none;}
+  .main8 .logoArea .animationLineY.l5{right: 0;}
+
+  .main8 .logoCard{}
+  .main8 .logoCard img{}
+}

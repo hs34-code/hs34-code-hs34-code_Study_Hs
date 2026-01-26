@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- font setting -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"/>
+
+  <!-- base setting -->
+  <link rel="stylesheet" href="../base/base.css">
+
+  <!-- custom setting -->
+  <link rel="stylesheet" href="../css/wwd_OV.css">
+
+  <title>COSMAX_Responsive_clone_3</title>
+</head>
+
+<body id="wwd_OV">
+  <!-- <div class="testArea1"></div> -->
+  <main>
+    <section class="heroBanner">
+      <div class="img">
+        <div class="imgCover mobileHero"><img src="../media/wwd/wwd_ov/heroBanner1.webp" alt="heroBanner1"></div>
+        <div class="imgCover"><img src="../media/wwd/wwd_ov/heroBanner2.webp" alt="heroBanner2"></div>
+        <div class="imgCover"><img src="../media/wwd/wwd_ov/heroBanner3.webp" alt="heroBanner3"></div>
+      </div>
+      <div class="title area">
+        <h2 data-i18n="hero.title">What we do</h2>
+
+        <svg class="animationHalfCircleTop area" viewBox="0 000 200 100" preserveAspectRatio="none">
+          <circle cx="100" cy="100" r="99" transform="rotate(-180 100 100)" />
+        </svg>
+      </div>
+    </section>
+
+    <section class="main1 wrapper">
+      <div class="content">
+        <div class="title area">
+          <h3 data-i18n="main1.title">Beauty from start to finish</h3>
+        </div>
+
+        <div class="text area">
+          <p data-i18n="main3.desc" class="fsNormal">‘스피드와 유연성’은 코스맥스의 성장을 견인한 독보적인 경쟁력입니다. 코스맥스만의 인사이트, 전문성 및 리소스를 바탕으로 고객에게 연구 개발 및 생산의 모든 단계, 그리고 통합적인 마케팅과 디자인까지 신속하게 제공합니다. 고객의 니즈에 맞는 맞춤형 원스톱 솔루션을 제공할 수 있는 기업은 오직 코스맥스뿐입니다.</p>
+        </div>
+
+        <svg class="animationLineY" viewBox="0 0 2 100" preserveAspectRatio="none">
+          <line x1="1" y1="0" x2="1" y2="100" vector-effect="non-scaling-stroke" />
+        </svg>
+      </div>
+      <div class="img">
+        <div class="imgCover"><img src="../media/wwd/wwd_ov/main1img1.webp" alt="main1img1"></div>
+        <div class="imgCover"><img src="../media/wwd/wwd_ov/main1img2.webp" alt="main1img2"></div>
+      </div>
+    </section>
+
+    <section class="main2 wrapper">
+      <div class="content">
+        <div class="title area">
+          <h3 data-i18n="main2.title">Your vision.<br>Your choice.</h3>
+        </div>
+
+        <div class="text area">
+          <p data-i18n="main2.desc" class="fsNormal">코스맥스는 고객의 개별 요구에 맞춘 다양한 서비스를 제공합니다. 고객은 전략, 브랜드 콘셉트, 디자인, 제형, 패키징, 제조 중 원하는 단계에서 개별 지원 서비스 혹은 토털 지원 서비스를 선택할 수 있습니다.</p>
+        </div>
+
+        <svg class="animationLineY" viewBox="0 0 2 100" preserveAspectRatio="none">
+          <line x1="1" y1="0" x2="1" y2="100" vector-effect="non-scaling-stroke" />
+        </svg>
+      </div>
+
+      <div class="desginAnimationArea">
+      <svg viewBox="0 0 1150 400" preserveAspectRatio="xMidYMid meet">
+        <!-- 메인 원들 (6개) -->
+        <circle class="svg-circle" id="circle1" cx="150" cy="200" r="100"/>
+        <circle class="svg-circle" id="circle2" cx="320" cy="200" r="100"/>
+        <circle class="svg-circle" id="circle3" cx="490" cy="200" r="100"/>
+        <circle class="svg-circle" id="circle4" cx="660" cy="200" r="100"/>
+        <circle class="svg-circle" id="circle5" cx="830" cy="200" r="100"/>
+        <circle class="svg-circle" id="circle6" cx="1000" cy="200" r="100"/>
+
+        <!-- 움직이는 원 (SVG) -->
+        <g id="movingCircle">
+            <circle class="moving-circle" cx="150" cy="200" r="100"/>
+        </g>
+
+        <!-- 텍스트들 -->
+        <text class="circle-text" id="text1" x="150" y="200" text-anchor="middle" dominant-baseline="middle">Strategy</text>
+        <text class="circle-text" id="text2" x="320" y="200" text-anchor="middle" dominant-baseline="middle">Brand concept</text>
+        <text class="circle-text" id="text3" x="490" y="200" text-anchor="middle" dominant-baseline="middle">Design</text>
+        <text class="circle-text" id="text4" x="660" y="200" text-anchor="middle" dominant-baseline="middle">Formulation</text>
+        <text class="circle-text" id="text5" x="830" y="200" text-anchor="middle" dominant-baseline="middle">Packaging</text>
+        <text class="circle-text" id="text6" x="1000" y="200" text-anchor="middle" dominant-baseline="middle">Manufacturing</text>
+
+        <!-- 상단 검정 라인 -->
+        <line class="top-line lineHidden topArea" id="topLine" x1="150" y1="100" x2="1000" y2="100"/>
+
+        <!-- 상단 검정 원과 점들 -->
+        <circle class="brand-circle lineHidden topArea" id="brandCircle" cx="150" cy="100" r="50"/>
+        <text class="brand-text lineHidden topArea" id="brandText" x="150" y="100" text-anchor="middle" dominant-baseline="middle" dominant-baseline="middle">Brand</text>
+        
+        <circle class="top-dot lineHidden topArea" id="dot1" cx="320" cy="100" r="6"/>
+        <circle class="top-dot lineHidden topArea" id="dot2" cx="490" cy="100" r="6"/>
+        <circle class="top-dot lineHidden topArea" id="dot3" cx="660" cy="100" r="6"/>
+        <circle class="top-dot lineHidden topArea" id="dot4" cx="830" cy="100" r="6"/>
+        <circle class="top-dot lineHidden topArea" id="dot5" cx="1000" cy="100" r="6"/>
+
+        <!-- 하단 베이지 라인 -->
+        <line class="bottom-line lineHidden bottomArea" id="bottomLine" x1="660" y1="300" x2="1000" y2="300"/>
+
+        <!-- 하단 베이지 원과 점들 -->
+        <circle class="product-circle lineHidden bottomArea" id="productCircle" cx="660" cy="300" r="50"/>
+        <text class="product-text lineHidden bottomArea" id="productText" x="660" y="300" text-anchor="middle" dominant-baseline="middle">Product</text>
+        
+        <circle class="bottom-dot lineHidden bottomArea" id="bdot1" cx="830" cy="300" r="6"/>
+        <circle class="bottom-dot lineHidden bottomArea" id="bdot2" cx="1000" cy="300" r="6"/>
+
+        <!-- 베이지 테두리 원들 (4, 5, 6번 위치) -->
+        <circle class="beige-ring" id="ring1" cx="660" cy="200" r="90"/>
+        <circle class="beige-ring" id="ring2" cx="830" cy="200" r="90"/>
+        <circle class="beige-ring" id="ring3" cx="1000" cy="200" r="90"/>
+      </svg>
+    </div>
+    </section>
+
+    <section class="main3 wrapper">
+      <div class="title">
+        <h3 data-i18n="main3.title">OBM: Build<br>Your Brand</h3>
+
+        <div class="imgCover i31 area"><img src="../media/wwd/wwd_ov/main2img1.webp" alt="main2img1"></div>
+        <div class="imgCover i32 area"><img src="../media/wwd/wwd_ov/main2img2.webp" alt="main2img2"></div>
+      </div>
+
+      <div class="content">
+        <div class="text">
+          <p data-i18n="main3.desc" class="fsNormal">코스맥스는 OBM(Original Branding Manufacturing) 방식을 통해 고객이 아이디어를 세상에 내놓을 수 있도록 처음부터 끝까지 모든 것을 제공합니다. OBM 서비스는 고객의 브랜드를 기초부터 탄탄히 세워나가는 것에서 시작됩니다. 전략을 수립하고, 브랜드 콘셉트를 발전시키며, 제품이 어떻게 보여지고 느껴져야 하는지까지 고려해 디자인합니다.</p>
+
+          <a href="" class="arrowIcon">
+            <p class="fsArrowIcon">Find out more</p>
+            <svg viewBox="0 0 100 20">
+              <circle class="arrowCircle" cx="10" cy="10" r="5" /> <!-- o -->
+              <line class="arrowShaft" x1="5" y1="10" x2="90" y2="10"/> <!-- - -->
+              <line class="arrowHead" x1="90" y1="10" x2="75" y2="00"/> <!-- > -->
+              <line class="arrowHead" x1="90" y1="10" x2="75" y2="20"/> <!-- > -->
+            </svg>
+          </a>
+        </div>
+
+        <div class="imgCover i33"><img src="../media/wwd/wwd_ov/main3img1.webp" alt="main3img1"></div>
+      </div>
+
+    </section>
+
+    <section class="main4 wrapper">
+      <div class="desginAnimationCricle right">
+        <svg viewBox="0 0 354 204" preserveAspectRatio="xMidYMid meet">
+          <!-- 큰원  -->
+          <circle class="baseCircle circleA" cx="102" cy="102" r="100"/>
+          <circle class="baseCircle circleB" cx="252" cy="102" r="100"/>
+          <!-- 작은 원 도트 -->
+          <circle class="orbitDot dotA" cx="202" cy="102" r="2"/>
+          <circle class="orbitDot dotB" cx="352" cy="102" r="2"/>
+        </svg>
+      </div>
+
+      <div class="content">
+        <div class="title">
+          <h3 data-i18n="main4.title">ODM: Create Your Product</h3>
+        </div>
+
+        <div class="text">
+          <p data-i18n="main4.desc" class="fsNormal">제품 개발 및 생산은 코스맥스의 고유 기술을 바탕으로 한 전문적인 ODM(Original Development Manufacturing) 방식을 활용합니다. 과학적으로 포뮬러를 개발하고, 감각적인 패키징을 덧입히며, 고객이 꿈꾸던 바로 그 제품을 눈앞에 완성해 냅니다.</p>
+
+          <a href="" class="arrowIcon">
+            <p class="fsArrowIcon">Find out more</p>
+            <svg viewBox="0 0 100 20">
+              <circle class="arrowCircle" cx="10" cy="10" r="5" /> <!-- o -->
+              <line class="arrowShaft" x1="5" y1="10" x2="90" y2="10"/> <!-- - -->
+              <line class="arrowHead" x1="90" y1="10" x2="75" y2="00"/> <!-- > -->
+              <line class="arrowHead" x1="90" y1="10" x2="75" y2="20"/> <!-- > -->
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="main5 wrapper">
+      <div class="card">
+        <svg class="animationLineY" viewBox="0 0 2 100" preserveAspectRatio="none">
+          <line x1="1" y1="0" x2="1" y2="100" vector-effect="non-scaling-stroke" />
+        </svg>
+
+        <div class="cardCover">
+          <div class="statCard">
+            <h3 data-i18n="main5.statcard.title.1">100+</h3>
+            <svg class="desginLineX" viewBox="0 0 100 2" preserveAspectRatio="none">
+              <line x1="0" y1="1" x2="100" y2="1" vector-effect="non-scaling-stroke" />
+            </svg>
+            <p data-i18n="main5.statcard.desc.1" class="fsNormal">제품 디자이너와 패키징 엔지니어</p>
+          </div>
+        </div>
+
+        <svg class="animationLineY" viewBox="0 0 2 100" preserveAspectRatio="none">
+          <line x1="1" y1="0" x2="1" y2="100" vector-effect="non-scaling-stroke" />
+        </svg>
+
+        <div class="cardCover">
+          <div class="statCard">
+            <h3 data-i18n="main5.statcard.title.2">110+</h3>
+            <svg class="desginLineX" viewBox="0 0 100 2" preserveAspectRatio="none">
+              <line x1="0" y1="1" x2="100" y2="1" vector-effect="non-scaling-stroke" />
+            </svg>
+            <p data-i18n="main5.statcard.desc.2" class="fsNormal">시장조사 및 브랜드·제품 개발 전문가</p>
+          </div>
+        </div>
+
+        <svg class="animationLineY" viewBox="0 0 2 100" preserveAspectRatio="none">
+          <line x1="1" y1="0" x2="1" y2="100" vector-effect="non-scaling-stroke" />
+        </svg>
+
+        <div class="cardCover">
+          <div class="statCard">
+            <h3 data-i18n="main5.statcard.title.3">6</h3>
+            <svg class="desginLineX" viewBox="0 0 100 2" preserveAspectRatio="none">
+              <line x1="0" y1="1" x2="100" y2="1" vector-effect="non-scaling-stroke" />
+            </svg>
+            <p data-i18n="main5.statcard.desc.3" class="fsNormal">디자인 센터(한국, 상하이, 광저우, 미국, 인도네시아, 태국)</p>
+          </div>
+        </div>
+
+        <svg class="animationLineY" viewBox="0 0 2 100" preserveAspectRatio="none">
+          <line x1="1" y1="0" x2="1" y2="100" vector-effect="non-scaling-stroke" />
+        </svg>
+      </div>
+    </section>
+
+    <section class="main6 wapper"></section>
+
+    <section class="main7 wrapper">
+      <div class="content">
+        <div class="title area">
+          <h3 data-i18n="main7.title">Keeping you ahead</h3>
+        </div>
+
+        <div class="text area">
+          <p data-i18n="main7.desc" class="fsNormal">코스맥스는 심층적인 소비자 및 시장조사에 트렌드 예측과 문화적 인식을 결합해 고객에게 뷰티 산업의 현재를 정확히 파악할 수 있는 솔루션을 제안합니다. 그뿐 아니라 고객의 기대를 뛰어넘는 혁신적인 제형과 성분, 패키징을 개발해 제공합니다.</p>
+        </div>
+
+        <svg class="animationLineY" viewBox="0 0 2 100" preserveAspectRatio="none">
+          <line x1="1" y1="0" x2="1" y2="100" vector-effect="non-scaling-stroke" />
+        </svg>
+      </div>
+
+      <div class="desginImg">
+        <div class="img area">
+          <div class="imgCover"><img src="../media/wwd/wwd_ov/main5img1.webp" alt="main5img1"></div>
+          <div class="imgCover"><img src="../media/wwd/wwd_ov/main5img2.webp" alt="main5img2"></div>
+          <div class="imgCover"><img src="../media/wwd/wwd_ov/main5img3.webp" alt="main5img3"></div>
+        </div>
+
+        <svg class="animationLineY line1" viewBox="0 0 2 100" preserveAspectRatio="none">
+          <line x1="1" y1="0" x2="1" y2="100" vector-effect="non-scaling-stroke" />
+        </svg>
+
+        <svg class="animationLineY line2" viewBox="0 0 2 100" preserveAspectRatio="none">
+          <line x1="1" y1="0" x2="1" y2="100" vector-effect="non-scaling-stroke" />
+        </svg>
+
+        <svg class="animationHalfCircleTop area" viewBox="0 000 200 100" preserveAspectRatio="none">
+          <circle cx="100" cy="100" r="99" transform="rotate(-180 100 100)" />
+        </svg>
+      </div>
+    </section>
+
+    <section class="main8 wrapper">
+      <div class="content">
+        <div class="title area">
+          <h3 data-i18n="main8.title">Our partners</h3>
+        </div>
+
+        <div class="text area">
+          <p data-i18n="main8.desc" class="fsNormal">20대 주요 글로벌 뷰티 기업 중 18개를 포함한 4,500여 개 기업이 코스맥스의 고객입니다. ‘혁신성’과 ‘고객 친밀성’을 앞세운 코스맥스는 전 세계 인구 약 3분의 1이 사용할 수 있는 규모의 제품을 생산하고 있습니다.</p>
+        </div>
+
+        <svg class="animationLineY" viewBox="0 0 2 100" preserveAspectRatio="none">
+          <line x1="1" y1="0" x2="1" y2="100" vector-effect="non-scaling-stroke" />
+        </svg>
+      </div>
+
+      <div class="gridLogo">
+        <div class="buttonArea">
+          <button class="btn_global select" data-logoShow="global">Global</button>
+
+          <svg class="desginLineY" viewBox="0 0 2 100" preserveAspectRatio="none">
+            <line x1="1" y1="0" x2="1" y2="100" vector-effect="non-scaling-stroke" />
+          </svg>
+
+          <button class="btn_korean"  data-logoShow="korean">Korean</button>
+        </div>
+        
+        <div class="logoArea">
+          <div class="logoCard">
+            <img src="../media/wwd/wwd_ov/logo1gl.webp" alt="">
+
+            <svg class="desginLineX" viewBox="0 0 100 2" preserveAspectRatio="none">
+              <line x1="0" y1="1" x2="100" y2="1" vector-effect="non-scaling-stroke" />
+            </svg>
+          </div>
+
+
+          <svg class="animationLineY l1" viewBox="0 0 2 100" preserveAspectRatio="none">
+            <line x1="1" y1="0" x2="1" y2="100" vector-effect="non-scaling-stroke" />
+          </svg>
+
+          <svg class="animationLineY l2" viewBox="0 0 2 100" preserveAspectRatio="none">
+            <line x1="1" y1="0" x2="1" y2="100" vector-effect="non-scaling-stroke" />
+          </svg>
+
+          <svg class="animationLineY l3" viewBox="0 0 2 100" preserveAspectRatio="none">
+            <line x1="1" y1="0" x2="1" y2="100" vector-effect="non-scaling-stroke" />
+          </svg>
+
+          <svg class="animationLineY l4" viewBox="0 0 2 100" preserveAspectRatio="none">
+            <line x1="1" y1="0" x2="1" y2="100" vector-effect="non-scaling-stroke" />
+          </svg>
+
+          <svg class="animationLineY l5" viewBox="0 0 2 100" preserveAspectRatio="none">
+            <line x1="1" y1="0" x2="1" y2="100" vector-effect="non-scaling-stroke" />
+          </svg>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+  </main>
+  <div class="testArea2"></div>
+  <!-- ICON -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!-- GSAP JS -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+
+  <!-- base setting -->
+  <script src="../base/base.js"></script>
+  <script src="../js/language.js"></script>
+  
+  <!-- custom setting -->
+  <script src="../js/wwd_ov.js"></script>
+</body>
+</html>

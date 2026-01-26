@@ -1,29 +1,401 @@
+/* ========================================================
+--------------------------- main1 -------------------------
+======================================================== */
 .main1{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto;
 }
 
-.title{
+.main1 .title{
   grid-column: 1/2;
   grid-row: 1/2;
 }
-.text{
+.main1 .text{
+  width: 80%;
   grid-column: 2/3;
   grid-row: 2/3;
 }
-.video{
+.main1 .video{
   grid-column: 1/-1;
   grid-row: 3/4;
+  margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+.main1 .video video{
+  width: 100%;
+  transform-origin: top;
+  transform: scale(0.6);
 }
 
-.desginLineY.line1{
+.main1 .desginLineY.line1{
   grid-column: 1/2;
   grid-row: 2/4;
   left: 15px;
 }
-.desginLineY.line2{
+.main1 .desginLineY.line2{
   grid-column: 2/3;
   grid-row: 2/4;
   right: 15px;
+}
+@media screen and (max-width: 768px){
+  .main1{grid-template-columns: 1fr;}
+  .main1 .title{}
+  .main1 .text{
+    width: 100%;
+    grid-column: 1/2;
+  }
+  .main1 .video{}
+  .main1 .desginLineY.line1{left: 0;}
+  .main1 .desginLineY.line2{
+    grid-column: 1/2;
+    right: 0;
+  }
+}
+
+/* ========================================================
+--------------------------- main2 -------------------------
+======================================================== */
+.main2{
+  background-color: #f3f0ed;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.main2 .content{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+.main2 .img{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+}
+
+.main2 .title{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main2 .text{
+  width: 75%;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.main2 .animationHalfCricle{
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.main2 .animationLineY{left: 50%;}
+
+.main2 .imgCover{width: 40%;}
+.main2 .imgCover img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px){
+  .main2{}
+
+  .main2 .content{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  .main2 .img{flex-direction: column;}
+
+  .main2 .title{}
+  .main2 .text{
+    width: 100%;
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+
+  .main2 .animationHalfCricle{
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .main2 .animationLineY{
+    grid-row: 2/4;
+    left:0;
+  }
+
+  .main2 .imgCover{width: 100%;}
+  .main2 .imgCover img{}
+}
+
+/* ========================================================
+--------------------------- main3 -------------------------
+======================================================== */
+.main3{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.main3 .content{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+.main3 .img{
+  display: flex;
+  flex-direction: row;
+}
+
+.main3 .title{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main3 .text{
+  margin-top: var(--fs_h3);
+  width: 85%;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  align-self: self-end;
+}
+
+.main3 .animationHalfCircleBottom{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main3 .animationLineY{left: 50%;}
+
+.main3 .imgCover{
+  position: relative;
+  width: calc(100%/3);
+  overflow: hidden;
+}
+.main3 .imgCover p{
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 1;
+}
+.main3 .imgCover img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  scale: 1.2;
+}
+
+@media screen and (max-width: 768px){
+  .main3{}
+
+  .main3 .content{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+  .main3 .img{flex-direction: column;}
+
+  .main3 .title{
+    width: 100%;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .main3 .text{
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .main3 .animationHalfCircleBottom{
+    display: none;
+  }
+  .main3 .animationLineY{
+    left: 0;
+  }
+
+  .main3 .imgCover{
+    width: 100%;
+  }
+  .main3 .imgCover p{}
+  .main3 .imgCover img{}
+}
+
+.main4{
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  grid-template-rows: auto;
+}
+
+.main4 .content{
+  position: relative;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main4 .desginAnimationCricle{
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.main4 .title{}
+.main4 .text{margin-top: var(--fs_h3);}
+.main4 .animationLineY{display: none;}
+
+@media screen and (max-width: 768px){
+  .main4{
+    grid-template-columns: 1fr;
+  }
+
+  .main4 .content{}
+  .main4 .desginAnimationCricle{display: none;}
+
+  .main4 .title{}
+  .main4 .text{}
+  .main4 .animationLineY{display: block;}
+}
+
+
+/* ========================================================
+--------------------------- main5 -------------------------
+======================================================== */
+.main5{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+.main5 .title{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main5 .text{
+  margin-top: var(--fs_h3);
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.main5 .animationLineY{
+  left: 50%;
+  grid-row: 1/-1;
+}
+@media screen and (max-width: 768px){
+  .main5{grid-template-columns: 1fr;}
+
+  .main5 .title{}
+  .main5 .text{grid-column: 1/2;}
+  .main5 .animationLineY{left: 15px;}
+}
+/* ========================================================
+--------------------------- main6 -------------------------
+======================================================== */
+.main6{
+  display: grid;
+  grid-template-columns: 45% 1fr;
+  grid-template-rows: auto auto;
+}
+
+.main6 .content{
+  position: relative;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main6 .animationLineY{
+  left: 45%;
+  grid-row: 1/-1;
+}
+
+.main6 .title{margin-top: var(--fs_h3);}
+.main6 .text{
+  width: 80%;
+  margin-top: var(--fs_h3);
+}
+
+.main6 .slideImg{
+  position: relative;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.main6 .slideImg .imgCover{
+  position: relative;
+  z-index: 2;
+  width: 25%;
+  aspect-ratio: 1/1;
+}
+.main6 .slideImg .imgCover img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main6 .slideImg .imgCover.i61{left: 50%; top: -20%;}
+.main6 .slideImg .imgCover.i62{left: 20%; top: -10%;}
+.main6 .slideImg .imgCover.i63{left: 65%; top: -20%;}
+
+.main6 .animationHalfCricle{
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+@media screen and (max-width: 768px){
+  .main6{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 50px;
+  }
+
+  .main6 .content{}
+  .main6 .animationLineY{left: 15px;}
+
+  .main6 .title{margin-top: 0;}
+  .main6 .text{width: 100%;}
+
+  .main6 .slideImg{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: grid;
+  }
+  .main6 .animationHalfCricle{}
+
+  .main6 .slideImg .imgCover{
+    width: 45%;
+  }
+  .main6 .slideImg .imgCover img{}
+  .main6 .slideImg .imgCover.i61{left: 45%; top: -100%;}
+  .main6 .slideImg .imgCover.i62{left: 5%; top: -80%;}
+  .main6 .slideImg .imgCover.i63{left: 55%; top: -50%;}
+}
+
+
+
+/* ========================================================
+--------------------------- main7 -------------------------
+======================================================== */
+.main7{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+.main7 .title{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main7 .text{
+  margin-top: var(--fs_h3);
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.main7 .animationLineY{
+  left: 50%;
+  grid-row: 1/-1;
+}
+@media screen and (max-width: 768px){
+  .main7{grid-template-columns: 1fr;}
+
+  .main7 .title{}
+  .main7 .text{grid-column: 1/2;}
+  .main7 .animationLineY{left: 15px;}
 }
