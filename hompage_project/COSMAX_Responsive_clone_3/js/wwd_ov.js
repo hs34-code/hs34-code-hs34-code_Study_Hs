@@ -55,144 +55,6 @@ imagesWheelControlManagerY({
 })
 
 // ========================================================
-// ----------------------- main 2 -------------------------
-// ========================================================
-const desginAnimationArea = wwd_OV.querySelector(".main2 .desginAnimationArea");
-// 감시자 생성
-const svgObserver = new IntersectionObserver((entries) => {
-  //보이면 실행
-  const entry = entries[0]
-  svgAnimationCover(entry.isIntersecting);
-}, {threshold: 1}) // 전부 보일때 실행
-// 감시할 객체 등록
-svgObserver.observe(desginAnimationArea);
-
-
-let moveTimeoutId = null;
-let bottomTimeoutId = null;
-let ringTimeoutId = null;
-let restartTimeoutId = null;
-let resetTimeoutId = null;
-
-let centerCricleCount = 1;
-function svgAnimationCover(isVisible){
-  // movingCricle 그려지기
-  const movingCricle = desginAnimationArea.querySelector(".moving-circle");
-  const svgCricle = desginAnimationArea.querySelectorAll(".svg-circle")
-  const cricleText = desginAnimationArea.querySelectorAll(".circle-text")
-  const topArea = desginAnimationArea.querySelectorAll(".topArea");
-  const bottomArea = desginAnimationArea.querySelectorAll(".bottomArea");
-  const beigeRing = desginAnimationArea.querySelectorAll(".beige-ring");
-
-  if(isVisible){
-    if (moveTimeoutId !== null) return;
-    movingCricle.classList.add("transition");
-
-    // 원 그려지기 
-    movingCricle.style.strokeDashoffset = "0";
-
-    clearInterval(moveTimeoutId);
-    clearTimeout(bottomTimeoutId);
-    clearTimeout(ringTimeoutId);
-
-    // 원 이동 및 텍스트 출력 반복 (즉 중앙 라인)
-    moveTimeoutId = setInterval(() => {
-      const movingRight = 170;
-
-      movingCricle.style.transform = `translateX(${movingRight*centerCricleCount}px)`;
-      svgCricle[centerCricleCount-1].classList.add("show");
-      cricleText[centerCricleCount-1].classList.add("show");
-
-      centerCricleCount++; 
-      if(centerCricleCount > 6){
-        clearInterval(moveTimeoutId);
-        moveTimeoutId = null;
-
-        // 다음 애니메이션 (topLine)
-        lineAnimation(true, topArea)
-
-        // 다음 애니메이션 (bottomine)
-        bottomTimeoutId = setTimeout(() => {
-          lineAnimation(true, bottomArea)
-        },1000)
-
-        // 다음 애니메이션 (beigeRing)
-        ringTimeoutId = setTimeout(() => {
-          beigeRing.forEach((e) => {e.classList.add("show");})
-        },2000)
-
-        // 초기화
-        movingCricle.style.opacity = 0;
-        clearTimeout(resetTimeoutId);
-        resetTimeoutId = setTimeout(() => {
-          resetAnimation();
-        },6500);
-
-        clearTimeout(restartTimeoutId);
-        restartTimeoutId = setTimeout(() => {
-          svgAnimationCover(true);
-        },7000)
-      }
-    }, 1000);
-  }
-
-  if(!isVisible){  
-    resetAnimation();
-    clearTimeout(restartTimeoutId);
-    restartTimeoutId = null;
-  }
-  function resetAnimation() {
-    movingCricle.classList.remove("transition");
-
-    // 원 그려지기 초기화
-    movingCricle.style.strokeDashoffset = "628";
-
-    // 타임 시간 대기열 초기화
-    clearInterval(moveTimeoutId); 
-    clearTimeout(bottomTimeoutId);
-    clearTimeout(ringTimeoutId);
-    moveTimeoutId = null;
-    bottomTimeoutId = null;
-    ringTimeoutId = null;
-    centerCricleCount = 1;
-
-    // 움직인 원 초기화
-    movingCricle.style.transform = "translateX(0px)";
-    movingCricle.style.opacity = 1;
-
-    // 원 이동 및 텍스트 출력 반복 (즉 중앙 라인) 초기화
-    svgCricle.forEach((e) => e.classList.remove("show"))
-    cricleText.forEach((e) => e.classList.remove("show"))
-
-    lineAnimation(false ,topArea);
-    lineAnimation(false ,bottomArea);
-
-    beigeRing.forEach((e) => {e.classList.remove("show");})
-  }
-  return;
-}
-
-//top anmd bottom Line animation
-function lineAnimation(boolean, area){
-  // start
-  if(boolean){
-    area.forEach((el) => {
-      el.classList.add("lineAnimation");
-      el.classList.remove("lineHidden");
-      el.classList.add("lineShow");
-    })
-  }
-  // reset
-  if(!boolean){
-    area.forEach((el) => {
-      el.classList.remove("lineAnimation");
-      el.classList.add("lineHidden");
-      el.classList.remove("lineShow");
-    })
-  }
-}
-
-// ========================================================
 // ----------------------- main 3 -------------------------
 // ========================================================
 imagesWheelIntroManagerOpacity({
@@ -218,6 +80,92 @@ imagesWheelControlManagerY({
   trigger: "#wwd_OV .main3 .content",
   fromY: 40, toY: -40,
   // markers: true,
+})
+// ========================================================
+// ----------------------- main 4 -------------------------
+// ========================================================
+makeDesginAnimationCircle("#wwd_OV .main4 .desginAnimationCircle");
+
+// ========================================================
+// ----------------------- main 6 -------------------------
+// ========================================================
+ScrollTrigger.matchMedia({
+  "(min-width: 768px)": () => { // ==== pc ====
+    const ctx = gsap.context(() => {
+      // ============= 여기부터 =============
+        const sections = gsap.utils.toArray(".main6 .scroll");
+        const dots = gsap.utils.toArray(".main6 .scrollDot");
+
+        // 초기 상태
+        gsap.set(sections, {
+          autoAlpha: 0,
+          y: 60
+        });
+
+        // 첫 dot 활성화
+        dots.forEach(dot => dot.classList.remove("show"));
+        if (dots[0]) dots[0].classList.add("show");
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".main6 .scrollsetting",
+            start: "top top",
+            end: "+=" + window.innerHeight * (sections.length - 1) * 2,
+            pin: true,
+            scrub: 0.8,
+            // markers: true
+          }
+        });
+
+      sections.forEach((section, i) => {
+        if (i > 0) {
+            tl.to(sections[i - 1], {
+              autoAlpha: 0,
+              y: -60,
+              duration: 1
+            });
+          }
+
+          tl
+            .call(() => {
+              dots.forEach(dot => dot.classList.remove("show"));
+              if (dots[i]) dots[i].classList.add("show");
+            })
+            .fromTo(
+              section,
+              { autoAlpha: 0, y: 60 },
+              { autoAlpha: 1, y: 0, duration: 1 },
+              "<"
+            )
+            .to({}, { duration: 1 });
+      });
+      // =============여기까지 =============
+    })
+    
+    return () => ctx.revert();
+  },
+  "(max-width: 768px)": () => { // ==== mobile ===
+    const sections = gsap.utils.toArray(".main6 .scroll");
+
+    gsap.set(sections, {
+      autoAlpha: 1,
+      y: 0,
+      clearProps: "transform"
+    });
+    const ctx = gsap.context(() => {
+      imagesWheelIntroManagerOpacity({
+        target:"#wwd_OV .main6 .scroll .imgCover img",
+        // markers: true,
+      })
+      imagesWheelIntroManagerY({
+        target:"#wwd_OV .main6 .scroll .imgCover",
+        toY: -100,
+        // markers: true,
+      })
+    })
+    
+    return () => ctx.revert();
+  }
 })
 
 // ========================================================
@@ -258,3 +206,95 @@ imagesWheelControlManagerY({
   fromY: -30, toY: 30,
   // markers: true,
 })
+
+makeAnimationLineY(".main7 .animationLineY.self");
+makeAnimationHalfCircleTop(".main7 .animationHalfCircleTop.self circle");
+
+// ========================================================
+// ----------------------- main 8 -------------------------
+// ========================================================
+makeAnimationLineY(".main8 .content .animationLineY.self");
+
+const main8 = wwd_OV.querySelector(".main8");
+const buttons = main8.querySelectorAll(".buttonArea button");
+
+// button에 select 넣기
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    buttons.forEach(b => b.classList.remove("select"));
+    btn.classList.add("select");
+    findSelect()
+  })
+})
+
+// select 찾기
+function findSelect(){
+  const select = main8.querySelector(".select");
+  setUpLogoList(select.dataset.logoshow)
+}
+
+function setUpLogoList(type){
+  const logoArea = main8.querySelector(".logoArea");
+  const baselogoCard = logoArea.querySelector(".logoCard.base");
+
+  logoArea.querySelectorAll(".logoCard:not(.base)").forEach(card => card.remove());
+
+  const list = logoList[type];
+  if (!list) return; 
+
+  list.forEach(item => {
+    const cardClone = baselogoCard.cloneNode(true);
+    cardClone.classList.remove("base");
+    cardClone.style.display = "block";
+
+    const img = cardClone.querySelector("img");
+    img.src = item.img;
+    img.alt = item.name;
+
+    logoArea.appendChild(cardClone);
+  });
+
+  setUpanimationLineY()
+}
+
+function setUpanimationLineY(){
+  const logoArea = main8.querySelector(".logoArea");
+  const baseAnimationLineY = logoArea.querySelector(".animationLineY.base");
+
+  const cols = Number(
+    getComputedStyle(logoArea)
+    .getPropertyValue("--cols")
+  )
+
+  logoArea.querySelectorAll(".animationLineY:not(.base)").forEach(line => line.remove());
+  
+  for(let i=0; i < cols+1; i++){
+    const coloneLine = baseAnimationLineY.cloneNode(true);
+    coloneLine.classList.remove("base");
+    
+
+    let LinePosition = 100 / cols * i;
+    coloneLine.style.left = `${LinePosition}%`
+
+    logoArea.appendChild(coloneLine);
+  }
+
+  makeAnimationLineY(".main8 .logoArea .animationLineY.self");
+
+  imagesWheelIntroManagerOpacity({
+    target:".main8 .logoArea .logoCard",
+    trigger:"self",
+    start: "top 75%", end: "top 75%",
+    // markers: true,
+  })
+  imagesWheelIntroManagerY({
+    target:".main8 .logoArea .logoCard",
+    trigger:"self",
+    start: "top 75%", end: "top 75%",
+    // markers: true,
+  })
+}
+
+setUpanimationLineY()
+window.addEventListener("resize", setUpanimationLineY);
+findSelect()

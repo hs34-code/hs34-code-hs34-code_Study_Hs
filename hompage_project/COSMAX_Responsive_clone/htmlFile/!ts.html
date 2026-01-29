@@ -1,332 +1,53 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brand Process Animation</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: #f5f5f5;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
+    .wrapper {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      background-color: #f0f0f0;
+      overflow: hidden;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 1200px;
-        }
+    .a {
+      width: 70%;
+      flex-shrink: 0;
+      background-color: #3498db;
+      padding: 20px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      font-weight: bold;
+    }
 
-        svg {
-            width: 100%;
-            height: auto;
-        }
-
-        .main-circle {
-            fill: white;
-            stroke: #ddd;
-            stroke-width: 2;
-            opacity: 0;
-        }
-
-        .main-circle.visible {
-            opacity: 1;
-            transition: opacity 0.3s;
-        }
-
-        .moving-circle {
-            fill: white;
-            stroke: #ddd;
-            stroke-width: 2;
-            stroke-dasharray: 565;
-            stroke-dashoffset: 565;
-        }
-
-        .circle-text {
-            font-size: 16px;
-            fill: #333;
-            opacity: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        .circle-text.show {
-            animation: fadeIn 0.5s forwards;
-        }
-
-        .top-line, .bottom-line {
-            stroke-width: 2;
-            opacity: 0;
-        }
-
-        .top-line {
-            stroke: #000;
-        }
-
-        .bottom-line {
-            stroke: #d4c5a9;
-        }
-
-        .top-line.show, .bottom-line.show {
-            animation: fadeIn 0.5s forwards;
-        }
-
-        .top-dot, .bottom-dot {
-            opacity: 0;
-        }
-
-        .top-dot {
-            fill: #000;
-        }
-
-        .bottom-dot {
-            fill: #d4c5a9;
-        }
-
-        .top-dot.show, .bottom-dot.show {
-            animation: fadeIn 0.5s forwards;
-        }
-
-        .brand-circle {
-            fill: #000;
-            opacity: 0;
-        }
-
-        .brand-circle.show {
-            animation: fadeIn 0.5s forwards;
-        }
-
-        .brand-text {
-            fill: white;
-            font-size: 14px;
-            font-weight: bold;
-            opacity: 0;
-        }
-
-        .brand-text.show {
-            animation: fadeIn 0.5s forwards;
-        }
-
-        .product-circle {
-            fill: #d4c5a9;
-            opacity: 0;
-        }
-
-        .product-circle.show {
-            animation: fadeIn 0.5s forwards;
-        }
-
-        .product-text {
-            fill: #5a5a5a;
-            font-size: 13px;
-            font-weight: 500;
-            opacity: 0;
-        }
-
-        .product-text.show {
-            animation: fadeIn 0.5s forwards;
-        }
-
-        .beige-ring {
-            fill: none;
-            stroke: #d4c5a9;
-            stroke-width: 1;
-            opacity: 0;
-        }
-
-        .beige-ring.show {
-            animation: fadeIn 0.5s forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes drawCircle {
-            to {
-                stroke-dashoffset: 0;
-            }
-        }
-    </style>
+    .margin {
+      width: 30%;
+      flex-shrink: 0;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #999;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid meet">
-            <!-- 중앙 기준선 y = 200 -->
-            
-            <!-- 메인 원들 (6개) -->
-            <circle class="main-circle" id="circle1" cx="130" cy="200" r="88"/>
-            <circle class="main-circle" id="circle2" cx="280" cy="200" r="88"/>
-            <circle class="main-circle" id="circle3" cx="430" cy="200" r="88"/>
-            <circle class="main-circle" id="circle4" cx="580" cy="200" r="88"/>
-            <circle class="main-circle" id="circle5" cx="730" cy="200" r="88"/>
-            <circle class="main-circle" id="circle6" cx="880" cy="200" r="88"/>
-
-            <!-- 움직이는 원 (SVG) -->
-            <g id="movingCircle">
-                <circle class="moving-circle" cx="130" cy="200" r="88"/>
-            </g>
-
-            <!-- 텍스트들 -->
-            <text class="circle-text" id="text1" x="130" y="205" text-anchor="middle">Strategy</text>
-            <text class="circle-text" id="text2" x="280" y="205" text-anchor="middle">Brand concept</text>
-            <text class="circle-text" id="text3" x="430" y="205" text-anchor="middle">Design</text>
-            <text class="circle-text" id="text4" x="580" y="205" text-anchor="middle">Formulation</text>
-            <text class="circle-text" id="text5" x="730" y="205" text-anchor="middle">Packaging</text>
-            <text class="circle-text" id="text6" x="880" y="205" text-anchor="middle">Manufacturing</text>
-
-            <!-- 상단 검정 라인 -->
-            <line class="top-line" id="topLine" x1="170" y1="112" x2="840" y2="112"/>
-
-            <!-- 상단 검정 원과 점들 -->
-            <circle class="brand-circle" id="brandCircle" cx="130" cy="112" r="40"/>
-            <text class="brand-text" id="brandText" x="130" y="117" text-anchor="middle">Brand</text>
-            
-            <circle class="top-dot" id="dot1" cx="280" cy="112" r="6"/>
-            <circle class="top-dot" id="dot2" cx="430" cy="112" r="6"/>
-            <circle class="top-dot" id="dot3" cx="580" cy="112" r="6"/>
-            <circle class="top-dot" id="dot4" cx="730" cy="112" r="6"/>
-            <circle class="top-dot" id="dot5" cx="880" cy="112" r="6"/>
-
-            <!-- 하단 베이지 라인 -->
-            <line class="bottom-line" id="bottomLine" x1="620" y1="288" x2="840" y2="288"/>
-
-            <!-- 하단 베이지 원과 점들 -->
-            <circle class="product-circle" id="productCircle" cx="580" cy="288" r="40"/>
-            <text class="product-text" id="productText" x="580" y="293" text-anchor="middle">Product</text>
-            
-            <circle class="bottom-dot" id="bdot1" cx="730" cy="288" r="6"/>
-            <circle class="bottom-dot" id="bdot2" cx="880" cy="288" r="6"/>
-
-            <!-- 베이지 테두리 원들 (4, 5, 6번 위치) -->
-            <circle class="beige-ring" id="ring1" cx="580" cy="200" r="70"/>
-            <circle class="beige-ring" id="ring2" cx="730" cy="200" r="70"/>
-            <circle class="beige-ring" id="ring3" cx="880" cy="200" r="70"/>
-        </svg>
-    </div>
-
-    <script>
-        const movingGroup = document.getElementById('movingCircle');
-        const movingCircle = movingGroup.querySelector('circle');
-        const circles = [
-            document.getElementById('circle1'),
-            document.getElementById('circle2'),
-            document.getElementById('circle3'),
-            document.getElementById('circle4'),
-            document.getElementById('circle5'),
-            document.getElementById('circle6')
-        ];
-        const texts = [
-            document.getElementById('text1'),
-            document.getElementById('text2'),
-            document.getElementById('text3'),
-            document.getElementById('text4'),
-            document.getElementById('text5'),
-            document.getElementById('text6')
-        ];
-
-        // SVG viewBox 기준 좌표
-        const positions = [
-            { cx: 130, cy: 200 },
-            { cx: 280, cy: 200 },
-            { cx: 430, cy: 200 },
-            { cx: 580, cy: 200 },
-            { cx: 730, cy: 200 },
-            { cx: 880, cy: 200 }
-        ];
-        
-        let currentPos = 0;
-
-        function animateCircle() {
-            if (currentPos < positions.length) {
-                const target = positions[currentPos];
-                
-                // 원 그리기 애니메이션
-                movingCircle.style.animation = 'drawCircle 0.6s ease-out forwards';
-                
-                // 위치 이동
-                movingCircle.setAttribute('cx', target.cx);
-                movingCircle.setAttribute('cy', target.cy);
-
-                setTimeout(() => {
-                    circles[currentPos].classList.add('visible');
-                    
-                    // 다음 위치로 이동 전 애니메이션 리셋
-                    setTimeout(() => {
-                        movingCircle.style.animation = 'none';
-                        setTimeout(() => {
-                            movingCircle.style.strokeDashoffset = '565';
-                            currentPos++;
-                            animateCircle();
-                        }, 50);
-                    }, 250);
-                }, 600);
-            } else {
-                movingGroup.style.display = 'none';
-                showTexts();
-            }
-        }
-
-        function showTexts() {
-            texts.forEach((text, i) => {
-                setTimeout(() => {
-                    text.classList.add('show');
-                }, i * 100);
-            });
-
-            setTimeout(() => {
-                showTopElements();
-            }, 1000);
-        }
-
-        function showTopElements() {
-            document.getElementById('topLine').classList.add('show');
-            
-            setTimeout(() => {
-                document.getElementById('brandCircle').classList.add('show');
-                document.getElementById('brandText').classList.add('show');
-                document.getElementById('dot1').classList.add('show');
-                document.getElementById('dot2').classList.add('show');
-                document.getElementById('dot3').classList.add('show');
-                document.getElementById('dot4').classList.add('show');
-                document.getElementById('dot5').classList.add('show');
-            }, 300);
-
-            setTimeout(() => {
-                showBottomElements();
-            }, 1000);
-        }
-
-        function showBottomElements() {
-            document.getElementById('bottomLine').classList.add('show');
-            
-            setTimeout(() => {
-                document.getElementById('productCircle').classList.add('show');
-                document.getElementById('productText').classList.add('show');
-                document.getElementById('bdot1').classList.add('show');
-                document.getElementById('bdot2').classList.add('show');
-            }, 300);
-
-            setTimeout(() => {
-                document.getElementById('ring1').classList.add('show');
-                document.getElementById('ring2').classList.add('show');
-                document.getElementById('ring3').classList.add('show');
-            }, 800);
-        }
-
-        setTimeout(() => {
-            animateCircle();
-        }, 500);
-    </script>
+  <div class="wrapper">
+    <div class="a">A (70%)</div>
+    <div class="margin">여백 (30%)</div>
+  </div>
 </body>
 </html>

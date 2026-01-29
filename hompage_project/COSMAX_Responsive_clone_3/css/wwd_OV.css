@@ -1,7 +1,11 @@
 /* ========================================================
 ----------------------- heroBanner ------------------------
 ======================================================== */
-.heroBanner{}
+.heroBanner{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
 
 .heroBanner .img{
   background-color: lightgray;
@@ -166,110 +170,7 @@
 
 /* ================= desginAnimationArea ================= */
 .main2.desginAnimationArea{}
-.main2 .desginAnimationArea svg{
-  width: 100%;
-  height: auto;
-}
 
-.main2 .svg-circle{
-  fill: none;
-  stroke: black;
-  stroke-width: 1;
-  opacity: 0;
-  transition: opacity .5s ease;
-}
-.main2 .svg-circle.show{
-  opacity: 1;
-}
-.main2 #movingCircle{
-  transform: rotate(-90deg);
-  transform-origin: center;
-  transform-box: fill-box;
-}
-.main2 .moving-circle{
-  fill: none;
-  stroke: black;
-  stroke-width: 1;
-
-  stroke-dasharray: 628;
-  stroke-dashoffset: 628; /* ← 완전히 숨김 */
-}
-.main2 .moving-circle.transition{  
-  transition: 
-  stroke-dashoffset 1s linear,
-  transform 1s ease;
-}
-
-.main2 .circle-text{
-  font-family: 'Pretendard', sans-serif;
-  font-weight: 300;
-  font-size: 1.3rem;
-  fill: darkblue;
-  opacity: 0;
-  transition: opacity .5s ease;
-}
-.main2 .circle-text.show{
-  opacity: 1;
-}
-
-.main2 .top-line, .main2 .bottom-line {
-  stroke-width: 2;
-}
-/* ----- top line area ----- */
-.main2 .top-line{
-  stroke: black;
-}
-.main2 .brand-circle{}
-.main2 .brand-text{
-  font-family: 'Pretendard', sans-serif;
-  font-weight: 400;
-  font-size: 1.3rem;
-  fill: white;
-}
-.main2 .top-dot{}
-
-/* ----- bottom line area ----- */
-.main2 .bottom-line{
-  stroke: burlywood;
-}
-.main2 .product-circle{
-  stroke: burlywood;
-  fill: burlywood;
-}
-.main2 .product-text{
-  font-family: 'Pretendard', sans-serif;
-  font-weight: 400;
-  font-size: 1.3rem;
-  fill: black;
-}
-.main2 .bottom-dot{
-  fill: burlywood;
-}
-
-/* 공용 라인 */
-.main2 .beige-ring{
-  fill: none;
-  stroke: burlywood;
-  stroke-width: 1;
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-.main2 .beige-ring.show{
-  opacity: 1;
-}
-.main2 .lineAnimation{
-  transition: 
-  transform 1s ease,
-  opacity 1s ease;
-}
-.main2 .lineShow{
-  transform: translateY(0);
-  opacity: 1;
-}
-.main2 .lineHidden{
-  transform: translateY(50px);
-  opacity: 0;
-}
 
 /* ========================================================
 --------------------------- main3 -------------------------
@@ -449,7 +350,258 @@
 --------------------------- main6 -------------------------
 ======================================================== */
 .main6{}
-@media screen and (max-width: 768px){}
+.main6 .scrollsetting{
+  width: 100%;
+  height: 100vh;
+  /* height: auto; */
+  
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.main6 .scrollsetting>.title{
+  padding: 15px;
+  position: absolute;
+  z-index: 3;
+}
+
+.main6 .scrollDots{
+  padding: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 3;
+}
+.main6 .scrollDot{
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  border: 1px solid black;
+  background-color: transparent;
+}
+.main6 .scrollDot.show{background-color: black;}
+
+.main6 .l1{left: 0;}
+.main6 .l2{right: 0;}
+
+.main6  .scroll{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 44% 44%;
+  grid-template-rows: auto auto;
+  row-gap: 50px;
+}
+
+.main6  .scroll .imgCover{
+  margin: 0 15px;
+  width: 60%;
+}
+.main6  .scroll .imgCover img{
+  width: 100%;
+  object-fit: cover;
+}
+.main6  .scroll .text{z-index: 5;}
+.main6  .scroll .text p{margin-top: var(--fs_h3_miniTitle);}
+
+/* 각 영역 개인설정 */
+/* scrollPage1 */
+.main6 .imgCover.i61{
+  justify-self: center;
+  align-self: center;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main6 .imgCover.i62{
+  justify-self: end;
+  align-self: top;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.main6 .t61{
+  justify-self: end;
+  align-self: center;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+/* scrollPage2 */
+.main6 .imgCover.i63{
+  justify-self: center;
+  align-self: center;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.main6 .imgCover.i64{
+  justify-self: end;
+  align-self: top;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.main6 .t62{
+  justify-self: end;
+  align-self: center;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+/* scrollPage3 */
+.main6 .imgCover.i65{
+  justify-self: center;
+  align-self: center;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main6 .imgCover.i66{
+  justify-self: end;
+  align-self: top;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.main6 .t63{
+  justify-self: end;
+  align-self: center;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+/* scrollPage4 */
+.main6 .imgCover.i67{
+  justify-self: center;
+  align-self: center;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.main6 .imgCover.i68{
+  justify-self: end;
+  align-self: top;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.main6 .t64{
+  justify-self: end;
+  align-self: center;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+/* scrollPage5 */
+.main6 .imgCover.i69{
+  justify-self: center;
+  align-self: center;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main6 .imgCover.i610{
+  justify-self: end;
+  align-self: top;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.main6 .t65{
+  justify-self: end;
+  align-self: center;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+/* scrollPage6 */
+.main6 .imgCover.i611{
+  justify-self: center;
+  align-self: center;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.main6 .imgCover.i612{
+  justify-self: end;
+  align-self: top;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.main6 .t66{
+  justify-self: end;
+  align-self: center;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+@media screen and (max-width: 768px){
+  .main6{}
+  .main6 .scrollsetting{height: auto;}
+  .main6 .scrollsetting>.title{}
+
+  .main6 .scrollDots{display: none;}
+  .main6 .scrollDot{}
+  .main6 .scrollDot.show{}
+
+  .main6 .l1{}
+  .main6 .l2{}
+
+  .main6  .scroll{
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .main6  .scroll .imgCover{width: 150%;}
+  .main6  .scroll .imgCover img{}
+  .main6  .scroll .text{}
+  .main6  .scroll .text p{}
+
+  /* 각 영역 개인설정 */
+  /* scrollPage1 */
+  .main6 .imgCover.i61{justify-self: start;}
+  .main6 .imgCover.i62{}
+  .main6 .t61{
+    grid-column: 1/-1;
+  }
+  /* scrollPage2 */
+  .main6 .imgCover.i63{
+    justify-self: start;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .main6 .imgCover.i64{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    
+  }
+  .main6 .t62{grid-column: 1/-1;}
+  /* scrollPage3 */
+  .main6 .imgCover.i65{justify-self: start;}
+  .main6 .imgCover.i66{}
+  .main6 .t63{grid-column: 1/-1;}
+  /* scrollPage4 */
+  .main6 .imgCover.i67{
+    justify-self: start;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .main6 .imgCover.i68{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    
+  }
+  .main6 .t64{grid-column: 1/-1;}
+  /* scrollPage5 */
+  .main6 .imgCover.i69{justify-self: start;}
+  .main6 .imgCover.i610{}
+  .main6 .t65{grid-column: 1/-1;}
+  /* scrollPage6 */
+  .main6 .imgCover.i611{
+    justify-self: start;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .main6 .imgCover.i612{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    
+  }
+  .main6 .t66{grid-column: 1/-1;}
+}
 
 
 /* ========================================================
@@ -606,21 +758,23 @@
 .main8 .logoArea{
   width: 100%;
   position: relative;
+  display: grid;
+
+  --cols:6;
+  grid-template-columns: repeat(var(--cols), 1fr);
 }
-.main8 .logoArea .animationLineY{}
-.main8 .logoArea .animationLineY.l1{left: 0;}
-.main8 .logoArea .animationLineY.l2{left: 25%;}
-.main8 .logoArea .animationLineY.l3{left: 50%;}
-.main8 .logoArea .animationLineY.l4{left: 75%;}
-.main8 .logoArea .animationLineY.l5{right: 0;}
+.main8 .logoArea .animationLineY.base{display: none;}
+@media screen and (max-width: 1020px){.main8 .logoArea{--cols:4};}
 
 .main8 .logoCard{
-  width: 25%;
+  /* width: 25%; */
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   padding: 0 20px;
 }
+.main8 .logoCard.base{display: none;}
 .main8 .logoCard img{
   width: 100%;
   object-fit: cover;
@@ -646,13 +800,8 @@
   .main8 .buttonArea .btn_Korean{}
   .main8 .buttonArea .desginLineY{}
 
-  .main8 .logoArea{}
+  .main8 .logoArea{--cols:2}
   .main8 .logoArea .animationLineY{}
-  .main8 .logoArea .animationLineY.l1{left: 0;}
-  .main8 .logoArea .animationLineY.l2{display: none;}
-  .main8 .logoArea .animationLineY.l3{display: none;}
-  .main8 .logoArea .animationLineY.l4{display: none;}
-  .main8 .logoArea .animationLineY.l5{right: 0;}
 
   .main8 .logoCard{}
   .main8 .logoCard img{}

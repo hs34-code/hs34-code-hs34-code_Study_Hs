@@ -1,0 +1,186 @@
+/* ========================================================
+----------------------- heroBanner ------------------------
+======================================================== */
+.heroBanner{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  height: auto;
+  padding: var(--wrapperTopPadding) 15px var(--wrapperTopPadding) 15px;
+}
+
+.heroBanner .title{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: column;
+}
+.heroBanner .img{
+  grid-column: 2/3;
+  grid-row: 1/2;
+
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.heroBanner .title h3{}
+.heroBanner .title p{
+  margin-top: var(--fs_h3);
+}
+.heroBanner .title p.fsLarge{
+  flex: 0 1 70%;     /* 기본 크기 70% */
+  max-width: 70%;   /* ← 여기까지는 절대 안 줄어듦 */
+  min-width: 320px; /* ← 이 지점부터 a가 줄기 시작 */
+}
+.heroBanner .imgCover{width: 95%;}
+.heroBanner .imgCover img{
+  width: 100%;
+  object-fit: cover;
+}
+
+.heroBanner .animationLineY{grid-row: 1/-1;}
+.heroBanner .animationLineY.l1{left: 15px;}
+.heroBanner .animationLineY.l2{left: 50%;}
+.heroBanner .animationLineY.l3{right: 15px;}
+
+@media screen and (max-width: 768px){
+  .heroBanner{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .heroBanner .title{}
+  .heroBanner .img{
+    margin-top: 50px;
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .heroBanner .title h3{}
+  .heroBanner .title p{}
+  .heroBanner .title p.fsLarge{width: 100%;}
+  .heroBanner .imgCover{width: 100%;}
+  .heroBanner .imgCover img{}
+
+  .heroBanner .animationLineY{}
+  .heroBanner .animationLineY.l1{}
+  .heroBanner .animationLineY.l2{display: none;}
+  .heroBanner .animationLineY.l3{}
+}
+
+
+/* ========================================================
+--------------------------- main1 -------------------------
+======================================================== */
+.main1{
+  display: flex;
+  flex-direction: column;
+  background-color: #f3f0ed;
+  gap: 50px;
+}
+
+.main1 .content{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+.main1 .desginAnimationArea{}
+
+.main1 .title{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main1 .text{
+  margin-top: var(--fs_h3);
+  width: 70%;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.main1 .animationLineY{left: 50%;}
+
+@media screen and (max-width: 768px){
+  .main1{}
+
+  .main1 .content{grid-template-columns: 1fr;}
+  .main1 .desginAnimationArea{}
+
+  .main1 .title{}
+  .main1 .text{
+    width: 100%;
+    grid-column: 1/2;
+  }
+  .main1 .animationLineY{left: 0;}
+}
+
+/* ========================================================
+--------------------------- main2 -------------------------
+======================================================== */
+.main2{background-color: #f3f0ed;}
+
+/* ========================================================
+--------------------------- main3 -------------------------
+======================================================== */
+@media screen and (max-width: 768px){}
+
+
+/* ========================================================
+--------------------------- main4 -------------------------
+======================================================== */
+.main4{
+  display: grid;
+  grid-template-columns: 1fr 40%;
+  grid-row: auto;
+  overflow: hidden;
+}
+
+.main4 .desginAnimationCircle{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.main4 .imgCover{
+  width: 60%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  z-index: 1;
+
+  justify-self: center;
+}
+.main4 .imgCover img{
+  width: 100%;
+  object-fit: cover;
+}
+.main4 .content{
+  align-self: center;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.main4 .title{}
+.main4 .text{
+  margin-top: var(--fs_h2);
+  width: 70%;
+}
+
+@media screen and (max-width: 768px){
+  .main4{
+    grid-template-columns: 100%;
+    grid-row: auto auto;
+  }
+
+  .main4 .desginAnimationCircle{
+    grid-row: 2/3;
+  }
+
+  .main4 .imgCover{
+    grid-row: 2/3;
+      justify-self: end;
+  }
+  .main4 .imgCover img{}
+  .main4 .content{
+    grid-column: 1/2;
+  }
+  .main4 .title{}
+  .main4 .text{width: 100%;}
+}

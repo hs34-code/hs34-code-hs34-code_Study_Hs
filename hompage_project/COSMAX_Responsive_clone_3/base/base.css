@@ -27,6 +27,7 @@
   --fs_h1 : 1rem;
   --fs_h2 : clamp(3.2rem, 2.2rem + 2.8vw, 6.4rem);
   --fs_h3 : clamp(3.2rem, 2.2rem + 2.8vw, 6.4rem);
+  --fs_h3_miniTitle:clamp(1.5rem, 1.2rem + 0.5vw, 1.8rem);
   --fs_h4 : 1rem;
   --fs_h5 : 1rem;
   --fs_h6 : 1rem;
@@ -47,6 +48,13 @@ h3{font-size: var(--fs_h3);}
 h4{font-size: var(--fs_h4);}
 h5{font-size: var(--fs_h5);}
 h6{font-size: var(--fs_h6);}
+
+h3.miniTitle{
+  font-size: var(--fs_h3_miniTitle);
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
 p.fsLarge{
   font-size: var(--fs_p_large);
   /* letter-spacing: 1px; */
@@ -55,6 +63,7 @@ p.fsNormal{
   font-size: var(--fs_p_normal);
   letter-spacing: 1px;
 }
+
 p.fsArrowIcon{
   font-weight: 600;
   white-space: nowrap;
@@ -85,10 +94,6 @@ p.caption{
   position: relative;
   width: 100%;
   height: 100vh;
-
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
 }
 
 
@@ -137,6 +142,21 @@ p.caption{
   transform-box: fill-box;
 }
 .animationLineY line{
+  stroke:black;
+  stroke-width:1;
+}
+
+/* ================== animationLineX =================== */
+.animationLineX{
+  position: absolute; 
+  width: 100%;
+  height: 2px;
+  left: 0;
+
+  display: block;
+  transform-box: fill-box;
+}
+.animationLineX line{
   stroke:black;
   stroke-width:1;
 }
@@ -206,31 +226,32 @@ p.caption{
   stroke: white;
 }
 
-/* =============== desginAnimationCricle =============== */
-.desginAnimationCricle{
+/* =============== desginAnimationCircle =============== */
+.desginAnimationCircle{
+  position: relative;
   align-self: stretch;
 
   display: flex;
   align-items: center;
   overflow: hidden;
 }
-.desginAnimationCricle svg{
+.desginAnimationCircle svg{
   height: 100%;
   
   width: auto;
   display: block;
 }
 
-.desginAnimationCricle.left{justify-self: end;}
-.desginAnimationCricle.left svg{
+.desginAnimationCircle.left{justify-self: end;}
+.desginAnimationCircle.left svg{
   transform: translateX(calc(50% + -40px));
 }
-.desginAnimationCricle.right{justify-self: start}
-.desginAnimationCricle.right svg{
-  transform: translateX(calc(-50% + 40px)     );
+.desginAnimationCircle.right{justify-self: start}
+.desginAnimationCircle.right svg{
+  transform: translateX(calc(-50% + 40px));
 }
 
-.desginAnimationCricle .baseCircle{
+.desginAnimationCircle .baseCircle{
   fill: none;
   stroke: black;
   stroke-width: 0.5;
@@ -238,7 +259,7 @@ p.caption{
   transform-origin: center;
   stroke-linecap: butt;
 }
-.desginAnimationCricle .orbitDot{
+.desginAnimationCircle .orbitDot{
   opacity: 0;
 }
 .circleA{transform: rotate(0);}
@@ -246,44 +267,221 @@ p.caption{
 
 
 
-/* 원 애니메이션 */
-/* .main4 .desginArea{
-  position: relative;
+/* ================= desginAnimationArea ================= */
+.desginAnimationArea svg{
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  height: auto;
 }
-.main4 .desginArea svg{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform-origin: left;
-  scale: 2;
-}
-.main4 .desginArea circle{
+
+.desginAnimationArea .svg-circle{
   fill: none;
   stroke: black;
-  stroke-width: 0.5;
+  stroke-width: 1;
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+.desginAnimationArea .svg-circle.show{
+  opacity: 1;
+}
+.desginAnimationArea #movingCircle{
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.desginAnimationArea .moving-circle{
+  fill: none;
+  stroke: black;
+  stroke-width: 1;
+
   stroke-dasharray: 628;
-  stroke-dashoffset: 628;
+  stroke-dashoffset: 628; /* ← 완전히 숨김 */
+}
+.desginAnimationArea .moving-circle.transition{  
+  transition: 
+  stroke-dashoffset 1s linear,
+  transform 1s ease;
 }
 
-.main4 circle.circle-a{
-  transform-origin: 150px 150px;
+.desginAnimationArea .circle-text{
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 300;
+  font-size: 1.3rem;
+  fill: darkblue;
+  opacity: 0;
+  transition: opacity .5s ease;
 }
-.main4 circle.circle-b{
-  transform-origin: 300px 150px;
-  transform: rotate(60deg);
+.desginAnimationArea .circle-text.show{
+  opacity: 1;
 }
-.main4 .animate{
-  animation: draw 1.5s ease-out forwards;
+
+.desginAnimationArea .top-line, .desginAnimationArea .bottom-line {
+  stroke-width: 2;
 }
- */
+/* ----- top line area ----- */
+.desginAnimationArea .top-line{
+  stroke: black;
+}
+.desginAnimationArea .brand-circle{}
+.desginAnimationArea .brand-text{
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  fill: white;
+}
+.desginAnimationArea .top-dot{}
 
+/* ----- bottom line area ----- */
+.desginAnimationArea .bottom-line{
+  stroke: burlywood;
+}
+.desginAnimationArea .product-circle{
+  stroke: burlywood;
+  fill: burlywood;
+}
+.desginAnimationArea .product-text{
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  fill: black;
+}
+.desginAnimationArea .bottom-dot{
+  fill: burlywood;
+}
 
+/* 공용 라인 */
+.desginAnimationArea .beige-ring{
+  fill: none;
+  stroke: burlywood;
+  stroke-width: 1;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.desginAnimationArea .beige-ring.show{
+  opacity: 1;
+}
+.desginAnimationArea .lineAnimation{
+  transition: 
+  transform 1s ease,
+  opacity 1s ease;
+}
+.desginAnimationArea .lineShow{
+  transform: translateY(0);
+  opacity: 1;
+}
+.desginAnimationArea .lineHidden{
+  transform: translateY(50px);
+  opacity: 0;
+}
 
+/* ================ horizontalCardScroll =============== */
+.horizontalCardScroll{
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.horizontalCardScroll .desginLineY{ display: none;}
 
+.horizontalCardScroll .title{position: absolute;}
+.horizontalCardScroll .scrollTrack{
+  position: relative;
+  padding: 10% 1040px;
+  display: flex;
+}
 
-/* ================== animationLineX =================== */
+.horizontalCardScroll .card{
+  position: relative;
+  list-style: none;
+  flex-shrink: 0;
+  width: 1040px;
+  height: auto;
+  padding: 100px;
 
-/* ================ animationCircle ================ */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+/* card 내부 공통 설정 */
+.horizontalCardScroll .imgCover{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 320px;
+  height: 420px;
+  overflow: hidden;
+  z-index: 1;
+}
+.horizontalCardScroll .imgCover img{
+  width: 100%;
+  object-fit: cover;
+}
+
+.horizontalCardScroll .text{
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.horizontalCardScroll .pointCircle{
+  margin-top: 50px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: black;
+}
+.horizontalCardScroll .animationLineX{
+  margin-top: 155px;
+}
+.horizontalCardScroll .scrollTrack h3{font-weight: 500;}
+.horizontalCardScroll p{}
+@media screen and (max-width: 768px){
+  .horizontalCardScroll{
+    height: auto;
+    padding: 15px 0;
+  }
+  .horizontalCardScroll .desginLineY{
+    display: block;
+    left: 15px;
+    top: calc(15px + var(--fs_h3) + 25px + 15px);
+    height: calc(100% - (15px + var(--fs_h3) + 25px + 15px + 30px));
+  }
+
+  .horizontalCardScroll .title{
+    padding: 0 30px;
+    position: relative;
+  }
+  .horizontalCardScroll .scrollTrack{
+    padding: 0;
+    flex-direction: column;
+  }
+
+  .horizontalCardScroll .card{
+    padding: 15px 15px 15px 45px;
+    width: auto;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+  }
+
+  .horizontalCardScroll .imgCover{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 100%;
+    height: auto;
+    padding: 25px 0;
+  }
+  .horizontalCardScroll .imgCover img{}
+
+  .horizontalCardScroll .text{
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .horizontalCardScroll .pointCircle{
+    margin-top: calc(var(--fs_h3_miniTitle) / 2);
+    transform: translateX(-34.5px);
+    position: absolute;
+  }
+  .horizontalCardScroll .animationLineX{display: none;}
+  .horizontalCardScroll .scrollTrack h3{font-size: var(--fs_h3_miniTitle);}
+  .horizontalCardScroll p{}
+}
